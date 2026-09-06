@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapitre 11 — Analyse grammaticale | Z.Éducation</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fb;
+      color: #1f2937;
+      line-height: 1.7;
+    }
+
+    header {
+      background: linear-gradient(135deg, #111827, #2563eb);
+      color: white;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .logo span {
+      color: #facc15;
+    }
+
+    .back {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .hero {
+      background: white;
+      padding: 55px 7%;
+      text-align: center;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #dbeafe;
+      color: #1d4ed8;
+      padding: 7px 15px;
+      border-radius: 20px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      color: #111827;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      max-width: 750px;
+      margin: auto;
+      color: #6b7280;
+      font-size: 1.1rem;
+    }
+
+    main {
+      width: 86%;
+      max-width: 1100px;
+      margin: 35px auto;
+    }
+
+    .section {
+      background: white;
+      padding: 30px;
+      border-radius: 18px;
+      margin-bottom: 25px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+    }
+
+    .section h2 {
+      color: #1d4ed8;
+      margin-bottom: 18px;
+      font-size: 1.6rem;
+    }
+
+    .section h3 {
+      color: #111827;
+      margin: 22px 0 10px;
+    }
+
+    .definition {
+      background: #eff6ff;
+      border-left: 5px solid #2563eb;
+      padding: 18px;
+      border-radius: 10px;
+      margin: 15px 0;
+    }
+
+    .example {
+      background: #f9fafb;
+      border-left: 5px solid #10b981;
+      padding: 16px;
+      margin: 15px 0;
+      border-radius: 8px;
+    }
+
+    .warning {
+      background: #fff7ed;
+      border-left: 5px solid #f97316;
+      padding: 16px;
+      margin: 15px 0;
+      border-radius: 8px;
+    }
+
+    .grammar-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+
+    .grammar-table th,
+    .grammar-table td {
+      border: 1px solid #d1d5db;
+      padding: 12px;
+      text-align: left;
+    }
+
+    .grammar-table th {
+      background: #2563eb;
+      color: white;
+    }
+
+    .grammar-table tr:nth-child(even) {
+      background: #f9fafb;
+    }
+
+    .method {
+      counter-reset: step;
+    }
+
+    .step {
+      display: flex;
+      gap: 15px;
+      margin: 15px 0;
+      align-items: flex-start;
+    }
+
+    .step-number {
+      min-width: 38px;
+      height: 38px;
+      background: #2563eb;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+
+    .exercise {
+      background: #f8fafc;
+      padding: 20px;
+      border-radius: 12px;
+      margin: 18px 0;
+      border: 1px solid #e5e7eb;
+    }
+
+    .exercise h3 {
+      margin-top: 0;
+      color: #2563eb;
+    }
+
+    button {
+      border: none;
+      background: #2563eb;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background: #1d4ed8;
+    }
+
+    .correction {
+      display: none;
+      margin-top: 15px;
+      padding: 15px;
+      background: #ecfdf5;
+      border-left: 4px solid #10b981;
+      border-radius: 8px;
+    }
+
+    .quiz-question {
+      margin: 22px 0;
+      padding: 18px;
+      background: #f9fafb;
+      border-radius: 10px;
+    }
+
+    .quiz-question label {
+      display: block;
+      margin: 8px 0;
+      cursor: pointer;
+    }
+
+    #resultat {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    .recap {
+      background: linear-gradient(135deg, #eff6ff, #f0fdf4);
+    }
+
+    .navigation {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      margin: 30px 0;
+    }
+
+    .navigation a {
+      text-decoration: none;
+      background: #111827;
+      color: white;
+      padding: 13px 20px;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+
+    .navigation a:hover {
+      background: #2563eb;
+    }
+
+    footer {
+      background: #111827;
+      color: white;
+      text-align: center;
+      padding: 25px;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 700px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      main {
+        width: 92%;
+      }
+
+      .section {
+        padding: 20px;
+      }
+
+      .grammar-table {
+        font-size: 0.9rem;
+      }
+
+      .navigation {
+        flex-direction: column;
+      }
+
+      .navigation a {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">Z.<span>Éducation</span></div>
+  <a href="cm2-francais-cours.html" class="back">← Retour aux cours</a>
+</header>
+
+<section class="hero">
+  <div class="badge">Français CM2 • Chapitre 11</div>
+  <h1>Analyse grammaticale</h1>
+  <p>
+    Apprends à identifier et à donner la nature et la fonction
+    des mots dans une phrase.
+  </p>
+</section>
+
+<main>
+
+  <section class="section">
+    <h2>📘 1. Qu'est-ce que l'analyse grammaticale ?</h2>
+
+    <div class="definition">
+      <strong>Définition :</strong>
+      L'analyse grammaticale consiste à étudier les mots d'une phrase
+      pour déterminer leur <strong>nature</strong> et leur <strong>fonction</strong>.
+    </div>
+
+    <p>
+      Pour analyser correctement un mot, il faut donc répondre à deux questions :
+    </p>
+
+    <ul>
+      <li><strong>Quelle est sa nature ?</strong></li>
+      <li><strong>Quelle est sa fonction dans la phrase ?</strong></li>
+    </ul>
+
+    <div class="example">
+      <strong>Exemple :</strong><br><br>
+      « Le petit garçon mange une pomme. »
+      <br><br>
+
+      <strong>garçon</strong> → nom commun, sujet du verbe « mange ».<br>
+      <strong>petit</strong> → adjectif qualificatif, épithète du nom « garçon ».<br>
+      <strong>une</strong> → déterminant indéfini, déterminant du nom « pomme ».<br>
+      <strong>pomme</strong> → nom commun, COD du verbe « mange ».
+    </div>
+  </section>
+
+
+  <section class="section">
+    <h2>🔎 2. La nature des mots</h2>
+
+    <p>
+      La <strong>nature</strong> d'un mot indique ce qu'il est.
+      Elle ne change généralement pas selon la place du mot dans la phrase.
+    </p>
+
+    <table class="grammar-table">
+      <tr>
+        <th>Nature</th>
+        <th>Exemple</th>
+        <th>Rôle général</th>
+      </tr>
+
+      <tr>
+        <td>Nom</td>
+        <td>maison</td>
+        <td>Désigne un être, un objet, un lieu ou une idée.</td>
+      </tr>
+
+      <tr>
+        <td>Déterminant</td>
+        <td>le, une, mes</td>
+        <td>Accompagne le nom.</td>
+      </tr>
+
+      <tr>
+        <td>Adjectif qualificatif</td>
+        <td>grand</td>
+        <td>Donne une précision sur le nom.</td>
+      </tr>
+
+      <tr>
+        <td>Verbe</td>
+        <td>courir</td>
+        <td>Exprime une action ou un état.</td>
+      </tr>
+
+      <tr>
+        <td>Pronom</td>
+        <td>il, elle, celui</td>
+        <td>Remplace généralement un nom ou un groupe nominal.</td>
+      </tr>
+
+      <tr>
+        <td>Adverbe</td>
+        <td>rapidement</td>
+        <td>Précise notamment un verbe, un adjectif ou un autre adverbe.</td>
+      </tr>
+
+      <tr>
+        <td>Préposition</td>
+        <td>à, de, pour</td>
+        <td>Introduit un complément.</td>
+      </tr>
+
+      <tr>
+        <td>Conjonction</td>
+        <td>mais, ou, et, donc</td>
+        <td>Relie des mots ou des groupes de mots.</td>
+      </tr>
+    </table>
+  </section>
+
+
+  <section class="section">
+    <h2>🎯 3. La fonction des mots</h2>
+
+    <p>
+      La <strong>fonction</strong> indique le rôle que joue un mot ou un groupe
+      de mots dans une phrase.
+    </p>
+
+    <table class="grammar-table">
+      <tr>
+        <th>Fonction</th>
+        <th>Question</th>
+        <th>Exemple</th>
+      </tr>
+
+      <tr>
+        <td>Sujet</td>
+        <td>Qui est-ce qui ?</td>
+        <td><strong>Paul</strong> court.</td>
+      </tr>
+
+      <tr>
+        <td>COD</td>
+        <td>Verbe + qui ? quoi ?</td>
+        <td>Paul mange <strong>une pomme</strong>.</td>
+      </tr>
+
+      <tr>
+        <td>COI</td>
+        <td>Verbe + à/de qui ? à/de quoi ?</td>
+        <td>Paul parle <strong>à son ami</strong>.</td>
+      </tr>
+
+      <tr>
+        <td>Attribut du sujet</td>
+        <td>Après un verbe d'état</td>
+        <td>Paul est <strong>heureux</strong>.</td>
+      </tr>
+
+      <tr>
+        <td>Épithète</td>
+        <td>Adjectif lié directement au nom</td>
+        <td>Une maison <strong>blanche</strong>.</td>
+      </tr>
+
+      <tr>
+        <td>Complément du nom</td>
+        <td>Précise un nom</td>
+        <td>La maison <strong>de mon père</strong>.</td>
+      </tr>
+
+      <tr>
+        <td>Complément circonstanciel</td>
+        <td>Où ? Quand ? Comment ? Pourquoi ?</td>
+        <td>Paul travaille <strong>le matin</strong>.</td>
+      </tr>
+    </table>
+  </section>
+
+
+  <section class="section">
+    <h2>🧠 4. Nature et fonction : ne pas confondre</h2>
+
+    <div class="warning">
+      <strong>Attention !</strong><br>
+      La nature et la fonction sont deux choses différentes.
+    </div>
+
+    <div class="example">
+      <strong>Exemple :</strong><br><br>
+
+      « Le chat mange la souris. »
+      <br><br>
+
+      <strong>chat</strong> : nom commun → sujet.<br>
+      <strong>souris</strong> : nom commun → COD.
+    </div>
+
+    <p>
+      Les deux mots sont des <strong>noms communs</strong>, mais ils n'ont pas
+      la même fonction.
+    </p>
+
+    <div class="example">
+      « Le petit chat mange rapidement. »
+      <br><br>
+
+      <strong>petit</strong> : adjectif qualificatif → épithète du nom « chat ».<br>
+      <strong>rapidement</strong> : adverbe → complément circonstanciel de manière.
+    </div>
+  </section>
+
+
+  <section class="section">
+    <h2>📝 5. Comment faire une analyse grammaticale ?</h2>
+
+    <div class="method">
+
+      <div class="step">
+        <div class="step-number">1</div>
+        <div>
+          <strong>Lire toute la phrase.</strong><br>
+          Il faut comprendre le sens général avant d'analyser les mots.
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-number">2</div>
+        <div>
+          <strong>Repérer le verbe.</strong><br>
+          Le verbe permet notamment de trouver le sujet et les compléments.
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-number">3</div>
+        <div>
+          <strong>Identifier le sujet.</strong><br>
+          Pose la question : « Qui est-ce qui + verbe ? »
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-number">4</div>
+        <div>
+          <strong>Identifier les compléments.</strong><br>
+          Cherche le COD, le COI et les compléments circonstanciels.
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-number">5</div>
+        <div>
+          <strong>Donner la nature.</strong><br>
+          Nom, déterminant, adjectif, verbe, pronom, adverbe, etc.
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-number">6</div>
+        <div>
+          <strong>Donner la fonction.</strong><br>
+          Sujet, COD, COI, épithète, complément du nom, etc.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <section class="section">
+    <h2>✏️ 6. Exemple d'analyse complète</h2>
+
+    <div class="example">
+      <strong>Phrase :</strong><br>
+      « Le jeune garçon mange une délicieuse mangue dans la cuisine. »
+    </div>
+
+    <table class="grammar-table">
+      <tr>
+        <th>Mot</th>
+        <th>Nature</th>
+        <th>Fonction</th>
+      </tr>
+
+      <tr>
+        <td>Le</td>
+        <td>Déterminant défini</td>
+        <td>Détermine « garçon »</td>
+      </tr>
+
+      <tr>
+        <td>jeune</td>
+        <td>Adjectif qualificatif</td>
+        <td>Épithète de « garçon »</td>
+      </tr>
+
+      <tr>
+        <td>garçon</td>
+        <td>Nom commun</td>
+        <td>Sujet de « mange »</td>
+      </tr>
+
+      <tr>
+        <td>mange</td>
+        <td>Verbe</td>
+        <td>Noyau du groupe verbal</td>
+      </tr>
+
+      <tr>
+        <td>une</td>
+        <td>Déterminant indéfini</td>
+        <td>Détermine « mangue »</td>
+      </tr>
+
+      <tr>
+        <td>délicieuse</td>
+        <td>Adjectif qualificatif</td>
+        <td>Épithète de « mangue »</td>
+      </tr>
+
+      <tr>
+        <td>mangue</td>
+        <td>Nom commun</td>
+        <td>COD de « mange »</td>
+      </tr>
+
+      <tr>
+        <td>dans</td>
+        <td>Préposition</td>
+        <td>Introduit le complément</td>
+      </tr>
+
+      <tr>
+        <td>la cuisine</td>
+        <td>Groupe nominal</td>
+        <td>Complément circonstanciel de lieu</td>
+      </tr>
+    </table>
+  </section>
+
+
+  <section class="section">
+    <h2>📝 7. Exercices</h2>
+
+    <div class="exercise">
+      <h3>Exercice 1 — Trouve la nature</h3>
+
+      <p>
+        Donne la nature des mots en gras.
+      </p>
+
+      <p>
+        1. Le <strong>grand</strong> arbre pousse rapidement.<br>
+        2. <strong>Paul</strong> joue au football.<br>
+        3. Marie <strong>chante</strong> une chanson.<br>
+        4. Il travaille <strong>rapidement</strong>.<br>
+        5. <strong>Ils</strong> arrivent demain.
+      </p>
+
+      <button onclick="toggleCorrection('corr1')">
+        Voir la correction
+      </button>
+
+      <div id="corr1" class="correction">
+        1. grand → adjectif qualificatif<br>
+        2. Paul → nom propre<br>
+        3. chante → verbe<br>
+        4. rapidement → adverbe<br>
+        5. Ils → pronom personnel
+      </div>
+    </div>
+
+
+    <div class="exercise">
+      <h3>Exercice 2 — Trouve la fonction</h3>
+
+      <p>
+        Donne la fonction du groupe en gras.
+      </p>
+
+      <p>
+        1. <strong>Le garçon</strong> mange une pomme.<br>
+        2. Le garçon mange <strong>une pomme</strong>.<br>
+        3. Amina parle <strong>à sa sœur</strong>.<br>
+        4. Nous travaillons <strong>le matin</strong>.<br>
+        5. C'est une maison <strong>magnifique</strong>.
+      </p>
+
+      <button onclick="toggleCorrection('corr2')">
+        Voir la correction
+      </button>
+
+      <div id="corr2" class="correction">
+        1. Le garçon → sujet<br>
+        2. une pomme → COD<br>
+        3. à sa sœur → COI<br>
+        4. le matin → complément circonstanciel de temps<br>
+        5. magnifique → attribut du sujet
+      </div>
+    </div>
+
+
+    <div class="exercise">
+      <h3>Exercice 3 — Analyse complète</h3>
+
+      <p>
+        Analyse les mots suivants :
+      </p>
+
+      <div class="example">
+        « La petite fille lit un livre intéressant. »
+      </div>
+
+      <button onclick="toggleCorrection('corr3')">
+        Voir la correction
+      </button>
+
+      <div id="corr3" class="correction">
+        <strong>La</strong> → déterminant défini, détermine « fille ».<br>
+        <strong>petite</strong> → adjectif qualificatif, épithète de « fille ».<br>
+        <strong>fille</strong> → nom commun, sujet de « lit ».<br>
+        <strong>lit</strong> → verbe, noyau du groupe verbal.<br>
+        <strong>un</strong> → déterminant indéfini, détermine « livre ».<br>
+        <strong>livre</strong> → nom commun, COD de « lit ».<br>
+        <strong>intéressant</strong> → adjectif qualificatif, épithète de « livre ».
+      </div>
+    </div>
+
+
+    <div class="exercise">
+      <h3>Exercice 4 — Niveau avancé</h3>
+
+      <p>
+        Analyse complètement la phrase :
+      </p>
+
+      <div class="example">
+        « Mon frère prépare soigneusement le repas dans la cuisine. »
+      </div>
+
+      <button onclick="toggleCorrection('corr4')">
+        Voir la correction
+      </button>
+
+      <div id="corr4" class="correction">
+        <strong>Mon</strong> → déterminant possessif, détermine « frère ».<br>
+        <strong>frère</strong> → nom commun, sujet de « prépare ».<br>
+        <strong>prépare</strong> → verbe.<br>
+        <strong>soigneusement</strong> → adverbe, complément circonstanciel de manière.<br>
+        <strong>le</strong> → déterminant défini.<br>
+        <strong>repas</strong> → nom commun, COD de « prépare ».<br>
+        <strong>dans la cuisine</strong> → groupe prépositionnel, complément circonstanciel de lieu.
+      </div>
+    </div>
+
+  </section>
+
+
+  <section class="section">
+    <h2>🎯 8. Quiz — Teste tes connaissances</h2>
+
+    <form id="quiz">
+
+      <div class="quiz-question">
+        <p><strong>1. Que donne-t-on lorsqu'on cherche ce qu'est un mot ?</strong></p>
+
+        <label>
+          <input type="radio" name="q1" value="a">
+          Sa fonction
+        </label>
+
+        <label>
+          <input type="radio" name="q1" value="b">
+          Sa nature
+        </label>
+
+        <label>
+          <input type="radio" name="q1" value="c">
+          Son nombre
+        </label>
+      </div>
+
+
+      <div class="quiz-question">
+        <p><strong>2. Dans « Paul mange une pomme », quelle est la fonction de « Paul » ?</strong></p>
+
+        <label>
+          <input type="radio" name="q2" value="a">
+          COD
+        </label>
+
+        <label>
+          <input type="radio" name="q2" value="b">
+          Sujet
+        </label>
+
+        <label>
+          <input type="radio" name="q2" value="c">
+          COI
+        </label>
+      </div>
+
+
+      <div class="quiz-question">
+        <p><strong>3. Quelle est la nature de « rapidement » ?</strong></p>
+
+        <label>
+          <input type="radio" name="q3" value="a">
+          Nom
+        </label>
+
+        <label>
+          <input type="radio" name="q3" value="b">
+          Adjectif
+        </label>
+
+        <label>
+          <input type="radio" name="q3" value="c">
+          Adverbe
+        </label>
+      </div>
+
+
+      <div class="quiz-question">
+        <p><strong>4. Dans « Il mange une mangue », quelle est la fonction de « une mangue » ?</strong></p>
+
+        <label>
+          <input type="radio" name="q4" value="a">
+          Sujet
+        </label>
+
+        <label>
+          <input type="radio" name="q4" value="b">
+          COD
+        </label>
+
+        <label>
+          <input type="radio" name="q4" value="c">
+          COI
+        </label>
+      </div>
+
+
+      <div class="quiz-question">
+        <p><strong>5. Dans « une belle maison », quelle est la fonction de « belle » ?</strong></p>
+
+        <label>
+          <input type="radio" name="q5" value="a">
+          Épithète
+        </label>
+
+        <label>
+          <input type="radio" name="q5" value="b">
+          Sujet
+        </label>
+
+        <label>
+          <input type="radio" name="q5" value="c">
+          COD
+        </label>
+      </div>
+
+      <button type="button" onclick="corrigerQuiz()">
+        Valider le quiz
+      </button>
+
+      <div id="resultat"></div>
+
+    </form>
+  </section>
+
+
+  <section class="section recap">
+    <h2>📚 9. À retenir</h2>
+
+    <ul>
+      <li>L'analyse grammaticale étudie les mots d'une phrase.</li>
+      <li>La <strong>nature</strong> indique ce qu'est un mot.</li>
+      <li>La <strong>fonction</strong> indique le rôle du mot dans la phrase.</li>
+      <li>Le sujet commande généralement l'accord du verbe.</li>
+      <li>Le COD répond aux questions « qui ? » ou « quoi ? » après le verbe.</li>
+      <li>Le COI est généralement introduit par une préposition.</li>
+      <li>L'adjectif qualificatif peut être épithète ou attribut.</li>
+      <li>Pour réussir une analyse, il faut toujours distinguer nature et fonction.</li>
+    </ul>
+  </section>
+
+
+  <div class="navigation">
+    <a href="cm2-francais-voix.html">
+      ← Chapitre 10 : Voix active et passive
+    </a>
+
+    <a href="cm2-francais-analyse-logique.html">
+      Chapitre 12 : Analyse logique →
+    </a>
+  </div>
+
+</main>
+
+
+<footer>
+  <p><strong>Z.Éducation</strong></p>
+  <p>Apprendre • Comprendre • Réussir</p>
+  <p>Français CM2</p>
+</footer>
+
+
+<script>
+
+  function toggleCorrection(id) {
+    const element = document.getElementById(id);
+
+    if (element.style.display === "block") {
+      element.style.display = "none";
+    } else {
+      element.style.display = "block";
+    }
+  }
+
+
+  function corrigerQuiz() {
+
+    const bonnesReponses = {
+      q1: "b",
+      q2: "b",
+      q3: "c",
+      q4: "b",
+      q5: "a"
+    };
+
+    let score = 0;
+
+    for (let question in bonnesReponses) {
+
+      const reponse = document.querySelector(
+        'input[name="' + question + '"]:checked'
+      );
+
+      if (reponse && reponse.value === bonnesReponses[question]) {
+        score++;
+      }
+    }
+
+    const resultat = document.getElementById("resultat");
+
+    if (score === 5) {
+      resultat.innerHTML =
+        "🎉 Excellent ! Tu as obtenu 5/5. Maîtrise parfaite de l'analyse grammaticale.";
+    } 
+    else if (score >= 3) {
+      resultat.innerHTML =
+        "👏 Bien joué ! Tu as obtenu " + score + "/5. Continue tes révisions.";
+    } 
+    else {
+      resultat.innerHTML =
+        "📚 Tu as obtenu " + score + "/5. Relis le cours puis recommence le quiz.";
+    }
+  }
+
+</script>
+
+</body>
+</html>
