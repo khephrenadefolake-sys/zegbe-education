@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Les pronoms - Français CM2 | Z.Éducation</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f7fb;
+      color: #1f2937;
+      line-height: 1.7;
+    }
+
+    header {
+      background: white;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 18px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      color: #2563eb;
+      text-decoration: none;
+      font-size: 24px;
+      font-weight: 800;
+    }
+
+    .back-link {
+      color: #374151;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .back-link:hover {
+      color: #2563eb;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #2563eb, #4f46e5);
+      color: white;
+      text-align: center;
+      padding: 70px 20px;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      max-width: 750px;
+      margin: auto;
+      font-size: 19px;
+    }
+
+    .container {
+      max-width: 1050px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .section {
+      background: white;
+      padding: 30px;
+      margin-bottom: 30px;
+      border-radius: 18px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+    }
+
+    .section h2 {
+      color: #1d4ed8;
+      font-size: 28px;
+      margin-bottom: 18px;
+    }
+
+    .section h3 {
+      margin: 25px 0 10px;
+      color: #374151;
+      font-size: 21px;
+    }
+
+    .definition {
+      background: #eff6ff;
+      border-left: 5px solid #2563eb;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+
+    .example {
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      padding: 18px;
+      border-radius: 12px;
+      margin: 15px 0;
+    }
+
+    .method {
+      background: #f0fdf4;
+      border-left: 5px solid #16a34a;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+
+    .warning {
+      background: #fff7ed;
+      border-left: 5px solid #f97316;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+
+    ul, ol {
+      margin: 12px 0 12px 25px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .exercise {
+      background: #f8fafc;
+      border: 1px solid #dbeafe;
+      padding: 22px;
+      border-radius: 14px;
+      margin: 18px 0;
+    }
+
+    .exercise h3 {
+      margin-top: 0;
+      color: #1d4ed8;
+    }
+
+    .answer-button {
+      margin-top: 12px;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 8px;
+      background: #2563eb;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .answer-button:hover {
+      background: #1d4ed8;
+    }
+
+    .answer {
+      display: none;
+      margin-top: 15px;
+      padding: 15px;
+      background: #ecfdf5;
+      border-left: 4px solid #16a34a;
+      border-radius: 8px;
+    }
+
+    .quiz-question {
+      margin: 22px 0;
+      padding: 20px;
+      background: #f8fafc;
+      border-radius: 12px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .quiz-question p {
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+
+    .quiz-question label {
+      display: block;
+      margin: 8px 0;
+      cursor: pointer;
+    }
+
+    .quiz-button {
+      display: block;
+      margin: 25px auto 0;
+      padding: 14px 28px;
+      border: none;
+      border-radius: 10px;
+      background: #16a34a;
+      color: white;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .quiz-result {
+      display: none;
+      margin-top: 25px;
+      padding: 20px;
+      background: #eff6ff;
+      border-radius: 12px;
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .recap {
+      background: linear-gradient(135deg, #eff6ff, #eef2ff);
+      padding: 25px;
+      border-radius: 15px;
+    }
+
+    .navigation {
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .navigation a {
+      display: inline-block;
+      background: #2563eb;
+      color: white;
+      text-decoration: none;
+      padding: 13px 22px;
+      border-radius: 10px;
+      font-weight: bold;
+      margin: 5px;
+    }
+
+    .navigation a:hover {
+      background: #1d4ed8;
+    }
+
+    footer {
+      background: #111827;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 50px;
+    }
+
+    footer p {
+      margin: 5px;
+      opacity: 0.85;
+    }
+
+    @media (max-width: 700px) {
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      .section {
+        padding: 22px;
+      }
+
+      .header-container {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-container">
+
+    <a href="index.html" class="logo">
+      Z.Éducation
+    </a>
+
+    <a href="cm2-francais-cours.html" class="back-link">
+      ← Retour aux cours de Français CM2
+    </a>
+
+  </div>
+</header>
+
+
+<section class="hero">
+
+  <h1>Les pronoms</h1>
+
+  <p>
+    Français CM2 — Reconnaître, identifier et utiliser
+    les différents types de pronoms.
+  </p>
+
+</section>
+
+
+<main class="container">
+
+
+<!-- 1 -->
+
+<section class="section">
+
+  <h2>📘 1. Qu'est-ce qu'un pronom ?</h2>
+
+  <div class="definition">
+
+    <strong>Définition :</strong>
+    Un pronom est un mot qui peut remplacer un nom,
+    un groupe nominal ou désigner une personne ou une chose
+    sans répéter son nom.
+
+  </div>
+
+  <div class="example">
+
+    <strong>Exemple :</strong><br><br>
+
+    Awa a acheté un livre.
+    <strong>Elle</strong> lit le livre.
+
+    <br><br>
+
+    « Elle » remplace « Awa ».
+
+  </div>
+
+  <div class="example">
+
+    Moussa aime cette voiture.
+    <strong>Il</strong> veut l'acheter.
+
+    <br><br>
+
+    « Il » remplace « Moussa ».
+
+  </div>
+
+</section>
+
+
+<!-- 2 -->
+
+<section class="section">
+
+  <h2>👤 2. Les pronoms personnels</h2>
+
+  <p>
+    Les pronoms personnels servent notamment à désigner
+    les personnes qui parlent, celles à qui l'on parle
+    ou celles dont on parle.
+  </p>
+
+  <div class="example">
+
+    <strong>Pronoms personnels sujets :</strong>
+
+    <ul>
+      <li>je</li>
+      <li>tu</li>
+      <li>il</li>
+      <li>elle</li>
+      <li>on</li>
+      <li>nous</li>
+      <li>vous</li>
+      <li>ils</li>
+      <li>elles</li>
+    </ul>
+
+  </div>
+
+  <div class="example">
+
+    <strong>Exemples :</strong>
+
+    <ul>
+      <li><strong>Je</strong> travaille.</li>
+      <li><strong>Nous</strong> étudions.</li>
+      <li><strong>Ils</strong> jouent.</li>
+      <li><strong>Elle</strong> chante.</li>
+    </ul>
+
+  </div>
+
+</section>
+
+
+<!-- 3 -->
+
+<section class="section">
+
+  <h2>🔑 3. Les pronoms possessifs</h2>
+
+  <p>
+    Les pronoms possessifs indiquent à qui appartient
+    une personne ou une chose.
+  </p>
+
+  <div class="example">
+
+    <strong>Exemples :</strong>
+
+    <ul>
+      <li>le mien / la mienne</li>
+      <li>le tien / la tienne</li>
+      <li>le sien / la sienne</li>
+      <li>le nôtre / la nôtre</li>
+      <li>le vôtre / la vôtre</li>
+      <li>le leur / la leur</li>
+    </ul>
+
+  </div>
+
+  <div class="example">
+
+    <strong>Exemple :</strong><br><br>
+
+    Ce livre est <strong>le mien</strong>.
+
+    <br><br>
+
+    Cette maison est <strong>la leur</strong>.
+
+  </div>
+
+</section>
+
+
+<!-- 4 -->
+
+<section class="section">
+
+  <h2>👉 4. Les pronoms démonstratifs</h2>
+
+  <p>
+    Les pronoms démonstratifs servent à désigner
+    une personne, une chose ou un groupe déjà connu.
+  </p>
+
+  <div class="example">
+
+    <strong>Principaux pronoms :</strong>
+
+    <ul>
+      <li>celui</li>
+      <li>celle</li>
+      <li>ceux</li>
+      <li>celles</li>
+      <li>ce</li>
+      <li>ceci</li>
+      <li>cela</li>
+      <li>ça</li>
+    </ul>
+
+  </div>
+
+  <div class="example">
+
+    <strong>Exemple :</strong><br><br>
+
+    Je préfère <strong>celui</strong> de gauche.
+
+    <br><br>
+
+    <strong>Celles</strong> qui travaillent réussiront.
+
+  </div>
+
+</section>
+
+
+<!-- 5 -->
+
+<section class="section">
+
+  <h2>🔗 5. Les pronoms relatifs</h2>
+
+  <div class="definition">
+
+    Les pronoms relatifs servent à relier une proposition
+    à un nom ou groupe nominal appelé <strong>antécédent</strong>.
+
+  </div>
+
+  <div class="example">
+
+    <strong>Principaux pronoms relatifs :</strong>
+
+    <ul>
+      <li>qui</li>
+      <li>que</li>
+      <li>quoi</li>
+      <li>dont</li>
+      <li>où</li>
+      <li>lequel</li>
+      <li>laquelle</li>
+      <li>lesquels</li>
+      <li>lesquelles</li>
+    </ul>
+
+  </div>
+
+  <div class="example">
+
+    <strong>Exemple :</strong><br><br>
+
+    Voici le livre <strong>que</strong> j'ai acheté.
+
+    <br><br>
+
+    « que » est un pronom relatif.
+    Son antécédent est « le livre ».
+
+  </div>
+
+  <div class="example">
+
+    L'élève <strong>qui</strong> travaille réussira.
+
+    <br><br>
+
+    « qui » reprend « l'élève ».
+
+  </div>
+
+</section>
+
+
+<!-- 6 -->
+
+<section class="section">
+
+  <h2>❓ 6. Les pronoms interrogatifs</h2>
+
+  <p>
+    Les pronoms interrogatifs servent à poser une question.
+  </p>
+
+  <div class="example">
+
+    <strong>Exemples :</strong>
+
+    <ul>
+      <li>qui ?</li>
+      <li>que ?</li>
+      <li>quoi ?</li>
+      <li>lequel ?</li>
+      <li>laquelle ?</li>
+      <li>lesquels ?</li>
+      <li>lesquelles ?</li>
+    </ul>
+
+  </div>
+
+  <div class="example">
+
+    <strong>Exemples :</strong><br><br>
+
+    <strong>Qui</strong> vient ?
+
+    <br><br>
+
+    <strong>Lequel</strong> préfères-tu ?
+
+    <br><br>
+
+    <strong>Que</strong> veux-tu ?
+
+  </div>
+
+</section>
+
+
+<!-- 7 -->
+
+<section class="section">
+
+  <h2>🌍 7. Les pronoms indéfinis</h2>
+
+  <p>
+    Les pronoms indéfinis désignent une personne,
+    une chose ou une quantité de manière imprécise.
+  </p>
+
+  <div class="example">
+
+    <strong>Exemples :</strong>
+
+    <ul>
+      <li>quelqu'un</li>
+      <li>personne</li>
+      <li>chacun</li>
+      <li>tout</li>
+      <li>rien</li>
+      <li>certains</li>
+      <li>plusieurs</li>
+      <li>aucun</li>
+    </ul>
+
+  </div>
+
+  <div class="example">
+
+    <strong>Exemples :</strong><br><br>
+
+    <strong>Quelqu'un</strong> frappe à la porte.
+
+    <br><br>
+
+    <strong>Personne</strong> n'est venu.
+
+    <br><br>
+
+    <strong>Chacun</strong> doit travailler.
+
+  </div>
+
+</section>
+
+
+<!-- 8 -->
+
+<section class="section">
+
+  <h2>⚠️ 8. Pronom ou déterminant ?</h2>
+
+  <div class="warning">
+
+    Il faut faire attention :
+    certains mots peuvent être des déterminants ou des pronoms
+    selon leur emploi dans la phrase.
+
+  </div>
+
+  <div class="example">
+
+    <strong>Déterminant :</strong><br><br>
+
+    <strong>Cette</strong> maison est grande.
+
+    <br><br>
+
+    « cette » accompagne le nom « maison ».
+
+  </div>
+
+  <div class="example">
+
+    <strong>Pronom :</strong><br><br>
+
+    Je préfère <strong>celle</strong>-ci.
+
+    <br><br>
+
+    « celle » remplace un nom.
+
+  </div>
+
+  <div class="method">
+
+    <strong>Astuce :</strong><br><br>
+
+    Si le mot accompagne un nom, il peut être déterminant.
+
+    <br><br>
+
+    Si le mot remplace un nom ou un groupe nominal,
+    il peut être pronom.
+
+  </div>
+
+</section>
+
+
+<!-- 9 -->
+
+<section class="section">
+
+  <h2>🧠 9. Comment identifier un pronom ?</h2>
+
+  <div class="method">
+
+    <strong>Étape 1 :</strong>
+    Observe le mot.
+
+    <br><br>
+
+    <strong>Étape 2 :</strong>
+    Vérifie s'il remplace un nom ou un groupe nominal.
+
+    <br><br>
+
+    <strong>Étape 3 :</strong>
+    Cherche le type de pronom.
+
+    <br><br>
+
+    <strong>Étape 4 :</strong>
+    Observe son rôle dans la phrase.
+
+  </div>
+
+  <div class="example">
+
+    <strong>Exemple :</strong><br><br>
+
+    La fille regarde son frère.
+    <strong>Elle</strong> lui parle.
+
+    <br><br>
+
+    « Elle » remplace « la fille ».
+    → pronom personnel.
+
+    <br><br>
+
+    « lui » remplace « à son frère ».
+    → pronom personnel.
+
+  </div>
+
+</section>
+
+
+<!-- EXERCICES -->
+
+<section class="section">
+
+  <h2>✏️ 10. Exercices</h2>
+
+
+  <div class="exercise">
+
+    <h3>Exercice 1 — Trouve les pronoms</h3>
+
+    <ol>
+      <li>Elle joue dans la cour.</li>
+      <li>Nous préparons notre travail.</li>
+      <li>Celui-ci est mon préféré.</li>
+      <li>Quelqu'un frappe à la porte.</li>
+    </ol>
+
+    <button class="answer-button"
+      onclick="toggleAnswer('answer1')">
+      Voir la correction
+    </button>
+
+    <div class="answer" id="answer1">
+
+      <strong>Correction :</strong><br><br>
+
+      1. Elle → pronom personnel<br>
+      2. Nous → pronom personnel<br>
+      3. Celui-ci → pronom démonstratif<br>
+      4. Quelqu'un → pronom indéfini
+
+    </div>
+
+  </div>
+
+
+  <div class="exercise">
+
+    <h3>Exercice 2 — Indique le type de pronom</h3>
+
+    <ol>
+      <li>Ils arrivent demain.</li>
+      <li>Lequel choisis-tu ?</li>
+      <li>Cette voiture est la mienne.</li>
+      <li>Celui-là est plus grand.</li>
+      <li>Personne ne répond.</li>
+    </ol>
+
+    <button class="answer-button"
+      onclick="toggleAnswer('answer2')">
+      Voir la correction
+    </button>
+
+    <div class="answer" id="answer2">
+
+      <strong>Correction :</strong><br><br>
+
+      1. Ils → personnel<br>
+      2. Lequel → interrogatif<br>
+      3. La mienne → possessif<br>
+      4. Celui-là → démonstratif<br>
+      5. Personne → indéfini
+
+    </div>
+
+  </div>
+
+
+  <div class="exercise">
+
+    <h3>Exercice 3 — Trouve l'antécédent</h3>
+
+    <p>
+      Le garçon <strong>qui</strong> parle est mon frère.
+    </p>
+
+    <button class="answer-button"
+      onclick="toggleAnswer('answer3')">
+      Voir la correction
+    </button>
+
+    <div class="answer" id="answer3">
+
+      <strong>Correction :</strong><br><br>
+
+      Le pronom relatif « qui » a pour antécédent
+      <strong>le garçon</strong>.
+
+    </div>
+
+  </div>
+
+
+  <div class="exercise">
+
+    <h3>Exercice 4 — Pronom ou déterminant ?</h3>
+
+    <ol>
+      <li>Cette maison est belle.</li>
+      <li>Celle-ci est magnifique.</li>
+      <li>Mon livre est neuf.</li>
+      <li>Le mien est ancien.</li>
+    </ol>
+
+    <button class="answer-button"
+      onclick="toggleAnswer('answer4')">
+      Voir la correction
+    </button>
+
+    <div class="answer" id="answer4">
+
+      <strong>Correction :</strong><br><br>
+
+      1. Cette → déterminant démonstratif<br>
+      2. Celle-ci → pronom démonstratif<br>
+      3. Mon → déterminant possessif<br>
+      4. Le mien → pronom possessif
+
+    </div>
+
+  </div>
+
+
+  <div class="exercise">
+
+    <h3>Exercice 5 — Remplace le groupe nominal</h3>
+
+    <p>
+      Remplace le groupe nominal souligné par un pronom.
+    </p>
+
+    <ol>
+      <li>Awa arrive. → ______ arrive.</li>
+      <li>Les enfants jouent. → ______ jouent.</li>
+      <li>Paul et moi travaillons. → ______ travaillons.</li>
+      <li>La voiture appartient à Mariam. → Elle est ______.</li>
+    </ol>
+
+    <button class="answer-button"
+      onclick="toggleAnswer('answer5')">
+      Voir la correction
+    </button>
+
+    <div class="answer" id="answer5">
+
+      <strong>Correction :</strong><br><br>
+
+      1. Elle arrive.<br>
+      2. Ils jouent.<br>
+      3. Nous travaillons.<br>
+      4. Elle est la sienne.
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- QUIZ -->
+
+<section class="section">
+
+  <h2>🧠 11. Quiz</h2>
+
+  <div class="quiz-question">
+
+    <p>1. Dans « Elle chante », quel est le type de « Elle » ?</p>
+
+    <label>
+      <input type="radio" name="q1" value="1">
+      Pronom personnel
+    </label>
+
+    <label>
+      <input type="radio" name="q1" value="0">
+      Pronom relatif
+    </label>
+
+    <label>
+      <input type="radio" name="q1" value="0">
+      Déterminant
+    </label>
+
+  </div>
+
+
+  <div class="quiz-question">
+
+    <p>2. Quel mot est un pronom relatif ?</p>
+
+    <label>
+      <input type="radio" name="q2" value="1">
+      qui
+    </label>
+
+    <label>
+      <input type="radio" name="q2" value="0">
+      mon
+    </label>
+
+    <label>
+      <input type="radio" name="q2" value="0">
+      une
+    </label>
+
+  </div>
+
+
+  <div class="quiz-question">
+
+    <p>3. Quel est le pronom possessif ?</p>
+
+    <label>
+      <input type="radio" name="q3" value="0">
+      mon
+    </label>
+
+    <label>
+      <input type="radio" name="q3" value="1">
+      le mien
+    </label>
+
+    <label>
+      <input type="radio" name="q3" value="0">
+      ma
+    </label>
+
+  </div>
+
+
+  <div class="quiz-question">
+
+    <p>4. Quel est le pronom démonstratif ?</p>
+
+    <label>
+      <input type="radio" name="q4" value="1">
+      celui
+    </label>
+
+    <label>
+      <input type="radio" name="q4" value="0">
+      ce
+    </label>
+
+    <label>
+      <input type="radio" name="q4" value="0">
+      mon
+    </label>
+
+  </div>
+
+
+  <div class="quiz-question">
+
+    <p>5. Dans « Quelqu'un arrive », « Quelqu'un » est :</p>
+
+    <label>
+      <input type="radio" name="q5" value="1">
+      Un pronom indéfini
+    </label>
+
+    <label>
+      <input type="radio" name="q5" value="0">
+      Un pronom relatif
+    </label>
+
+    <label>
+      <input type="radio" name="q5" value="0">
+      Un déterminant
+    </label>
+
+  </div>
+
+
+  <button class="quiz-button" onclick="calculateScore()">
+    Voir mon score
+  </button>
+
+  <div class="quiz-result" id="quizResult"></div>
+
+</section>
+
+
+<!-- RECAP -->
+
+<section class="section">
+
+  <h2>📚 12. L'essentiel à retenir</h2>
+
+  <div class="recap">
+
+    <ul>
+
+      <li>
+        Le <strong>pronom</strong> peut remplacer un nom
+        ou un groupe nominal.
+      </li>
+
+      <li>
+        Les <strong>pronoms personnels</strong> désignent
+        les personnes ou les êtres dont on parle.
+      </li>
+
+      <li>
+        Les <strong>pronoms possessifs</strong> indiquent
+        l'appartenance.
+      </li>
+
+      <li>
+        Les <strong>pronoms démonstratifs</strong>
+        servent à désigner.
+      </li>
+
+      <li>
+        Les <strong>pronoms relatifs</strong> relient
+        une proposition à son antécédent.
+      </li>
+
+      <li>
+        Les <strong>pronoms interrogatifs</strong>
+        servent à poser des questions.
+      </li>
+
+      <li>
+        Les <strong>pronoms indéfinis</strong>
+        désignent de manière imprécise.
+      </li>
+
+      <li>
+        Un pronom ne doit pas être confondu avec
+        un déterminant.
+      </li>
+
+    </ul>
+
+  </div>
+
+</section>
+
+
+<!-- NAVIGATION -->
+
+<div class="navigation">
+
+  <a href="cm2-francais-cours.html">
+    ← Retour aux cours
+  </a>
+
+  <a href="cm2-francais-propositions.html">
+    Chapitre suivant →
+  </a>
+
+</div>
+
+
+</main>
+
+
+<footer>
+
+  <p><strong>Z.Éducation</strong></p>
+  <p>Apprendre • Comprendre • Réussir</p>
+  <p>Français CM2</p>
+
+</footer>
+
+
+<script>
+
+function toggleAnswer(id) {
+
+  const answer = document.getElementById(id);
+
+  if (answer.style.display === "block") {
+    answer.style.display = "none";
+  } else {
+    answer.style.display = "block";
+  }
+
+}
+
+
+function calculateScore() {
+
+  let score = 0;
+
+  const questions = ["q1", "q2", "q3", "q4", "q5"];
+
+  questions.forEach(function(question) {
+
+    const selected = document.querySelector(
+      'input[name="' + question + '"]:checked'
+    );
+
+    if (selected) {
+      score += Number(selected.value);
+    }
+
+  });
+
+  const result = document.getElementById("quizResult");
+
+  result.style.display = "block";
+
+  if (score === 5) {
+
+    result.innerHTML =
+      "🎉 Excellent ! Tu as obtenu " +
+      score +
+      "/5. Bravo !";
+
+  } else if (score >= 3) {
+
+    result.innerHTML =
+      "👏 Bien joué ! Tu as obtenu " +
+      score +
+      "/5. Continue tes efforts !";
+
+  } else {
+
+    result.innerHTML =
+      "💪 Tu as obtenu " +
+      score +
+      "/5. Relis le cours et recommence !";
+
+  }
+
+}
+
+</script>
+
+</body>
+</html>
