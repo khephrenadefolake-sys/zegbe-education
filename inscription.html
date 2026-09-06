@@ -498,10 +498,6 @@ document.getElementById("inscription-form").addEventListener("submit", async fun
         return;
     }
 
-    const button = document.querySelector(".register-btn");
-    button.disabled = true;
-    button.textContent = "Création du compte...";
-
     try {
         const { data, error } = await supabaseClient.auth.signUp({
             email: email,
@@ -526,24 +522,15 @@ document.getElementById("inscription-form").addEventListener("submit", async fun
         }
 
         alert(
-            "✅ Votre compte a été créé avec succès !\n\n" +
-            "Un e-mail de confirmation vient d'être envoyé à :\n" +
-            email +
-            "\n\nVeuillez confirmer votre adresse e-mail avant de vous connecter."
+            "✅ Compte créé avec succès !\n\n" +
+            "Un e-mail de confirmation a été envoyé à :\n" +
+            email
         );
 
         window.location.href = "connexion.html";
 
     } catch (error) {
-        console.error(error);
-
-        alert(
-            "❌ Impossible de créer le compte :\n\n" +
-            error.message
-        );
-
-        button.disabled = false;
-        button.textContent = "Créer mon compte";
+        alert("❌ Impossible de créer le compte :\n\n" + error.message);
     }
 });
 </script>
