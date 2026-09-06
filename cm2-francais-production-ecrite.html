@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Production écrite CM2 - Z.Éducation</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fb;
+    color: #1f2937;
+    line-height: 1.7;
+}
+
+header {
+    background: #0f172a;
+    color: white;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #38bdf8;
+}
+
+.back-btn {
+    color: white;
+    text-decoration: none;
+    background: #1e293b;
+    padding: 10px 18px;
+    border-radius: 8px;
+}
+
+.back-btn:hover {
+    background: #334155;
+}
+
+.hero {
+    background: linear-gradient(135deg, #0f172a, #0369a1);
+    color: white;
+    text-align: center;
+    padding: 65px 20px;
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 12px;
+}
+
+.hero p {
+    font-size: 18px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+}
+
+.section {
+    background: white;
+    padding: 30px;
+    margin-bottom: 25px;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(0,0,0,.06);
+}
+
+.section h2 {
+    color: #0369a1;
+    margin-bottom: 18px;
+    font-size: 27px;
+}
+
+.section h3 {
+    color: #0f172a;
+    margin: 22px 0 10px;
+}
+
+.definition {
+    background: #f0fdf4;
+    border-left: 5px solid #16a34a;
+    padding: 18px;
+    margin: 18px 0;
+    border-radius: 8px;
+}
+
+.example {
+    background: #eff6ff;
+    border-left: 5px solid #0284c7;
+    padding: 18px;
+    margin: 18px 0;
+    border-radius: 8px;
+}
+
+.warning {
+    background: #fff7ed;
+    border-left: 5px solid #f97316;
+    padding: 18px;
+    margin: 18px 0;
+    border-radius: 8px;
+}
+
+.steps {
+    counter-reset: etape;
+    list-style: none;
+}
+
+.steps li {
+    counter-increment: etape;
+    margin: 15px 0;
+    padding: 15px;
+    background: #f8fafc;
+    border-radius: 9px;
+}
+
+.steps li::before {
+    content: counter(etape);
+    display: inline-block;
+    background: #0369a1;
+    color: white;
+    font-weight: bold;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.model {
+    background: #f8fafc;
+    border: 1px solid #dbe3ec;
+    padding: 22px;
+    border-radius: 12px;
+    margin: 18px 0;
+}
+
+.model-title {
+    color: #0369a1;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.exercise {
+    background: #f8fafc;
+    padding: 22px;
+    margin: 18px 0;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+}
+
+.exercise strong {
+    color: #0369a1;
+}
+
+textarea {
+    width: 100%;
+    min-height: 150px;
+    margin-top: 15px;
+    padding: 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 9px;
+    resize: vertical;
+    font-family: Arial;
+    font-size: 16px;
+}
+
+button {
+    background: #0369a1;
+    color: white;
+    border: none;
+    padding: 11px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 12px;
+}
+
+button:hover {
+    background: #075985;
+}
+
+.correction {
+    display: none;
+    background: #ecfdf5;
+    border-left: 4px solid #16a34a;
+    padding: 17px;
+    margin-top: 15px;
+    border-radius: 8px;
+}
+
+.checklist {
+    list-style: none;
+}
+
+.checklist li {
+    padding: 10px;
+    margin: 7px 0;
+    background: #f8fafc;
+    border-radius: 7px;
+}
+
+.quiz-question {
+    background: #f8fafc;
+    padding: 18px;
+    margin: 18px 0;
+    border-radius: 10px;
+}
+
+.quiz-question label {
+    display: block;
+    margin: 9px 0;
+    cursor: pointer;
+}
+
+#resultat {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #0369a1;
+}
+
+.recap {
+    background: #0f172a;
+    color: white;
+}
+
+.recap h2 {
+    color: #38bdf8;
+}
+
+.recap li {
+    margin: 9px 0;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin: 35px 0;
+}
+
+.navigation a {
+    color: white;
+    text-decoration: none;
+    background: #0369a1;
+    padding: 13px 20px;
+    border-radius: 9px;
+}
+
+.navigation a:hover {
+    background: #075985;
+}
+
+footer {
+    background: #0f172a;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 50px;
+}
+
+@media (max-width: 700px) {
+
+    .hero h1 {
+        font-size: 31px;
+    }
+
+    .section {
+        padding: 20px;
+    }
+
+    .navigation {
+        flex-direction: column;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        Z.<span>Éducation</span>
+    </div>
+
+    <a href="cm2-francais-cours.html" class="back-btn">
+        ← Cours de Français
+    </a>
+
+</header>
+
+
+<section class="hero">
+
+    <h1>Production écrite CM2</h1>
+
+    <p>
+        Organiser ses idées • Rédiger • Décrire • Raconter • Communiquer
+    </p>
+
+</section>
+
+
+<main class="container">
+
+
+<!-- INTRODUCTION -->
+
+<section class="section">
+
+    <h2>✍️ 1. Qu'est-ce que la production écrite ?</h2>
+
+    <div class="definition">
+
+        <strong>Définition :</strong>
+
+        La production écrite consiste à exprimer des idées,
+        des informations, des sentiments ou une histoire
+        dans un texte organisé et compréhensible.
+
+    </div>
+
+    <p>
+        Pour réussir une rédaction, il ne suffit pas d'écrire beaucoup.
+        Il faut surtout écrire un texte <strong>clair, cohérent,
+        organisé et correctement rédigé</strong>.
+    </p>
+
+    <div class="example">
+
+        <strong>Un bon texte doit :</strong><br><br>
+
+        • respecter le sujet ;<br>
+        • présenter des idées organisées ;<br>
+        • utiliser des phrases correctes ;<br>
+        • employer un vocabulaire précis ;<br>
+        • respecter les temps verbaux ;<br>
+        • respecter l'orthographe et la ponctuation.
+
+    </div>
+
+</section>
+
+
+<!-- PREPARER -->
+
+<section class="section">
+
+    <h2>🧠 2. Préparer sa rédaction</h2>
+
+    <p>
+        Avant de commencer à écrire, il faut réfléchir au sujet.
+    </p>
+
+    <ol class="steps">
+
+        <li>
+            <strong>Lire attentivement le sujet.</strong>
+            Repère les mots importants.
+        </li>
+
+        <li>
+            <strong>Comprendre ce que l'on te demande.</strong>
+            Faut-il raconter, décrire, expliquer ou écrire une lettre ?
+        </li>
+
+        <li>
+            <strong>Chercher les idées.</strong>
+            Note rapidement les informations importantes.
+        </li>
+
+        <li>
+            <strong>Organiser les idées.</strong>
+            Classe-les dans l'ordre logique.
+        </li>
+
+        <li>
+            <strong>Rédiger.</strong>
+            Transforme tes idées en phrases.
+        </li>
+
+        <li>
+            <strong>Relire.</strong>
+            Vérifie le sens, la conjugaison, l'orthographe et la ponctuation.
+        </li>
+
+    </ol>
+
+</section>
+
+
+<!-- ORGANISATION -->
+
+<section class="section">
+
+    <h2>🏗️ 3. Organiser un texte</h2>
+
+    <p>
+        Un texte doit généralement comporter trois grandes parties.
+    </p>
+
+    <table>
+
+        <tr>
+            <th>Partie</th>
+            <th>Rôle</th>
+        </tr>
+
+        <tr>
+            <td>Introduction</td>
+            <td>Présenter le sujet ou la situation.</td>
+        </tr>
+
+        <tr>
+            <td>Développement</td>
+            <td>Présenter les événements, les descriptions ou les idées.</td>
+        </tr>
+
+        <tr>
+            <td>Conclusion</td>
+            <td>Terminer le texte et donner une fin cohérente.</td>
+        </tr>
+
+    </table>
+
+    <div class="warning">
+
+        <strong>Attention :</strong>
+
+        Évite de mélanger toutes les idées dans un seul paragraphe.
+        Utilise plusieurs paragraphes lorsque les idées changent.
+
+    </div>
+
+</section>
+
+
+<!-- DESCRIPTION -->
+
+<section class="section">
+
+    <h2>🌳 4. Décrire une personne ou un lieu</h2>
+
+    <div class="definition">
+
+        <strong>Décrire</strong>, c'est présenter une personne,
+        un animal, un objet ou un lieu en donnant suffisamment
+        de détails pour permettre au lecteur de l'imaginer.
+
+    </div>
+
+    <h3>Pour décrire une personne</h3>
+
+    <p>
+        On peut présenter :
+    </p>
+
+    <ul>
+        <li>son âge ;</li>
+        <li>sa taille ;</li>
+        <li>son visage ;</li>
+        <li>ses cheveux ;</li>
+        <li>ses vêtements ;</li>
+        <li>son caractère ;</li>
+        <li>ses habitudes.</li>
+    </ul>
+
+    <div class="model">
+
+        <div class="model-title">
+            Exemple de description
+        </div>
+
+        <p>
+            Aïcha est une jeune fille de onze ans. Elle est grande
+            et mince. Ses cheveux noirs sont longs et soigneusement
+            attachés. Elle a de grands yeux brillants et un sourire
+            chaleureux. Toujours souriante et généreuse, elle aime
+            aider ses camarades en difficulté.
+        </p>
+
+    </div>
+
+    <h3>Pour décrire un lieu</h3>
+
+    <p>
+        Il faut préciser :
+    </p>
+
+    <ul>
+        <li>où se trouve le lieu ;</li>
+        <li>sa taille ;</li>
+        <li>ce que l'on y voit ;</li>
+        <li>les couleurs ;</li>
+        <li>les sons ;</li>
+        <li>l'ambiance.</li>
+    </ul>
+
+</section>
+
+
+<!-- RECIT -->
+
+<section class="section">
+
+    <h2>📖 5. Raconter une histoire</h2>
+
+    <div class="definition">
+
+        <strong>Raconter</strong>, c'est présenter des événements
+        dans un ordre logique.
+
+    </div>
+
+    <h3>Le schéma narratif</h3>
+
+    <ol class="steps">
+
+        <li>
+            <strong>Situation initiale :</strong>
+            on présente les personnages, le lieu et la situation.
+        </li>
+
+        <li>
+            <strong>Élément déclencheur :</strong>
+            un événement vient modifier la situation.
+        </li>
+
+        <li>
+            <strong>Péripéties :</strong>
+            les personnages rencontrent différentes difficultés.
+        </li>
+
+        <li>
+            <strong>Dénouement :</strong>
+            le problème commence à être résolu.
+        </li>
+
+        <li>
+            <strong>Situation finale :</strong>
+            l'histoire se termine.
+        </li>
+
+    </ol>
+
+    <div class="example">
+
+        <strong>Mots utiles pour raconter :</strong><br><br>
+
+        un matin, soudain, tout à coup, ensuite, puis,
+        quelques minutes plus tard, pendant ce temps,
+        finalement, enfin, à la fin...
+
+    </div>
+
+</section>
+
+
+<!-- DIALOGUE -->
+
+<section class="section">
+
+    <h2>💬 6. Écrire un dialogue</h2>
+
+    <p>
+        Un dialogue reproduit une conversation entre deux
+        personnes ou plusieurs personnages.
+    </p>
+
+    <h3>Règles principales</h3>
+
+    <ul>
+        <li>Chaque personnage prend la parole à son tour.</li>
+        <li>On utilise les signes de ponctuation appropriés.</li>
+        <li>Les tirets peuvent introduire les différentes interventions.</li>
+        <li>Les verbes de parole permettent d'indiquer qui parle.</li>
+    </ul>
+
+    <div class="model">
+
+        <div class="model-title">
+            Exemple
+        </div>
+
+        <p>
+            — Bonjour, Moussa ! Où vas-tu ? demanda Karim.<br>
+            — Je vais à la bibliothèque, répondit Moussa.<br>
+            — Puis-je venir avec toi ?<br>
+            — Bien sûr ! Allons-y ensemble.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- LETTRE -->
+
+<section class="section">
+
+    <h2>✉️ 7. Écrire une lettre</h2>
+
+    <p>
+        Une lettre peut être personnelle ou administrative.
+        Elle doit respecter une présentation adaptée.
+    </p>
+
+    <h3>Structure d'une lettre personnelle</h3>
+
+    <ol class="steps">
+
+        <li>Lieu et date</li>
+
+        <li>Formule d'appel</li>
+
+        <li>Message</li>
+
+        <li>Formule de politesse</li>
+
+        <li>Signature</li>
+
+    </ol>
+
+    <div class="model">
+
+        <div class="model-title">
+            Exemple
+        </div>
+
+        <p>
+            Abidjan, le 6 septembre 2026
+        </p>
+
+        <br>
+
+        <p>
+            Cher ami,
+        </p>
+
+        <br>
+
+        <p>
+            J'espère que tu vas bien. Je t'écris pour te raconter
+            ma rentrée scolaire. J'ai retrouvé mes camarades et
+            découvert ma nouvelle classe. Les cours ont commencé
+            dans une très bonne ambiance.
+        </p>
+
+        <br>
+
+        <p>
+            À bientôt !<br>
+            Ton ami,<br>
+            Karim
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- RESUME -->
+
+<section class="section">
+
+    <h2>📝 8. Faire un résumé</h2>
+
+    <div class="definition">
+
+        <strong>Résumer un texte</strong>, c'est présenter
+        les informations essentielles avec moins de mots.
+
+    </div>
+
+    <h3>Pour réussir un résumé</h3>
+
+    <ol class="steps">
+
+        <li>Lire attentivement le texte.</li>
+
+        <li>Identifier le thème principal.</li>
+
+        <li>Repérer les informations importantes.</li>
+
+        <li>Supprimer les détails secondaires.</li>
+
+        <li>Reformuler avec ses propres mots.</li>
+
+        <li>Relire pour vérifier que le résumé reste compréhensible.</li>
+
+    </ol>
+
+    <div class="warning">
+
+        <strong>À éviter :</strong>
+
+        Ne copie pas simplement plusieurs phrases du texte.
+        Un bon résumé doit être reformulé.
+
+    </div>
+
+</section>
+
+
+<!-- CONNECTEURS -->
+
+<section class="section">
+
+    <h2>🔗 9. Les connecteurs logiques et chronologiques</h2>
+
+    <p>
+        Les connecteurs permettent de relier les idées et
+        d'organiser le texte.
+    </p>
+
+    <table>
+
+        <tr>
+            <th>Utilité</th>
+            <th>Connecteurs</th>
+        </tr>
+
+        <tr>
+            <td>Ajouter</td>
+            <td>et, de plus, également, aussi</td>
+        </tr>
+
+        <tr>
+            <td>Ordre</td>
+            <td>d'abord, ensuite, puis, enfin</td>
+        </tr>
+
+        <tr>
+            <td>Cause</td>
+            <td>parce que, car, puisque</td>
+        </tr>
+
+        <tr>
+            <td>Conséquence</td>
+            <td>donc, ainsi, c'est pourquoi</td>
+        </tr>
+
+        <tr>
+            <td>Opposition</td>
+            <td>mais, cependant, pourtant</td>
+        </tr>
+
+        <tr>
+            <td>Conclusion</td>
+            <td>enfin, finalement, pour conclure</td>
+        </tr>
+
+    </table>
+
+</section>
+
+
+<!-- VOCABULAIRE -->
+
+<section class="section">
+
+    <h2>🎨 10. Enrichir son texte</h2>
+
+    <p>
+        Un bon texte utilise un vocabulaire précis et varié.
+        Il faut éviter de répéter constamment les mêmes mots.
+    </p>
+
+    <div class="example">
+
+        Au lieu de répéter :
+
+        <br><br>
+
+        « Le garçon est <strong>content</strong>.
+        Le garçon est très <strong>content</strong>.
+        Le garçon reste <strong>content</strong>. »
+
+        <br><br>
+
+        On peut écrire :
+
+        <br><br>
+
+        « Le garçon est <strong>heureux</strong>.
+        Il affiche un large sourire et semble
+        <strong>ravi</strong> de cette nouvelle. »
+
+    </div>
+
+</section>
+
+
+<!-- RELECTURE -->
+
+<section class="section">
+
+    <h2>🔍 11. Relire et améliorer son texte</h2>
+
+    <p>
+        La relecture est une étape indispensable.
+    </p>
+
+    <ul class="checklist">
+
+        <li>☐ Ai-je respecté le sujet ?</li>
+
+        <li>☐ Mon texte est-il organisé ?</li>
+
+        <li>☐ Mes phrases sont-elles complètes ?</li>
+
+        <li>☐ Ai-je utilisé les bons temps verbaux ?</li>
+
+        <li>☐ Ai-je accordé les sujets et les verbes ?</li>
+
+        <li>☐ Ai-je vérifié les accords dans les groupes nominaux ?</li>
+
+        <li>☐ Ai-je vérifié les homophones ?</li>
+
+        <li>☐ Ai-je utilisé correctement la ponctuation ?</li>
+
+        <li>☐ Ai-je évité les répétitions ?</li>
+
+        <li>☐ Mon texte a-t-il une vraie conclusion ?</li>
+
+    </ul>
+
+</section>
+
+
+<!-- EXERCICES -->
+
+<section class="section">
+
+    <h2>✏️ Exercices</h2>
+
+
+    <div class="exercise">
+
+        <strong>Exercice 1 — Organiser un récit</strong>
+
+        <p>
+            Remets ces événements dans l'ordre logique :
+        </p>
+
+        <p>
+            A. Le garçon retrouve finalement son chemin.<br>
+            B. Il se promène dans la forêt avec son frère.<br>
+            C. Il commence à faire nuit.<br>
+            D. Les deux garçons se séparent accidentellement.
+        </p>
+
+        <button onclick="toggle('corr1')">
+            Voir la correction
+        </button>
+
+        <div id="corr1" class="correction">
+
+            <strong>Réponse :</strong>
+
+            B → D → C → A
+
+        </div>
+
+    </div>
+
+
+    <div class="exercise">
+
+        <strong>Exercice 2 — Connecteurs</strong>
+
+        <p>
+            Complète avec : d'abord, ensuite, finalement.
+        </p>
+
+        <p>
+            ________, nous avons préparé nos affaires.
+            ________, nous sommes partis.
+            ________, nous sommes arrivés à l'école.
+        </p>
+
+        <button onclick="toggle('corr2')">
+            Voir la correction
+        </button>
+
+        <div id="corr2" class="correction">
+
+            D'abord → ensuite → finalement
+
+        </div>
+
+    </div>
+
+
+    <div class="exercise">
+
+        <strong>Exercice 3 — Améliorer une phrase</strong>
+
+        <p>
+            Réécris cette phrase en évitant les répétitions :
+        </p>
+
+        <p>
+            « Le garçon voit un chien. Le garçon prend le chien.
+            Le garçon caresse le chien. »
+        </p>
+
+        <button onclick="toggle('corr3')">
+            Voir un exemple de correction
+        </button>
+
+        <div id="corr3" class="correction">
+
+            « Le garçon aperçoit un chien. Il le prend dans ses bras
+            et le caresse doucement. »
+
+        </div>
+
+    </div>
+
+
+    <div class="exercise">
+
+        <strong>Exercice 4 — Description</strong>
+
+        <p>
+            Décris une personne de ton choix en utilisant au moins
+            cinq informations.
+        </p>
+
+        <textarea
+            placeholder="Écris ta description ici...">
+        </textarea>
+
+    </div>
+
+
+    <div class="exercise">
+
+        <strong>Exercice 5 — Rédaction</strong>
+
+        <p>
+            Raconte une histoire d'environ 10 à 15 lignes ayant
+            pour sujet :
+        </p>
+
+        <div class="example">
+
+            <strong>
+                « Un matin, en arrivant à l'école, tu découvres
+                une mystérieuse enveloppe devant la porte de ta classe. »
+            </strong>
+
+        </div>
+
+        <textarea
+            placeholder="Écris ton histoire ici...">
+        </textarea>
+
+    </div>
+
+
+    <div class="exercise">
+
+        <strong>Exercice 6 — Lettre</strong>
+
+        <p>
+            Écris une lettre à un ami pour lui raconter
+            une activité intéressante que tu as réalisée
+            pendant les vacances.
+        </p>
+
+        <textarea
+            placeholder="Écris ta lettre ici...">
+        </textarea>
+
+    </div>
+
+</section>
+
+
+<!-- QUIZ -->
+
+<section class="section">
+
+    <h2>🎯 Quiz Production écrite</h2>
+
+    <form id="quiz">
+
+
+        <div class="quiz-question">
+
+            <p>
+                <strong>
+                    1. Quelle est la première étape avant de rédiger ?
+                </strong>
+            </p>
+
+            <label>
+                <input type="radio" name="q1" value="1">
+                Lire et comprendre le sujet
+            </label>
+
+            <label>
+                <input type="radio" name="q1" value="0">
+                Écrire immédiatement
+            </label>
+
+            <label>
+                <input type="radio" name="q1" value="0">
+                Faire la conclusion
+            </label>
+
+        </div>
+
+
+        <div class="quiz-question">
+
+            <p>
+                <strong>
+                    2. Quelle partie présente les événements principaux ?
+                </strong>
+            </p>
+
+            <label>
+                <input type="radio" name="q2" value="0">
+                L'introduction uniquement
+            </label>
+
+            <label>
+                <input type="radio" name="q2" value="1">
+                Le développement
+            </label>
+
+            <label>
+                <input type="radio" name="q2" value="0">
+                La signature
+            </label>
+
+        </div>
+
+
+        <div class="quiz-question">
+
+            <p>
+                <strong>
+                    3. Que permet un connecteur comme « ensuite » ?
+                </strong>
+            </p>
+
+            <label>
+                <input type="radio" name="q3" value="1">
+                Organiser les événements
+            </label>
+
+            <label>
+                <input type="radio" name="q3" value="0">
+                Décrire une couleur
+            </label>
+
+            <label>
+                <input type="radio" name="q3" value="0">
+                Remplacer un nom
+            </label>
+
+        </div>
+
+
+        <div class="quiz-question">
+
+            <p>
+                <strong>
+                    4. Que faut-il faire après avoir rédigé ?
+                </strong>
+            </p>
+
+            <label>
+                <input type="radio" name="q4" value="0">
+                Jeter le texte
+            </label>
+
+            <label>
+                <input type="radio" name="q4" value="1">
+                Relire et corriger
+            </label>
+
+            <label>
+                <input type="radio" name="q4" value="0">
+                Ajouter des erreurs
+            </label>
+
+        </div>
+
+
+        <div class="quiz-question">
+
+            <p>
+                <strong>
+                    5. Quel élément appartient au schéma narratif ?
+                </strong>
+            </p>
+
+            <label>
+                <input type="radio" name="q5" value="0">
+                La définition
+            </label>
+
+            <label>
+                <input type="radio" name="q5" value="1">
+                Le dénouement
+            </label>
+
+            <label>
+                <input type="radio" name="q5" value="0">
+                Le dictionnaire
+            </label>
+
+        </div>
+
+
+        <button type="button" onclick="calculerScore()">
+            Voir mon score
+        </button>
+
+        <div id="resultat"></div>
+
+    </form>
+
+</section>
+
+
+<!-- RECAP -->
+
+<section class="section recap">
+
+    <h2>📌 À retenir</h2>
+
+    <ul>
+
+        <li>
+            Une bonne rédaction commence par une bonne compréhension
+            du sujet.
+        </li>
+
+        <li>
+            Il faut chercher et organiser ses idées avant d'écrire.
+        </li>
+
+        <li>
+            Un texte doit être structuré en paragraphes.
+        </li>
+
+        <li>
+            Le récit peut suivre le schéma narratif.
+        </li>
+
+        <li>
+            La description utilise des détails précis.
+        </li>
+
+        <li>
+            Le dialogue respecte des règles de présentation.
+        </li>
+
+        <li>
+            Une lettre possède une présentation particulière.
+        </li>
+
+        <li>
+            Un résumé conserve uniquement les informations essentielles.
+        </li>
+
+        <li>
+            Les connecteurs permettent de relier les idées.
+        </li>
+
+        <li>
+            La relecture permet de corriger et d'améliorer son texte.
+        </li>
+
+    </ul>
+
+</section>
+
+
+<!-- NAVIGATION -->
+
+<div class="navigation">
+
+    <a href="cm2-francais-vocabulaire.html">
+        ← Chapitre 15 : Vocabulaire
+    </a>
+
+    <a href="cm2-francais-cours.html">
+        Retour au programme de Français →
+    </a>
+
+</div>
+
+
+</main>
+
+
+<footer>
+
+    <p><strong>Z.Éducation</strong></p>
+
+    <p>Apprendre • Comprendre • Réussir</p>
+
+    <p>Français CM2 — Programme complet</p>
+
+</footer>
+
+
+<script>
+
+function toggle(id) {
+
+    const element = document.getElementById(id);
+
+    if (element.style.display === "block") {
+
+        element.style.display = "none";
+
+    } else {
+
+        element.style.display = "block";
+
+    }
+
+}
+
+
+function calculerScore() {
+
+    let score = 0;
+
+    const questions = [
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5"
+    ];
+
+    questions.forEach(function(question) {
+
+        const reponse = document.querySelector(
+            'input[name="' + question + '"]:checked'
+        );
+
+        if (reponse && reponse.value === "1") {
+
+            score++;
+
+        }
+
+    });
+
+
+    const resultat = document.getElementById("resultat");
+
+
+    if (score === 5) {
+
+        resultat.innerHTML =
+            "🏆 Excellent ! 5/5 — Tu maîtrises très bien la production écrite.";
+
+    }
+
+    else if (score === 4) {
+
+        resultat.innerHTML =
+            "👏 Très bien ! 4/5 — Continue tes efforts.";
+
+    }
+
+    else if (score === 3) {
+
+        resultat.innerHTML =
+            "👍 Bien ! 3/5 — Relis le cours et entraîne-toi encore.";
+
+    }
+
+    else {
+
+        resultat.innerHTML =
+            "📚 " + score +
+            "/5 — Relis le cours puis recommence le quiz.";
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
