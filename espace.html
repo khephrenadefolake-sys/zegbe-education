@@ -127,7 +127,7 @@
 <div class="container">
 
     <div class="welcome">
-        <h1>Bienvenue dans ton espace 👋</h1>
+        <h1 id="welcome-message">Bienvenue dans ton espace 👋</h1>
         <p>
             Accède à tes niveaux et découvre les contenus
             pédagogiques de Z.Éducation.
@@ -188,8 +188,12 @@ async function verifierConnexion() {
         window.location.href = "connexion.html";
         return;
     }
-}
 
+    const prenom = data.user.user_metadata?.prenom || "élève";
+
+    document.getElementById("welcome-message").textContent =
+        `Bienvenue ${prenom} 👋`;
+}
 verifierConnexion();
 
 document.getElementById("logout-btn").addEventListener("click", async function() {
