@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapitre 12 — Analyse logique | Z.Éducation</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fb;
+      color: #1f2937;
+      line-height: 1.7;
+    }
+
+    header {
+      background: linear-gradient(135deg, #111827, #2563eb);
+      color: white;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .logo span {
+      color: #facc15;
+    }
+
+    .back {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .hero {
+      background: white;
+      padding: 55px 7%;
+      text-align: center;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #dbeafe;
+      color: #1d4ed8;
+      padding: 7px 15px;
+      border-radius: 20px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      color: #111827;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      max-width: 780px;
+      margin: auto;
+      color: #6b7280;
+      font-size: 1.1rem;
+    }
+
+    main {
+      width: 86%;
+      max-width: 1100px;
+      margin: 35px auto;
+    }
+
+    .section {
+      background: white;
+      padding: 30px;
+      border-radius: 18px;
+      margin-bottom: 25px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+    }
+
+    .section h2 {
+      color: #1d4ed8;
+      margin-bottom: 18px;
+      font-size: 1.6rem;
+    }
+
+    .section h3 {
+      color: #111827;
+      margin: 22px 0 10px;
+    }
+
+    .definition {
+      background: #eff6ff;
+      border-left: 5px solid #2563eb;
+      padding: 18px;
+      border-radius: 10px;
+      margin: 15px 0;
+    }
+
+    .example {
+      background: #f9fafb;
+      border-left: 5px solid #10b981;
+      padding: 16px;
+      margin: 15px 0;
+      border-radius: 8px;
+    }
+
+    .warning {
+      background: #fff7ed;
+      border-left: 5px solid #f97316;
+      padding: 16px;
+      margin: 15px 0;
+      border-radius: 8px;
+    }
+
+    .logic-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+
+    .logic-table th,
+    .logic-table td {
+      border: 1px solid #d1d5db;
+      padding: 12px;
+      text-align: left;
+    }
+
+    .logic-table th {
+      background: #2563eb;
+      color: white;
+    }
+
+    .logic-table tr:nth-child(even) {
+      background: #f9fafb;
+    }
+
+    .step {
+      display: flex;
+      gap: 15px;
+      margin: 18px 0;
+      align-items: flex-start;
+    }
+
+    .step-number {
+      min-width: 38px;
+      height: 38px;
+      background: #2563eb;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+
+    .exercise {
+      background: #f8fafc;
+      padding: 20px;
+      border-radius: 12px;
+      margin: 18px 0;
+      border: 1px solid #e5e7eb;
+    }
+
+    .exercise h3 {
+      margin-top: 0;
+      color: #2563eb;
+    }
+
+    button {
+      border: none;
+      background: #2563eb;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background: #1d4ed8;
+    }
+
+    .correction {
+      display: none;
+      margin-top: 15px;
+      padding: 15px;
+      background: #ecfdf5;
+      border-left: 4px solid #10b981;
+      border-radius: 8px;
+    }
+
+    .quiz-question {
+      margin: 22px 0;
+      padding: 18px;
+      background: #f9fafb;
+      border-radius: 10px;
+    }
+
+    .quiz-question label {
+      display: block;
+      margin: 8px 0;
+      cursor: pointer;
+    }
+
+    #resultat {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      padding: 15px;
+      border-radius: 10px;
+      background: #eff6ff;
+    }
+
+    .recap {
+      background: linear-gradient(135deg, #eff6ff, #f0fdf4);
+    }
+
+    .navigation {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      margin: 30px 0;
+    }
+
+    .navigation a {
+      text-decoration: none;
+      background: #111827;
+      color: white;
+      padding: 13px 20px;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+
+    .navigation a:hover {
+      background: #2563eb;
+    }
+
+    footer {
+      background: #111827;
+      color: white;
+      text-align: center;
+      padding: 25px;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 700px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      main {
+        width: 92%;
+      }
+
+      .section {
+        padding: 20px;
+      }
+
+      .logic-table {
+        font-size: 0.9rem;
+      }
+
+      .navigation {
+        flex-direction: column;
+      }
+
+      .navigation a {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">Z.<span>Éducation</span></div>
+  <a href="cm2-francais-cours.html" class="back">← Retour aux cours</a>
+</header>
+
+<section class="hero">
+  <div class="badge">Français CM2 • Chapitre 12</div>
+
+  <h1>Analyse logique</h1>
+
+  <p>
+    Apprends à reconnaître les propositions d'une phrase,
+    à déterminer leurs relations et à construire une analyse logique.
+  </p>
+</section>
+
+<main>
+
+  <!-- 1 -->
+  <section class="section">
+
+    <h2>📘 1. Qu'est-ce que l'analyse logique ?</h2>
+
+    <div class="definition">
+      <strong>Définition :</strong>
+      L'analyse logique consiste à découper une phrase en
+      <strong>propositions</strong> et à déterminer la nature ainsi que
+      la relation entre ces propositions.
+    </div>
+
+    <p>
+      Pour faire une analyse logique, on commence généralement par
+      rechercher les <strong>verbes conjugués</strong>.
+    </p>
+
+    <div class="example">
+      <strong>Exemple :</strong><br><br>
+
+      « Paul travaille et Marie lit. »
+      <br><br>
+
+      Il y a deux verbes conjugués :
+      <strong>travaille</strong> et <strong>lit</strong>.
+      <br><br>
+
+      Il y a donc deux propositions :
+      <br>
+      1. Paul travaille.<br>
+      2. Marie lit.
+    </div>
+
+  </section>
+
+
+  <!-- 2 -->
+  <section class="section">
+
+    <h2>🔎 2. Qu'est-ce qu'une proposition ?</h2>
+
+    <div class="definition">
+      Une <strong>proposition</strong> est un groupe de mots organisé autour
+      d'un verbe conjugué.
+    </div>
+
+    <h3>Exemple 1</h3>
+
+    <div class="example">
+      « Les enfants jouent. »
+      <br><br>
+      Verbe conjugué : <strong>jouent</strong><br>
+      → Une proposition.
+    </div>
+
+    <h3>Exemple 2</h3>
+
+    <div class="example">
+      « Les enfants jouent et les parents discutent. »
+      <br><br>
+      Verbes conjugués :
+      <strong>jouent</strong> et <strong>discutent</strong>.
+      <br><br>
+      → Deux propositions.
+    </div>
+
+    <div class="warning">
+      <strong>Attention :</strong>
+      pour compter les propositions dans une phrase, il faut principalement
+      repérer les verbes conjugués.
+    </div>
+
+  </section>
+
+
+  <!-- 3 -->
+  <section class="section">
+
+    <h2>🧩 3. Les principaux types de propositions</h2>
+
+    <table class="logic-table">
+
+      <tr>
+        <th>Type</th>
+        <th>Explication</th>
+        <th>Exemple</th>
+      </tr>
+
+      <tr>
+        <td>Proposition indépendante</td>
+        <td>Elle ne dépend d'aucune autre proposition.</td>
+        <td>Paul travaille.</td>
+      </tr>
+
+      <tr>
+        <td>Proposition principale</td>
+        <td>Elle commande une proposition subordonnée.</td>
+        <td>Je pense / que tu as raison.</td>
+      </tr>
+
+      <tr>
+        <td>Proposition subordonnée</td>
+        <td>Elle dépend d'une proposition principale.</td>
+        <td>Je pense / que tu as raison.</td>
+      </tr>
+
+    </table>
+
+  </section>
+
+
+  <!-- 4 -->
+  <section class="section">
+
+    <h2>🔗 4. Les propositions indépendantes</h2>
+
+    <p>
+      Une proposition indépendante peut exister seule.
+    </p>
+
+    <div class="example">
+      « Le soleil brille. »
+      <br><br>
+      La proposition « Le soleil brille » est indépendante.
+    </div>
+
+    <h3>Deux propositions indépendantes</h3>
+
+    <div class="example">
+      « Paul travaille et Marie étudie. »
+      <br><br>
+
+      Proposition 1 : <strong>Paul travaille</strong>.<br>
+      Proposition 2 : <strong>Marie étudie</strong>.
+    </div>
+
+    <p>
+      Elles sont reliées par la conjonction de coordination
+      <strong>et</strong>.
+    </p>
+
+  </section>
+
+
+  <!-- 5 -->
+  <section class="section">
+
+    <h2>🤝 5. La coordination</h2>
+
+    <p>
+      Deux propositions peuvent être reliées par une
+      <strong>conjonction de coordination</strong>.
+    </p>
+
+    <div class="example">
+      « Il pleut <strong>mais</strong> nous sortons. »
+    </div>
+
+    <p>
+      Les principales conjonctions de coordination sont :
+    </p>
+
+    <div class="definition">
+      <strong>mais – ou – et – donc – or – ni – car</strong>
+    </div>
+
+    <p>
+      On peut retenir la formule :
+      <strong>Mais où est donc Ornicar ?</strong>
+    </p>
+
+  </section>
+
+
+  <!-- 6 -->
+  <section class="section">
+
+    <h2>➕ 6. La juxtaposition</h2>
+
+    <p>
+      Deux propositions sont juxtaposées lorsqu'elles sont placées l'une
+      à côté de l'autre et séparées par un signe de ponctuation.
+    </p>
+
+    <div class="example">
+      « Le soleil se couche, les oiseaux rentrent. »
+    </div>
+
+    <p>
+      Les propositions sont séparées par une <strong>virgule</strong>.
+    </p>
+
+    <div class="example">
+      Proposition 1 : <strong>Le soleil se couche</strong>.<br>
+      Proposition 2 : <strong>les oiseaux rentrent</strong>.
+    </div>
+
+    <p>
+      D'autres signes peuvent également séparer des propositions :
+      <strong>;</strong> ou <strong>:</strong>.
+    </p>
+
+  </section>
+
+
+  <!-- 7 -->
+  <section class="section">
+
+    <h2>⬇️ 7. La subordination</h2>
+
+    <p>
+      Dans la subordination, une proposition dépend d'une autre.
+    </p>
+
+    <div class="example">
+      « Je pense <strong>que tu as raison</strong>. »
+    </div>
+
+    <p>
+      « Je pense » est la <strong>proposition principale</strong>.
+    </p>
+
+    <p>
+      « que tu as raison » est la <strong>proposition subordonnée</strong>.
+    </p>
+
+    <div class="definition">
+      Les propositions subordonnées peuvent être introduites par
+      des mots comme <strong>que, quand, lorsque, parce que, si,
+      puisque, comme, afin que</strong>, etc.
+    </div>
+
+  </section>
+
+
+  <!-- 8 -->
+  <section class="section">
+
+    <h2>🧠 8. Exemple d'analyse logique</h2>
+
+    <div class="example">
+      <strong>Phrase :</strong><br>
+      « Quand il pleut, les enfants restent à la maison. »
+    </div>
+
+    <p>
+      Étape 1 : rechercher les verbes conjugués.
+    </p>
+
+    <div class="definition">
+      <strong>pleut</strong> et <strong>restent</strong>
+    </div>
+
+    <p>
+      Il y a donc deux propositions.
+    </p>
+
+    <table class="logic-table">
+
+      <tr>
+        <th>Proposition</th>
+        <th>Type</th>
+      </tr>
+
+      <tr>
+        <td>Quand il pleut</td>
+        <td>Proposition subordonnée circonstancielle de temps</td>
+      </tr>
+
+      <tr>
+        <td>les enfants restent à la maison</td>
+        <td>Proposition principale</td>
+      </tr>
+
+    </table>
+
+  </section>
+
+
+  <!-- 9 -->
+  <section class="section">
+
+    <h2>📝 9. Méthode pour faire une analyse logique</h2>
+
+    <div class="step">
+      <div class="step-number">1</div>
+      <div>
+        <strong>Lire la phrase.</strong><br>
+        Comprends d'abord son sens général.
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-number">2</div>
+      <div>
+        <strong>Souligner les verbes conjugués.</strong><br>
+        Chaque verbe conjugué correspond généralement à une proposition.
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-number">3</div>
+      <div>
+        <strong>Découper la phrase.</strong><br>
+        Sépare les différentes propositions.
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-number">4</div>
+      <div>
+        <strong>Repérer les mots de liaison.</strong><br>
+        Cherche une conjonction de coordination, un pronom relatif
+        ou une conjonction de subordination.
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-number">5</div>
+      <div>
+        <strong>Identifier la relation.</strong><br>
+        Coordination, juxtaposition ou subordination.
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-number">6</div>
+      <div>
+        <strong>Donner la nature de chaque proposition.</strong><br>
+        Indépendante, principale ou subordonnée.
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- 10 -->
+  <section class="section">
+
+    <h2>✏️ 10. Exercices</h2>
+
+    <div class="exercise">
+
+      <h3>Exercice 1 — Compte les propositions</h3>
+
+      <p>
+        Combien y a-t-il de propositions dans chaque phrase ?
+      </p>
+
+      <p>
+        1. Le garçon joue.<br>
+        2. Le garçon joue et sa sœur lit.<br>
+        3. Je sais que tu viens.<br>
+        4. Il pleut, nous restons à la maison.<br>
+        5. Quand le soleil se lève, les oiseaux chantent.
+      </p>
+
+      <button onclick="toggleCorrection('corr1')">
+        Voir la correction
+      </button>
+
+      <div id="corr1" class="correction">
+
+        1. Une proposition.<br>
+        2. Deux propositions.<br>
+        3. Deux propositions.<br>
+        4. Deux propositions.<br>
+        5. Deux propositions.
+
+      </div>
+
+    </div>
+
+
+    <div class="exercise">
+
+      <h3>Exercice 2 — Coordination ou juxtaposition ?</h3>
+
+      <p>
+        Indique si les propositions sont coordonnées ou juxtaposées.
+      </p>
+
+      <p>
+        1. Paul travaille et Marie lit.<br>
+        2. Le soleil brille, les enfants jouent.<br>
+        3. Il veut venir mais il est malade.<br>
+        4. La cloche sonne : les élèves entrent.
+      </p>
+
+      <button onclick="toggleCorrection('corr2')">
+        Voir la correction
+      </button>
+
+      <div id="corr2" class="correction">
+
+        1. Coordonnées → « et ».<br>
+        2. Juxtaposées → virgule.<br>
+        3. Coordonnées → « mais ».<br>
+        4. Juxtaposées → deux-points.
+
+      </div>
+
+    </div>
+
+
+    <div class="exercise">
+
+      <h3>Exercice 3 — Principale ou subordonnée ?</h3>
+
+      <p>
+        Identifie les propositions principales et subordonnées.
+      </p>
+
+      <div class="example">
+        « Je reste à la maison parce qu'il pleut. »
+      </div>
+
+      <button onclick="toggleCorrection('corr3')">
+        Voir la correction
+      </button>
+
+      <div id="corr3" class="correction">
+
+        <strong>Proposition principale :</strong>
+        « Je reste à la maison. »
+        <br><br>
+
+        <strong>Proposition subordonnée circonstancielle de cause :</strong>
+        « parce qu'il pleut. »
+
+      </div>
+
+    </div>
+
+
+    <div class="exercise">
+
+      <h3>Exercice 4 — Analyse complète</h3>
+
+      <p>
+        Analyse la phrase suivante :
+      </p>
+
+      <div class="example">
+        « Le maître explique la leçon et les élèves écoutent attentivement. »
+      </div>
+
+      <button onclick="toggleCorrection('corr4')">
+        Voir la correction
+      </button>
+
+      <div id="corr4" class="correction">
+
+        Verbes conjugués :
+        <strong>explique</strong> et <strong>écoutent</strong>.
+        <br><br>
+
+        <strong>Proposition 1 :</strong>
+        « Le maître explique la leçon. »
+        → proposition indépendante.
+        <br><br>
+
+        <strong>Proposition 2 :</strong>
+        « les élèves écoutent attentivement. »
+        → proposition indépendante.
+        <br><br>
+
+        Les deux propositions sont
+        <strong>coordonnées</strong> par la conjonction « et ».
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- 11 -->
+  <section class="section">
+
+    <h2>🎯 11. Quiz</h2>
+
+    <form id="quiz">
+
+      <div class="quiz-question">
+
+        <p>
+          <strong>1. Comment repère-t-on généralement les propositions ?</strong>
+        </p>
+
+        <label>
+          <input type="radio" name="q1" value="a">
+          En comptant les noms
+        </label>
+
+        <label>
+          <input type="radio" name="q1" value="b">
+          En repérant les verbes conjugués
+        </label>
+
+        <label>
+          <input type="radio" name="q1" value="c">
+          En comptant les adjectifs
+        </label>
+
+      </div>
+
+
+      <div class="quiz-question">
+
+        <p>
+          <strong>2. Dans « Paul travaille et Marie lit », quel mot coordonne les propositions ?</strong>
+        </p>
+
+        <label>
+          <input type="radio" name="q2" value="a">
+          Paul
+        </label>
+
+        <label>
+          <input type="radio" name="q2" value="b">
+          et
+        </label>
+
+        <label>
+          <input type="radio" name="q2" value="c">
+          lit
+        </label>
+
+      </div>
+
+
+      <div class="quiz-question">
+
+        <p>
+          <strong>3. Dans « Il pleut, nous restons à la maison », les propositions sont :</strong>
+        </p>
+
+        <label>
+          <input type="radio" name="q3" value="a">
+          Coordonnées
+        </label>
+
+        <label>
+          <input type="radio" name="q3" value="b">
+          Juxtaposées
+        </label>
+
+        <label>
+          <input type="radio" name="q3" value="c">
+          Subordonnées
+        </label>
+
+      </div>
+
+
+      <div class="quiz-question">
+
+        <p>
+          <strong>4. Dans « Je pense que tu as raison », « que tu as raison » est :</strong>
+        </p>
+
+        <label>
+          <input type="radio" name="q4" value="a">
+          Une proposition subordonnée
+        </label>
+
+        <label>
+          <input type="radio" name="q4" value="b">
+          Une proposition indépendante
+        </label>
+
+        <label>
+          <input type="radio" name="q4" value="c">
+          Une phrase nominale
+        </label>
+
+      </div>
+
+
+      <div class="quiz-question">
+
+        <p>
+          <strong>5. Quelle est la relation dans « Il travaille car il veut réussir » ?</strong>
+        </p>
+
+        <label>
+          <input type="radio" name="q5" value="a">
+          Juxtaposition
+        </label>
+
+        <label>
+          <input type="radio" name="q5" value="b">
+          Coordination
+        </label>
+
+        <label>
+          <input type="radio" name="q5" value="c">
+          Subordination
+        </label>
+
+      </div>
+
+
+      <button type="button" onclick="corrigerQuiz()">
+        Valider le quiz
+      </button>
+
+      <div id="resultat"></div>
+
+    </form>
+
+  </section>
+
+
+  <!-- 12 -->
+  <section class="section recap">
+
+    <h2>📚 12. À retenir</h2>
+
+    <ul>
+
+      <li>
+        Une proposition est organisée autour d'un verbe conjugué.
+      </li>
+
+      <li>
+        Pour compter les propositions, on recherche les verbes conjugués.
+      </li>
+
+      <li>
+        Une proposition peut être indépendante, principale ou subordonnée.
+      </li>
+
+      <li>
+        La coordination relie des propositions avec des mots comme
+        <strong>mais, ou, et, donc, or, ni, car</strong>.
+      </li>
+
+      <li>
+        La juxtaposition utilise généralement un signe de ponctuation.
+      </li>
+
+      <li>
+        La subordination établit une relation de dépendance entre les propositions.
+      </li>
+
+      <li>
+        L'analyse logique permet de comprendre la construction d'une phrase complexe.
+      </li>
+
+    </ul>
+
+  </section>
+
+
+  <!-- Navigation -->
+  <div class="navigation">
+
+    <a href="cm2-francais-analyse-grammaticale.html">
+      ← Chapitre 11 : Analyse grammaticale
+    </a>
+
+    <a href="cm2-francais-conjugaison.html">
+      Chapitre 13 : Conjugaison →
+    </a>
+
+  </div>
+
+</main>
+
+
+<footer>
+
+  <p><strong>Z.Éducation</strong></p>
+  <p>Apprendre • Comprendre • Réussir</p>
+  <p>Français CM2</p>
+
+</footer>
+
+
+<script>
+
+  function toggleCorrection(id) {
+
+    const element = document.getElementById(id);
+
+    if (element.style.display === "block") {
+      element.style.display = "none";
+    } else {
+      element.style.display = "block";
+    }
+
+  }
+
+
+  function corrigerQuiz() {
+
+    const bonnesReponses = {
+      q1: "b",
+      q2: "b",
+      q3: "b",
+      q4: "a",
+      q5: "c"
+    };
+
+    let score = 0;
+
+    for (let question in bonnesReponses) {
+
+      const reponse = document.querySelector(
+        'input[name="' + question + '"]:checked'
+      );
+
+      if (
+        reponse &&
+        reponse.value === bonnesReponses[question]
+      ) {
+        score++;
+      }
+
+    }
+
+    const resultat = document.getElementById("resultat");
+
+    if (score === 5) {
+
+      resultat.innerHTML =
+        "🎉 Excellent ! 5/5. Tu maîtrises l'analyse logique !";
+
+    } else if (score >= 3) {
+
+      resultat.innerHTML =
+        "👏 Bien joué ! " + score +
+        "/5. Continue tes révisions pour progresser.";
+
+    } else {
+
+      resultat.innerHTML =
+        "📚 Tu as obtenu " + score +
+        "/5. Relis le cours et recommence le quiz.";
+
+    }
+
+  }
+
+</script>
+
+</body>
+</html>
