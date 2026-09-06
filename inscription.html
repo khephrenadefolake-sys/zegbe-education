@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Inscription — Z.Éducation</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #e0f2fe, #f8fafc);
+            padding: 30px 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 650px;
+            margin: auto;
+        }
+
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 24px;
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.12);
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo h1 {
+            color: #0369a1;
+            font-size: 34px;
+            margin-bottom: 8px;
+        }
+
+        .logo p {
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #0f172a;
+            margin-bottom: 8px;
+        }
+
+        .intro {
+            text-align: center;
+            color: #64748b;
+            font-size: 14px;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .section-title {
+            color: #0369a1;
+            font-size: 17px;
+            font-weight: bold;
+            margin: 28px 0 18px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 7px;
+            color: #334155;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 13px 14px;
+            border: 1px solid #cbd5e1;
+            border-radius: 10px;
+            font-size: 15px;
+            background: white;
+            outline: none;
+        }
+
+        input:focus,
+        select:focus {
+            border-color: #0284c7;
+            box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.12);
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .checkbox-group input {
+            width: auto;
+            margin-top: 3px;
+        }
+
+        .checkbox-group label {
+            font-weight: normal;
+            font-size: 13px;
+            line-height: 1.5;
+            margin: 0;
+            color: #64748b;
+        }
+
+        .register-btn {
+            width: 100%;
+            border: none;
+            padding: 15px;
+            border-radius: 10px;
+            background: #0369a1;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 25px;
+        }
+
+        .register-btn:hover {
+            background: #075985;
+        }
+
+        .login-link {
+            text-align: center;
+            margin-top: 22px;
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        .login-link a,
+        .back a {
+            color: #0369a1;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .back {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .back a {
+            color: #64748b;
+            font-weight: normal;
+        }
+
+        .required {
+            color: #dc2626;
+        }
+
+        @media (max-width: 600px) {
+            .card {
+                padding: 28px 20px;
+            }
+
+            .row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <div class="logo">
+            <h1>Z.Éducation</h1>
+            <p>Apprendre • Comprendre • Réussir</p>
+        </div>
+
+        <h2>Créer un compte</h2>
+
+        <p class="intro">
+            Inscris-toi pour accéder à ton espace personnel
+            et profiter des contenus pédagogiques de Z.Éducation.
+        </p>
+
+        <form id="inscription-form">
+
+            <!-- INFORMATIONS PERSONNELLES -->
+
+            <div class="section-title">
+                👤 Informations personnelles
+            </div>
+
+            <div class="row">
+
+                <div class="form-group">
+                    <label for="nom">
+                        Nom <span class="required">*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nom"
+                        placeholder="Votre nom"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="prenom">
+                        Prénom <span class="required">*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="prenom"
+                        placeholder="Votre prénom"
+                        required
+                    >
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="form-group">
+                    <label for="pays">
+                        Pays <span class="required">*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="pays"
+                        placeholder="Ex. Côte d'Ivoire"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="ville">
+                        Ville <span class="required">*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="ville"
+                        placeholder="Ex. Abidjan"
+                        required
+                    >
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <label for="telephone">
+                    Téléphone / WhatsApp <span class="required">*</span>
+                </label>
+
+                <input
+                    type="tel"
+                    id="telephone"
+                    placeholder="Ex. +225 07 XX XX XX XX"
+                    required
+                >
+            </div>
+
+
+            <!-- PROFIL -->
+
+            <div class="section-title">
+                🎓 Profil scolaire
+            </div>
+
+            <div class="form-group">
+                <label for="profil">
+                    Je suis <span class="required">*</span>
+                </label>
+
+                <select id="profil" required>
+                    <option value="">Sélectionner...</option>
+                    <option value="eleve">Élève</option>
+                    <option value="parent">Parent / Tuteur</option>
+                    <option value="enseignant">Enseignant</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="niveau">
+                    Niveau scolaire
+                </label>
+
+                <select id="niveau">
+                    <option value="">Sélectionner...</option>
+                    <option value="CP1">CP1</option>
+                    <option value="CP2">CP2</option>
+                    <option value="CE1">CE1</option>
+                    <option value="CE2">CE2</option>
+                    <option value="CM1">CM1</option>
+                    <option value="CM2">CM2</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="ecole">
+                    Établissement scolaire
+                </label>
+
+                <input
+                    type="text"
+                    id="ecole"
+                    placeholder="Nom de l'établissement"
+                >
+            </div>
+
+
+            <!-- CONNEXION -->
+
+            <div class="section-title">
+                🔐 Informations de connexion
+            </div>
+
+            <div class="form-group">
+                <label for="email">
+                    Adresse e-mail <span class="required">*</span>
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="exemple@email.com"
+                    required
+                >
+            </div>
+
+            <div class="row">
+
+                <div class="form-group">
+                    <label for="password">
+                        Mot de passe <span class="required">*</span>
+                    </label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Minimum 6 caractères"
+                        minlength="6"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="confirm-password">
+                        Confirmer <span class="required">*</span>
+                    </label>
+
+                    <input
+                        type="password"
+                        id="confirm-password"
+                        placeholder="Confirmer le mot de passe"
+                        minlength="6"
+                        required
+                    >
+                </div>
+
+            </div>
+
+
+            <!-- NOTIFICATIONS -->
+
+            <div class="section-title">
+                📱 Notifications
+            </div>
+
+            <div class="checkbox-group">
+
+                <input
+                    type="checkbox"
+                    id="notifications"
+                >
+
+                <label for="notifications">
+                    J'accepte de recevoir des informations,
+                    actualités et notifications de Z.Éducation
+                    par e-mail, SMS ou WhatsApp.
+                </label>
+
+            </div>
+
+
+            <!-- CONDITIONS -->
+
+            <div class="checkbox-group">
+
+                <input
+                    type="checkbox"
+                    id="conditions"
+                    required
+                >
+
+                <label for="conditions">
+                    J'accepte les conditions d'utilisation
+                    de Z.Éducation et confirme l'exactitude
+                    des informations fournies.
+                </label>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="register-btn"
+            >
+                Créer mon compte
+            </button>
+
+        </form>
+
+
+        <div class="login-link">
+            Vous avez déjà un compte ?
+            <a href="connexion.html">Se connecter</a>
+        </div>
+
+    </div>
+
+
+    <div class="back">
+        <a href="index.html">← Retour à l'accueil</a>
+    </div>
+
+</div>
+
+</body>
+</html>
