@@ -169,6 +169,33 @@
     </div>
 
 </div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
+<script>
+const SUPABASE_URL = "https://qeiggkbirzrxpikhdzgn.supabase.co";
+
+const SUPABASE_PUBLISHABLE_KEY = "METS_ICI_LA_MÊME_CLÉ_QUE_DANS_inscription.html";
+
+const supabaseClient = window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_PUBLISHABLE_KEY
+);
+
+async function verifierConnexion() {
+    const { data, error } = await supabaseClient.auth.getUser();
+
+    if (error || !data.user) {
+        window.location.href = "connexion.html";
+        return;
+    }
+}
+
+verifierConnexion();
+
+document.getElementById("logout-btn").addEventListener("click", async function() {
+    await supabaseClient.auth.signOut();
+    window.location.href = "connexion.html";
+});
+</script>
 </body>
 </html>
