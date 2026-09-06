@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>La phrase — Français CM2 | Z.Éducation</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fb;
+    color: #1f2937;
+    line-height: 1.7;
+}
+
+header {
+    background: white;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    color: #2563eb;
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.back {
+    color: #374151;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.hero {
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+    color: white;
+    text-align: center;
+    padding: 65px 20px;
+}
+
+.hero .icon {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    max-width: 750px;
+    margin: auto;
+    font-size: 18px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    margin-bottom: 25px;
+    border-radius: 18px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.07);
+}
+
+.card h2 {
+    color: #2563eb;
+    margin-bottom: 18px;
+    font-size: 27px;
+}
+
+.card h3 {
+    margin-top: 22px;
+    margin-bottom: 10px;
+    color: #374151;
+}
+
+.definition {
+    background: #eff6ff;
+    border-left: 5px solid #2563eb;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.definition strong {
+    color: #1d4ed8;
+}
+
+.example {
+    background: #f8fafc;
+    padding: 18px;
+    border-radius: 10px;
+    margin: 15px 0;
+}
+
+.example strong {
+    color: #7c3aed;
+}
+
+.rule {
+    background: #fef3c7;
+    border-left: 5px solid #f59e0b;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+ul {
+    padding-left: 25px;
+    margin: 12px 0;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+.table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+}
+
+th, td {
+    border: 1px solid #d1d5db;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background: #eef2ff;
+}
+
+.exercise {
+    background: #f8fafc;
+    padding: 22px;
+    margin: 20px 0;
+    border-radius: 12px;
+}
+
+.exercise h3 {
+    margin-top: 0;
+    color: #111827;
+}
+
+.question {
+    margin: 15px 0;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    margin-top: 8px;
+    font-size: 16px;
+}
+
+button {
+    border: none;
+    background: #2563eb;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
+
+.answer {
+    display: none;
+    margin-top: 15px;
+    padding: 15px;
+    background: #ecfdf5;
+    border-left: 5px solid #10b981;
+    border-radius: 8px;
+}
+
+.quiz-question {
+    padding: 20px;
+    background: #f8fafc;
+    border-radius: 12px;
+    margin: 18px 0;
+}
+
+.quiz-question label {
+    display: block;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.result {
+    margin-top: 20px;
+    padding: 18px;
+    background: #eef2ff;
+    border-radius: 10px;
+    font-weight: bold;
+    display: none;
+}
+
+.progress {
+    background: #e5e7eb;
+    height: 12px;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+.progress-bar {
+    width: 0%;
+    height: 100%;
+    background: #2563eb;
+    transition: width 0.4s;
+}
+
+.recap {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.recap div {
+    background: #f8fafc;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.recap strong {
+    display: block;
+    color: #2563eb;
+    margin-bottom: 8px;
+}
+
+footer {
+    background: #111827;
+    color: #d1d5db;
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 60px;
+}
+
+footer strong {
+    color: white;
+}
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 15px 5%;
+    }
+
+    .logo {
+        font-size: 21px;
+    }
+
+    .back {
+        font-size: 14px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .card {
+        padding: 22px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <a href="index.html" class="logo">Z.Éducation</a>
+    <a href="cm2-francais-cours.html" class="back">
+        ← Retour aux cours
+    </a>
+</header>
+
+<section class="hero">
+
+    <div class="icon">📘</div>
+
+    <h1>Chapitre 1 : La phrase</h1>
+
+    <p>
+        Français CM2 — Types de phrases, formes de phrases,
+        phrase simple et phrase complexe.
+    </p>
+
+</section>
+
+<main class="container">
+
+<!-- COURS -->
+
+<section class="card">
+
+    <h2>📖 1. Qu'est-ce qu'une phrase ?</h2>
+
+    <div class="definition">
+        <strong>Définition :</strong>
+        Une phrase est un ensemble de mots organisé qui a un sens.
+        Elle commence généralement par une majuscule et se termine par
+        un signe de ponctuation.
+    </div>
+
+    <h3>Exemples</h3>
+
+    <div class="example">
+        <strong>Exemple 1 :</strong><br>
+        Les élèves travaillent en classe.
+    </div>
+
+    <div class="example">
+        <strong>Exemple 2 :</strong><br>
+        Où vas-tu ?
+    </div>
+
+    <div class="example">
+        <strong>Exemple 3 :</strong><br>
+        Ferme la porte !
+    </div>
+
+    <div class="rule">
+        <strong>À retenir :</strong>
+        Une phrase doit être correctement construite et avoir un sens.
+    </div>
+
+</section>
+
+<!-- TYPES -->
+
+<section class="card">
+
+    <h2>🎯 2. Les types de phrases</h2>
+
+    <p>
+        On distingue principalement quatre types de phrases.
+    </p>
+
+    <div class="table-container">
+
+        <table>
+
+            <tr>
+                <th>Type</th>
+                <th>Rôle</th>
+                <th>Exemple</th>
+            </tr>
+
+            <tr>
+                <td>Déclarative</td>
+                <td>Elle donne une information.</td>
+                <td>Paul lit un livre.</td>
+            </tr>
+
+            <tr>
+                <td>Interrogative</td>
+                <td>Elle pose une question.</td>
+                <td>Paul lit-il un livre ?</td>
+            </tr>
+
+            <tr>
+                <td>Exclamative</td>
+                <td>Elle exprime un sentiment ou une émotion.</td>
+                <td>Quel beau livre !</td>
+            </tr>
+
+            <tr>
+                <td>Impérative / injonctive</td>
+                <td>Elle donne un ordre, un conseil ou une interdiction.</td>
+                <td>Lis ce livre !</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+</section>
+
+<!-- FORMES -->
+
+<section class="card">
+
+    <h2>🔄 3. Les formes de phrases</h2>
+
+    <p>
+        Une phrase peut également avoir différentes formes.
+    </p>
+
+    <h3>La forme affirmative</h3>
+
+    <div class="example">
+        <strong>Exemple :</strong>
+        Awa aime les mathématiques.
+    </div>
+
+    <h3>La forme négative</h3>
+
+    <div class="example">
+        <strong>Exemple :</strong>
+        Awa n'aime pas les mathématiques.
+    </div>
+
+    <h3>La forme active</h3>
+
+    <div class="example">
+        <strong>Exemple :</strong>
+        Le professeur explique la leçon.
+    </div>
+
+    <h3>La forme passive</h3>
+
+    <div class="example">
+        <strong>Exemple :</strong>
+        La leçon est expliquée par le professeur.
+    </div>
+
+    <div class="rule">
+        <strong>Attention :</strong>
+        Le type et la forme d'une phrase sont deux notions différentes.
+        Une phrase peut donc être, par exemple, déclarative et négative.
+    </div>
+
+</section>
+
+<!-- SIMPLE COMPLEXE -->
+
+<section class="card">
+
+    <h2>🧩 4. Phrase simple et phrase complexe</h2>
+
+    <h3>La phrase simple</h3>
+
+    <div class="definition">
+        Une phrase simple contient généralement
+        <strong>un seul verbe conjugué</strong>.
+    </div>
+
+    <div class="example">
+        <strong>Exemple :</strong><br>
+        Les enfants jouent.
+    </div>
+
+    <p>
+        Le verbe conjugué est : <strong>jouent</strong>.
+    </p>
+
+    <h3>La phrase complexe</h3>
+
+    <div class="definition">
+        Une phrase complexe contient
+        <strong>plusieurs verbes conjugués</strong>.
+    </div>
+
+    <div class="example">
+        <strong>Exemple :</strong><br>
+        Les enfants jouent parce qu'ils ont terminé leur travail.
+    </div>
+
+    <p>
+        Les verbes conjugués sont :
+        <strong>jouent</strong> et <strong>ont terminé</strong>.
+    </p>
+
+    <div class="rule">
+        <strong>Astuce :</strong>
+        Pour savoir si une phrase est simple ou complexe,
+        cherche d'abord les verbes conjugués.
+    </div>
+
+</section>
+
+<!-- PONCTUATION -->
+
+<section class="card">
+
+    <h2>✒️ 5. Les signes de ponctuation</h2>
+
+    <div class="table-container">
+
+        <table>
+
+            <tr>
+                <th>Signe</th>
+                <th>Nom</th>
+                <th>Exemple</th>
+            </tr>
+
+            <tr>
+                <td>.</td>
+                <td>Point</td>
+                <td>Il travaille.</td>
+            </tr>
+
+            <tr>
+                <td>?</td>
+                <td>Point d'interrogation</td>
+                <td>Travaille-t-il ?</td>
+            </tr>
+
+            <tr>
+                <td>!</td>
+                <td>Point d'exclamation</td>
+                <td>Quel travail !</td>
+            </tr>
+
+            <tr>
+                <td>;</td>
+                <td>Point-virgule</td>
+                <td>Il travaille ; il progresse.</td>
+            </tr>
+
+            <tr>
+                <td>:</td>
+                <td>Deux-points</td>
+                <td>Il dit : « Je travaille. »</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+</section>
+
+<!-- EXERCICES -->
+
+<section class="card">
+
+    <h2>✏️ 6. Exercices</h2>
+
+    <div class="exercise">
+
+        <h3>Exercice 1 — Identifier le type</h3>
+
+        <p>
+            Indique si chaque phrase est déclarative,
+            interrogative, exclamative ou impérative.
+        </p>
+
+        <ol>
+            <li>Quelle magnifique journée !</li>
+            <li>Est-ce que tu as terminé ton exercice ?</li>
+            <li>Les élèves entrent dans la classe.</li>
+            <li>Range ton cahier.</li>
+        </ol>
+
+        <button onclick="toggleAnswer('answer1')">
+            Voir la correction
+        </button>
+
+        <div class="answer" id="answer1">
+            <strong>Correction :</strong><br><br>
+            1. Exclamative<br>
+            2. Interrogative<br>
+            3. Déclarative<br>
+            4. Impérative / injonctive
+        </div>
+
+    </div>
+
+    <div class="exercise">
+
+        <h3>Exercice 2 — Phrase simple ou complexe ?</h3>
+
+        <p>
+            Indique si chaque phrase est simple ou complexe.
+        </p>
+
+        <ol>
+            <li>Le soleil brille.</li>
+            <li>Les enfants jouent et leur mère prépare le repas.</li>
+            <li>Nous avons terminé notre travail.</li>
+            <li>Quand il pleut, les élèves restent en classe.</li>
+        </ol>
+
+        <button onclick="toggleAnswer('answer2')">
+            Voir la correction
+        </button>
+
+        <div class="answer" id="answer2">
+            <strong>Correction :</strong><br><br>
+            1. Simple — un verbe conjugué : brille.<br>
+            2. Complexe — deux verbes conjugués : jouent, prépare.<br>
+            3. Simple — un verbe conjugué : avons terminé.<br>
+            4. Complexe — deux verbes conjugués : pleut, restent.
+        </div>
+
+    </div>
+
+    <div class="exercise">
+
+        <h3>Exercice 3 — Transformer à la forme négative</h3>
+
+        <p>
+            Transforme les phrases suivantes à la forme négative.
+        </p>
+
+        <ol>
+            <li>Fatou aime le français.</li>
+            <li>Les élèves jouent dans la cour.</li>
+            <li>Il comprend la leçon.</li>
+        </ol>
+
+        <button onclick="toggleAnswer('answer3')">
+            Voir la correction
+        </button>
+
+        <div class="answer" id="answer3">
+            <strong>Correction :</strong><br><br>
+            1. Fatou n'aime pas le français.<br>
+            2. Les élèves ne jouent pas dans la cour.<br>
+            3. Il ne comprend pas la leçon.
+        </div>
+
+    </div>
+
+</section>
+
+<!-- QUIZ -->
+
+<section class="card">
+
+    <h2>🧠 7. Quiz</h2>
+
+    <p>
+        Réponds aux cinq questions puis clique sur
+        <strong>Calculer mon score</strong>.
+    </p>
+
+    <div class="progress">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <div class="quiz-question">
+
+        <strong>1. Quelle phrase est interrogative ?</strong>
+
+        <label>
+            <input type="radio" name="q1" value="0">
+            Les élèves travaillent.
+        </label>
+
+        <label>
+            <input type="radio" name="q1" value="1">
+            Est-ce que les élèves travaillent ?
+        </label>
+
+        <label>
+            <input type="radio" name="q1" value="0">
+            Travaillez bien !
+        </label>
+
+    </div>
+
+    <div class="quiz-question">
+
+        <strong>2. Quelle phrase est exclamative ?</strong>
+
+        <label>
+            <input type="radio" name="q2" value="1">
+            Quelle belle journée !
+        </label>
+
+        <label>
+            <input type="radio" name="q2" value="0">
+            Quelle heure est-il ?
+        </label>
+
+        <label>
+            <input type="radio" name="q2" value="0">
+            Il fait beau.
+        </label>
+
+    </div>
+
+    <div class="quiz-question">
+
+        <strong>3. Quelle phrase est complexe ?</strong>
+
+        <label>
+            <input type="radio" name="q3" value="0">
+            Koffi mange.
+        </label>
+
+        <label>
+            <input type="radio" name="q3" value="1">
+            Koffi mange parce qu'il a faim.
+        </label>
+
+        <label>
+            <input type="radio" name="q3" value="0">
+            Koffi dort.
+        </label>
+
+    </div>
+
+    <div class="quiz-question">
+
+        <strong>4. Quelle phrase est négative ?</strong>
+
+        <label>
+            <input type="radio" name="q4" value="1">
+            Je ne comprends pas.
+        </label>
+
+        <label>
+            <input type="radio" name="q4" value="0">
+            Je comprends.
+        </label>
+
+        <label>
+            <input type="radio" name="q4" value="0">
+            Comprends-tu ?
+        </label>
+
+    </div>
+
+    <div class="quiz-question">
+
+        <strong>5. Combien de verbes conjugués y a-t-il dans cette phrase ?
+        « Awa lit et son frère écrit. »</strong>
+
+        <label>
+            <input type="radio" name="q5" value="0">
+            Un
+        </label>
+
+        <label>
+            <input type="radio" name="q5" value="1">
+            Deux
+        </label>
+
+        <label>
+            <input type="radio" name="q5" value="0">
+            Trois
+        </label>
+
+    </div>
+
+    <button onclick="calculateQuiz()">
+        Calculer mon score
+    </button>
+
+    <div class="result" id="quizResult"></div>
+
+</section>
+
+<!-- A RETENIR -->
+
+<section class="card">
+
+    <h2>⭐ L'essentiel à retenir</h2>
+
+    <div class="recap">
+
+        <div>
+            <strong>Phrase</strong>
+            Ensemble de mots organisé qui a un sens.
+        </div>
+
+        <div>
+            <strong>Types</strong>
+            Déclarative, interrogative, exclamative, impérative.
+        </div>
+
+        <div>
+            <strong>Formes</strong>
+            Affirmative, négative, active, passive...
+        </div>
+
+        <div>
+            <strong>Structure</strong>
+            Phrase simple = un verbe conjugué.
+        </div>
+
+        <div>
+            <strong>Phrase complexe</strong>
+            Plusieurs verbes conjugués.
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+<footer>
+
+    <strong>Z.Éducation</strong>
+
+    <p>Apprendre • Comprendre • Réussir</p>
+
+    <p>
+        © 2026 Z.Éducation — Tous droits réservés.
+    </p>
+
+</footer>
+
+<script>
+
+function toggleAnswer(id) {
+
+    const answer = document.getElementById(id);
+
+    if (answer.style.display === "block") {
+        answer.style.display = "none";
+    } else {
+        answer.style.display = "block";
+    }
+}
+
+function calculateQuiz() {
+
+    let score = 0;
+    let answered = 0;
+
+    for (let i = 1; i <= 5; i++) {
+
+        const selected = document.querySelector(
+            'input[name="q' + i + '"]:checked'
+        );
+
+        if (selected) {
+
+            answered++;
+
+            score += Number(selected.value);
+
+        }
+
+    }
+
+    const result = document.getElementById("quizResult");
+    const progress = document.getElementById("progressBar");
+
+    const percentage = Math.round((score / 5) * 100);
+
+    progress.style.width = percentage + "%";
+
+    result.style.display = "block";
+
+    if (answered < 5) {
+
+        result.innerHTML =
+            "⚠️ Tu as répondu à " + answered +
+            " question(s) sur 5. Réponds à toutes les questions.";
+
+        return;
+
+    }
+
+    if (score === 5) {
+
+        result.innerHTML =
+            "🏆 Excellent ! Score : 5/5 — Tu maîtrises très bien la leçon.";
+
+    } else if (score >= 4) {
+
+        result.innerHTML =
+            "👏 Très bien ! Score : " + score +
+            "/5 — Continue tes efforts.";
+
+    } else if (score >= 3) {
+
+        result.innerHTML =
+            "👍 Bien ! Score : " + score +
+            "/5 — Relis les règles et entraîne-toi encore.";
+
+    } else {
+
+        result.innerHTML =
+            "📖 Score : " + score +
+            "/5 — Relis attentivement le cours puis recommence le quiz.";
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
