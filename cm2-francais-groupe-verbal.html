@@ -1,1080 +1,1076 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Le groupe nominal — Français CM2 | Z.Éducation</title>
+  <title>Le groupe verbal - Français CM2 | Z.Éducation</title>
 
-<style>
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f5f7fb;
-    color: #1f2937;
-    line-height: 1.7;
-}
-
-header {
-    background: white;
-    padding: 18px 7%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-    position: sticky;
-    top: 0;
-    z-index: 10;
-}
-
-.logo {
-    color: #2563eb;
-    text-decoration: none;
-    font-size: 25px;
-    font-weight: bold;
-}
-
-.back {
-    color: #374151;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.hero {
-    background: linear-gradient(135deg, #2563eb, #7c3aed);
-    color: white;
-    text-align: center;
-    padding: 65px 20px;
-}
-
-.hero .icon {
-    font-size: 55px;
-    margin-bottom: 15px;
-}
-
-.hero h1 {
-    font-size: 42px;
-    margin-bottom: 10px;
-}
-
-.hero p {
-    max-width: 800px;
-    margin: auto;
-    font-size: 18px;
-}
-
-.container {
-    width: 90%;
-    max-width: 1000px;
-    margin: 40px auto;
-}
-
-.card {
-    background: white;
-    padding: 30px;
-    margin-bottom: 25px;
-    border-radius: 18px;
-    box-shadow: 0 5px 18px rgba(0,0,0,0.07);
-}
-
-.card h2 {
-    color: #2563eb;
-    margin-bottom: 18px;
-    font-size: 27px;
-}
-
-.card h3 {
-    margin-top: 22px;
-    margin-bottom: 10px;
-    color: #374151;
-}
-
-.definition {
-    background: #eff6ff;
-    border-left: 5px solid #2563eb;
-    padding: 20px;
-    border-radius: 10px;
-    margin: 20px 0;
-}
-
-.example {
-    background: #f8fafc;
-    padding: 18px;
-    border-radius: 10px;
-    margin: 15px 0;
-}
-
-.example strong {
-    color: #7c3aed;
-}
-
-.rule {
-    background: #fef3c7;
-    border-left: 5px solid #f59e0b;
-    padding: 20px;
-    border-radius: 10px;
-    margin: 20px 0;
-}
-
-.highlight {
-    background: #ecfdf5;
-    border-left: 5px solid #10b981;
-    padding: 20px;
-    border-radius: 10px;
-    margin: 20px 0;
-}
-
-ul, ol {
-    padding-left: 25px;
-    margin: 12px 0;
-}
-
-li {
-    margin-bottom: 8px;
-}
-
-.table-container {
-    overflow-x: auto;
-    margin-top: 20px;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    min-width: 650px;
-}
-
-th, td {
-    border: 1px solid #d1d5db;
-    padding: 12px;
-    text-align: left;
-}
-
-th {
-    background: #eef2ff;
-}
-
-.exercise {
-    background: #f8fafc;
-    padding: 22px;
-    margin: 20px 0;
-    border-radius: 12px;
-}
-
-.exercise h3 {
-    margin-top: 0;
-    color: #111827;
-}
-
-button {
-    border: none;
-    background: #2563eb;
-    color: white;
-    padding: 12px 20px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    margin-top: 10px;
-}
-
-button:hover {
-    background: #1d4ed8;
-}
-
-.answer {
-    display: none;
-    margin-top: 15px;
-    padding: 15px;
-    background: #ecfdf5;
-    border-left: 5px solid #10b981;
-    border-radius: 8px;
-}
-
-.quiz-question {
-    padding: 20px;
-    background: #f8fafc;
-    border-radius: 12px;
-    margin: 18px 0;
-}
-
-.quiz-question label {
-    display: block;
-    margin: 10px 0;
-    cursor: pointer;
-}
-
-.result {
-    margin-top: 20px;
-    padding: 18px;
-    background: #eef2ff;
-    border-radius: 10px;
-    font-weight: bold;
-    display: none;
-}
-
-.progress {
-    background: #e5e7eb;
-    height: 12px;
-    border-radius: 20px;
-    overflow: hidden;
-    margin: 20px 0;
-}
-
-.progress-bar {
-    width: 0%;
-    height: 100%;
-    background: #2563eb;
-    transition: width 0.4s;
-}
-
-.recap {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-    margin-top: 20px;
-}
-
-.recap div {
-    background: #f8fafc;
-    padding: 20px;
-    border-radius: 12px;
-    text-align: center;
-}
-
-.recap strong {
-    display: block;
-    color: #2563eb;
-    margin-bottom: 8px;
-}
-
-footer {
-    background: #111827;
-    color: #d1d5db;
-    text-align: center;
-    padding: 30px 20px;
-    margin-top: 60px;
-}
-
-footer strong {
-    color: white;
-}
-
-@media (max-width: 600px) {
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f7fb;
+      color: #1f2937;
+      line-height: 1.7;
+    }
 
     header {
-        padding: 15px 5%;
+      background: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 18px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
     .logo {
-        font-size: 21px;
+      font-size: 24px;
+      font-weight: 800;
+      color: #2563eb;
+      text-decoration: none;
     }
 
-    .back {
-        font-size: 14px;
+    .back-link {
+      text-decoration: none;
+      color: #374151;
+      font-weight: 600;
+    }
+
+    .back-link:hover {
+      color: #2563eb;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #2563eb, #4f46e5);
+      color: white;
+      padding: 70px 20px;
+      text-align: center;
     }
 
     .hero h1 {
-        font-size: 32px;
+      font-size: 42px;
+      margin-bottom: 15px;
     }
 
     .hero p {
-        font-size: 16px;
+      font-size: 19px;
+      max-width: 750px;
+      margin: auto;
+      opacity: 0.95;
     }
 
-    .card {
-        padding: 22px;
+    .container {
+      max-width: 1050px;
+      margin: 40px auto;
+      padding: 0 20px;
     }
-}
-</style>
+
+    .section {
+      background: white;
+      padding: 30px;
+      border-radius: 18px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+    }
+
+    .section h2 {
+      color: #1d4ed8;
+      font-size: 28px;
+      margin-bottom: 18px;
+    }
+
+    .section h3 {
+      color: #374151;
+      font-size: 21px;
+      margin: 25px 0 10px;
+    }
+
+    .definition {
+      background: #eff6ff;
+      border-left: 5px solid #2563eb;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+
+    .example {
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      padding: 18px;
+      border-radius: 12px;
+      margin: 15px 0;
+    }
+
+    .example strong {
+      color: #1d4ed8;
+    }
+
+    ul, ol {
+      margin: 12px 0 12px 25px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .highlight {
+      font-weight: bold;
+      color: #dc2626;
+    }
+
+    .method {
+      background: #f0fdf4;
+      border-left: 5px solid #16a34a;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+
+    .warning {
+      background: #fff7ed;
+      border-left: 5px solid #f97316;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+
+    .exercise {
+      background: #f8fafc;
+      border: 1px solid #dbeafe;
+      padding: 22px;
+      border-radius: 14px;
+      margin: 18px 0;
+    }
+
+    .exercise h3 {
+      margin-top: 0;
+      color: #1d4ed8;
+    }
+
+    .answer-button {
+      margin-top: 12px;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 8px;
+      background: #2563eb;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .answer-button:hover {
+      background: #1d4ed8;
+    }
+
+    .answer {
+      display: none;
+      margin-top: 15px;
+      padding: 15px;
+      background: #ecfdf5;
+      border-left: 4px solid #16a34a;
+      border-radius: 8px;
+    }
+
+    .quiz-question {
+      margin: 22px 0;
+      padding: 20px;
+      background: #f8fafc;
+      border-radius: 12px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .quiz-question p {
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+
+    .quiz-question label {
+      display: block;
+      margin: 8px 0;
+      cursor: pointer;
+    }
+
+    .quiz-result {
+      margin-top: 25px;
+      padding: 20px;
+      border-radius: 12px;
+      background: #eff6ff;
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+      display: none;
+    }
+
+    .quiz-button {
+      display: block;
+      margin: 25px auto 0;
+      padding: 14px 28px;
+      border: none;
+      border-radius: 10px;
+      background: #16a34a;
+      color: white;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .quiz-button:hover {
+      background: #15803d;
+    }
+
+    .recap {
+      background: linear-gradient(135deg, #eff6ff, #eef2ff);
+      padding: 25px;
+      border-radius: 15px;
+    }
+
+    .recap li {
+      margin-bottom: 10px;
+    }
+
+    .navigation {
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .navigation a {
+      display: inline-block;
+      text-decoration: none;
+      background: #2563eb;
+      color: white;
+      padding: 13px 22px;
+      border-radius: 10px;
+      font-weight: bold;
+      margin: 5px;
+    }
+
+    .navigation a:hover {
+      background: #1d4ed8;
+    }
+
+    footer {
+      background: #111827;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 50px;
+    }
+
+    footer p {
+      margin: 5px;
+      opacity: 0.85;
+    }
+
+    @media (max-width: 700px) {
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      .section {
+        padding: 22px;
+      }
+
+      .section h2 {
+        font-size: 24px;
+      }
+
+      .header-container {
+        padding: 15px;
+      }
+
+      .logo {
+        font-size: 21px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
+  <div class="header-container">
     <a href="index.html" class="logo">Z.Éducation</a>
 
-    <a href="cm2-francais-cours.html" class="back">
-        ← Retour aux cours
+    <a href="cm2-francais-cours.html" class="back-link">
+      ← Retour aux cours de Français CM2
     </a>
+  </div>
 </header>
 
+
 <section class="hero">
-
-    <div class="icon">🧩</div>
-
-    <h1>Chapitre 2 : Le groupe nominal</h1>
-
-    <p>
-        Français CM2 — Déterminant, nom, adjectif qualificatif
-        et expansions du nom.
-    </p>
-
+  <h1>Le groupe verbal</h1>
+  <p>
+    Français CM2 — Comprendre le groupe verbal,
+    le verbe, le COD, le COI, le COS et les compléments circonstanciels.
+  </p>
 </section>
+
 
 <main class="container">
 
-<!-- DEFINITION -->
 
-<section class="card">
+  <!-- INTRODUCTION -->
 
-    <h2>📖 1. Qu'est-ce qu'un groupe nominal ?</h2>
+  <section class="section">
+
+    <h2>📘 1. Qu'est-ce que le groupe verbal ?</h2>
 
     <div class="definition">
-
-        <strong>Définition :</strong>
-
-        Un groupe nominal, appelé aussi <strong>GN</strong>,
-        est un groupe de mots organisé autour d'un
-        <strong>nom</strong>.
-
-    </div>
-
-    <div class="example">
-
-        <strong>Exemple :</strong><br><br>
-
-        <strong>Le petit garçon</strong> joue dans la cour.
-
+      <strong>Définition :</strong>
+      Le groupe verbal (GV) est un groupe de mots organisé autour d'un
+      <strong>verbe</strong>. Il indique généralement ce que fait le sujet
+      ou ce qui lui arrive.
     </div>
 
     <p>
-        Dans le groupe nominal
-        <strong>« le petit garçon »</strong>,
-        le mot principal est <strong>garçon</strong>.
-    </p>
-
-    <div class="rule">
-
-        <strong>À retenir :</strong>
-
-        Le nom est généralement le
-        <strong>noyau du groupe nominal</strong>.
-
-    </div>
-
-</section>
-
-<!-- CONSTITUANTS -->
-
-<section class="card">
-
-    <h2>🔎 2. Les éléments du groupe nominal</h2>
-
-    <p>
-        Un groupe nominal peut être composé de plusieurs éléments.
-    </p>
-
-    <div class="table-container">
-
-        <table>
-
-            <tr>
-                <th>Élément</th>
-                <th>Rôle</th>
-                <th>Exemple</th>
-            </tr>
-
-            <tr>
-                <td>Déterminant</td>
-                <td>Il accompagne et précise le nom.</td>
-                <td><strong>Le</strong> garçon</td>
-            </tr>
-
-            <tr>
-                <td>Nom</td>
-                <td>Il constitue le noyau du GN.</td>
-                <td>Le <strong>garçon</strong></td>
-            </tr>
-
-            <tr>
-                <td>Adjectif qualificatif</td>
-                <td>Il donne une précision sur le nom.</td>
-                <td>Le garçon <strong>gentil</strong></td>
-            </tr>
-
-            <tr>
-                <td>Complément du nom</td>
-                <td>Il apporte une précision sur le nom.</td>
-                <td>Le livre <strong>de français</strong></td>
-            </tr>
-
-        </table>
-
-    </div>
-
-</section>
-
-<!-- DETERMINANTS -->
-
-<section class="card">
-
-    <h2>📝 3. Les déterminants</h2>
-
-    <p>
-        Le déterminant accompagne généralement le nom.
-        Il permet notamment de connaître son genre et son nombre.
-    </p>
-
-    <h3>Les articles définis</h3>
-
-    <div class="example">
-        <strong>le, la, l', les</strong>
-    </div>
-
-    <p>
-        Exemple : <strong>le</strong> garçon,
-        <strong>la</strong> fille,
-        <strong>les</strong> élèves.
-    </p>
-
-    <h3>Les articles indéfinis</h3>
-
-    <div class="example">
-        <strong>un, une, des</strong>
-    </div>
-
-    <p>
-        Exemple : <strong>un</strong> livre,
-        <strong>une</strong> maison,
-        <strong>des</strong> enfants.
-    </p>
-
-    <h3>Les déterminants possessifs</h3>
-
-    <div class="example">
-        <strong>mon, ton, son, ma, ta, sa, notre, votre, leur, leurs...</strong>
-    </div>
-
-    <p>
-        Exemple : <strong>mon</strong> cahier,
-        <strong>notre</strong> classe,
-        <strong>leurs</strong> livres.
-    </p>
-
-    <h3>Les déterminants démonstratifs</h3>
-
-    <div class="example">
-        <strong>ce, cet, cette, ces</strong>
-    </div>
-
-    <p>
-        Exemple : <strong>ce</strong> garçon,
-        <strong>cette</strong> fille,
-        <strong>ces</strong> élèves.
-    </p>
-
-    <h3>Les déterminants interrogatifs et exclamatifs</h3>
-
-    <div class="example">
-        <strong>quel, quelle, quels, quelles</strong>
-    </div>
-
-    <p>
-        Exemple : <strong>Quelle</strong> belle journée !
-    </p>
-
-    <div class="rule">
-
-        <strong>Attention :</strong>
-
-        Le déterminant s'accorde avec le nom
-        en genre et en nombre.
-
-    </div>
-
-</section>
-
-<!-- NOM -->
-
-<section class="card">
-
-    <h2>🔤 4. Le nom : le noyau du groupe nominal</h2>
-
-    <p>
-        Le nom désigne généralement une personne,
-        un animal, une chose, un lieu, une idée ou un sentiment.
+      Dans une phrase, le groupe verbal constitue avec le groupe sujet
+      l'un des éléments essentiels de la phrase.
     </p>
 
     <div class="example">
+      <strong>Exemple :</strong><br><br>
 
-        <strong>Exemples :</strong><br><br>
-
-        <strong>fille</strong> → personne<br>
-        <strong>chat</strong> → animal<br>
-        <strong>table</strong> → chose<br>
-        <strong>Abidjan</strong> → lieu<br>
-        <strong>courage</strong> → idée / qualité
-
+      <strong>Le petit garçon</strong> mange une pomme.<br>
+      → Groupe sujet : <strong>Le petit garçon</strong><br>
+      → Groupe verbal : <strong>mange une pomme</strong>
     </div>
 
-    <div class="highlight">
+    <div class="example">
+      <strong>Autre exemple :</strong><br><br>
 
-        Pour trouver le noyau du groupe nominal,
-        demande-toi :
-
-        <br><br>
-
-        <strong>« De qui ou de quoi parle-t-on ? »</strong>
-
+      Les élèves <strong>révisent leurs leçons</strong>.<br>
+      → Groupe sujet : <strong>Les élèves</strong><br>
+      → Groupe verbal : <strong>révisent leurs leçons</strong>
     </div>
 
-</section>
+  </section>
 
-<!-- ADJECTIF -->
 
-<section class="card">
+  <!-- VERBE -->
 
-    <h2>🎨 5. L'adjectif qualificatif</h2>
+  <section class="section">
+
+    <h2>🔹 2. Le verbe, noyau du groupe verbal</h2>
+
+    <p>
+      Le verbe est le mot principal du groupe verbal.
+      Il exprime une action, un état ou un événement.
+    </p>
+
+    <div class="example">
+      <strong>Exemples :</strong>
+
+      <ul>
+        <li>Awa <strong>lit</strong> un livre.</li>
+        <li>Les enfants <strong>jouent</strong> dans la cour.</li>
+        <li>Mon frère <strong>semble</strong> fatigué.</li>
+      </ul>
+    </div>
+
+    <p>
+      Pour trouver le verbe, on peut modifier le temps de la phrase.
+      Le mot qui change est généralement le verbe.
+    </p>
+
+    <div class="example">
+      Aujourd'hui, Paul <strong>joue</strong> au football.<br>
+      Hier, Paul <strong>jouait</strong> au football.<br>
+      Demain, Paul <strong>jouera</strong> au football.
+    </div>
+
+  </section>
+
+
+  <!-- COD -->
+
+  <section class="section">
+
+    <h2>🎯 3. Le complément d'objet direct (COD)</h2>
 
     <div class="definition">
-
-        L'adjectif qualificatif donne une information
-        ou une précision sur un nom.
-
+      Le <strong>COD</strong> complète directement le verbe.
+      Il répond généralement aux questions
+      <strong>« qui ? »</strong> ou <strong>« quoi ? »</strong>
+      après le verbe.
     </div>
 
     <div class="example">
+      <strong>Exemple :</strong><br><br>
 
-        <strong>Exemple :</strong><br><br>
+      Fatou mange <strong>une mangue</strong>.<br><br>
 
-        Une <strong>grande</strong> maison.<br>
-        Un garçon <strong>courageux</strong>.<br>
-        Des fleurs <strong>magnifiques</strong>.
-
+      Fatou mange quoi ? → <strong>une mangue</strong><br>
+      Donc « une mangue » est le <strong>COD</strong>.
     </div>
 
-    <h3>L'accord de l'adjectif</h3>
+    <div class="example">
+      Le maître explique <strong>la leçon</strong>.<br><br>
 
-    <p>
-        L'adjectif qualificatif s'accorde généralement
-        en genre et en nombre avec le nom qu'il qualifie.
-    </p>
+      Le maître explique quoi ? → <strong>la leçon</strong>.<br>
+      → « la leçon » est COD.
+    </div>
+
+    <h3>Comment reconnaître le COD ?</h3>
+
+    <ol>
+      <li>Je trouve le verbe.</li>
+      <li>Je pose la question « qui ? » ou « quoi ? ».</li>
+      <li>La réponse est directement reliée au verbe.</li>
+    </ol>
+
+  </section>
+
+
+  <!-- COI -->
+
+  <section class="section">
+
+    <h2>🎯 4. Le complément d'objet indirect (COI)</h2>
+
+    <div class="definition">
+      Le <strong>COI</strong> complète le verbe indirectement.
+      Il est généralement introduit par une préposition comme
+      <strong>à</strong>, <strong>de</strong>, <strong>pour</strong>, etc.
+    </div>
+
+    <div class="example">
+      <strong>Exemple :</strong><br><br>
+
+      Awa parle <strong>à sa mère</strong>.<br><br>
+
+      Awa parle à qui ? → <strong>à sa mère</strong>.<br>
+      → « à sa mère » est COI.
+    </div>
+
+    <div class="example">
+      Karim se souvient <strong>de son enfance</strong>.<br><br>
+
+      Karim se souvient de quoi ? → <strong>de son enfance</strong>.<br>
+      → « de son enfance » est COI.
+    </div>
+
+    <h3>Comment reconnaître le COI ?</h3>
+
+    <ol>
+      <li>Je trouve le verbe.</li>
+      <li>Je pose « à qui ? », « à quoi ? », « de qui ? » ou « de quoi ? ».</li>
+      <li>La réponse est reliée au verbe par une préposition.</li>
+    </ol>
+
+  </section>
+
+
+  <!-- COS -->
+
+  <section class="section">
+
+    <h2>🎯 5. Le complément d'objet second (COS)</h2>
+
+    <div class="definition">
+      Le <strong>COS</strong> est un complément d'objet qui accompagne
+      déjà un autre complément d'objet, généralement un COD ou un COI.
+    </div>
+
+    <div class="example">
+      <strong>Exemple :</strong><br><br>
+
+      Le professeur explique <strong>la leçon</strong>
+      <strong>aux élèves</strong>.<br><br>
+
+      « la leçon » → COD<br>
+      « aux élèves » → COS
+    </div>
+
+    <div class="example">
+      Maman offre <strong>un cadeau</strong>
+      <strong>à son fils</strong>.<br><br>
+
+      « un cadeau » → COD<br>
+      « à son fils » → COS
+    </div>
+
+    <div class="warning">
+      <strong>À retenir :</strong>
+      Le COS n'est pas simplement « un COI ».
+      On parle de COS lorsqu'un autre complément d'objet est déjà présent
+      dans la phrase.
+    </div>
+
+  </section>
+
+
+  <!-- COMPLEMENTS CIRCONSTANCIELS -->
+
+  <section class="section">
+
+    <h2>🌍 6. Les compléments circonstanciels</h2>
+
+    <div class="definition">
+      Les compléments circonstanciels donnent des informations
+      supplémentaires sur les circonstances de l'action.
+    </div>
+
+    <h3>Le complément circonstanciel de temps</h3>
+
+    <div class="example">
+      Nous partirons <strong>demain matin</strong>.<br>
+      → Quand partirons-nous ?<br>
+      → <strong>demain matin</strong> = complément circonstanciel de temps.
+    </div>
+
+    <h3>Le complément circonstanciel de lieu</h3>
+
+    <div class="example">
+      Les enfants jouent <strong>dans la cour</strong>.<br>
+      → Où jouent les enfants ?<br>
+      → <strong>dans la cour</strong> = complément circonstanciel de lieu.
+    </div>
+
+    <h3>Le complément circonstanciel de manière</h3>
+
+    <div class="example">
+      Elle travaille <strong>avec soin</strong>.<br>
+      → Comment travaille-t-elle ?<br>
+      → <strong>avec soin</strong> = complément circonstanciel de manière.
+    </div>
+
+    <h3>Le complément circonstanciel de cause</h3>
+
+    <div class="example">
+      Il reste à la maison <strong>à cause de la pluie</strong>.<br>
+      → Pourquoi reste-t-il à la maison ?<br>
+      → <strong>à cause de la pluie</strong> = complément circonstanciel de cause.
+    </div>
+
+    <h3>Le complément circonstanciel de but</h3>
+
+    <div class="example">
+      Il travaille <strong>pour réussir</strong>.<br>
+      → Dans quel but travaille-t-il ?<br>
+      → <strong>pour réussir</strong> = complément circonstanciel de but.
+    </div>
+
+  </section>
+
+
+  <!-- TABLEAU -->
+
+  <section class="section">
+
+    <h2>📋 7. Tableau récapitulatif</h2>
 
     <div class="example">
 
-        un garçon <strong>courageux</strong><br>
-        une fille <strong>courageuse</strong><br>
-        des garçons <strong>courageux</strong><br>
-        des filles <strong>courageuses</strong>
+      <p><strong>COD</strong> → qui ? quoi ?</p>
+      <p><strong>COI</strong> → à qui ? à quoi ? de qui ? de quoi ?</p>
+      <p><strong>COS</strong> → deuxième complément d'objet</p>
+      <p><strong>CCT</strong> → quand ?</p>
+      <p><strong>CCL</strong> → où ?</p>
+      <p><strong>CCM</strong> → comment ?</p>
+      <p><strong>CCC</strong> → pourquoi ? pour quelle cause ?</p>
+      <p><strong>CCB</strong> → dans quel but ?</p>
 
     </div>
 
-    <div class="rule">
+  </section>
 
-        <strong>À retenir :</strong>
 
-        Pour accorder correctement un adjectif,
-        cherche le nom auquel il se rapporte.
+  <!-- METHODE -->
 
+  <section class="section">
+
+    <h2>🧠 8. Méthode pour analyser le groupe verbal</h2>
+
+    <div class="method">
+
+      <strong>Étape 1 :</strong>
+      Je cherche le verbe conjugué.
+
+      <br><br>
+
+      <strong>Étape 2 :</strong>
+      Je cherche le groupe verbal.
+
+      <br><br>
+
+      <strong>Étape 3 :</strong>
+      Je regarde si le verbe possède un COD.
+
+      <br><br>
+
+      <strong>Étape 4 :</strong>
+      Je cherche éventuellement un COI ou un COS.
+
+      <br><br>
+
+      <strong>Étape 5 :</strong>
+      Je cherche les compléments circonstanciels.
+
+      <br><br>
+
+      <strong>Étape 6 :</strong>
+      Je vérifie le rôle de chaque groupe de mots.
     </div>
-
-</section>
-
-<!-- EXPANSIONS -->
-
-<section class="card">
-
-    <h2>➕ 6. Les expansions du nom</h2>
-
-    <p>
-        Une expansion du nom est un élément qui apporte
-        des informations supplémentaires sur un nom.
-    </p>
-
-    <h3>L'adjectif qualificatif</h3>
 
     <div class="example">
-        une <strong>belle</strong> maison
+      <strong>Exemple complet :</strong><br><br>
+
+      Hier, Paul a offert un cadeau à sa sœur dans la cour.
+      <br><br>
+
+      Verbe → <strong>a offert</strong><br>
+      COD → <strong>un cadeau</strong><br>
+      COS → <strong>à sa sœur</strong><br>
+      CCT → <strong>Hier</strong><br>
+      CCL → <strong>dans la cour</strong>
     </div>
 
-    <h3>Le complément du nom</h3>
+  </section>
 
-    <div class="example">
-        le livre <strong>de français</strong>
-    </div>
 
-    <h3>La proposition subordonnée relative</h3>
+  <!-- EXERCICES -->
 
-    <div class="example">
-        le garçon <strong>qui joue dans la cour</strong>
-    </div>
+  <section class="section">
 
-    <div class="table-container">
+    <h2>✏️ 9. Exercices</h2>
 
-        <table>
-
-            <tr>
-                <th>Groupe nominal</th>
-                <th>Expansion</th>
-            </tr>
-
-            <tr>
-                <td>une voiture rouge</td>
-                <td>rouge → adjectif qualificatif</td>
-            </tr>
-
-            <tr>
-                <td>un sac de voyage</td>
-                <td>de voyage → complément du nom</td>
-            </tr>
-
-            <tr>
-                <td>l'élève qui travaille</td>
-                <td>qui travaille → proposition relative</td>
-            </tr>
-
-        </table>
-
-    </div>
-
-</section>
-
-<!-- ANALYSE -->
-
-<section class="card">
-
-    <h2>🔬 7. Analyser un groupe nominal</h2>
-
-    <p>
-        Pour analyser un groupe nominal, on peut identifier
-        la nature de chacun de ses éléments.
-    </p>
-
-    <div class="example">
-
-        <strong>Exemple :</strong><br><br>
-
-        <strong>Le petit garçon courageux</strong>
-        aide son ami.
-
-        <br><br>
-
-        <strong>Le</strong> → déterminant<br>
-
-        <strong>petit</strong> → adjectif qualificatif<br>
-
-        <strong>garçon</strong> → nom commun, noyau du GN<br>
-
-        <strong>courageux</strong> → adjectif qualificatif
-
-    </div>
-
-    <div class="rule">
-
-        <strong>Méthode :</strong>
-
-        <ol>
-            <li>Repère le groupe nominal.</li>
-            <li>Cherche le nom noyau.</li>
-            <li>Identifie le déterminant.</li>
-            <li>Repère les adjectifs.</li>
-            <li>Repère les éventuels compléments du nom ou relatives.</li>
-        </ol>
-
-    </div>
-
-</section>
-
-<!-- EXERCICES -->
-
-<section class="card">
-
-    <h2>✏️ 8. Exercices</h2>
 
     <div class="exercise">
 
-        <h3>Exercice 1 — Trouver le groupe nominal</h3>
+      <h3>Exercice 1 — Trouve le verbe</h3>
 
-        <p>
-            Recopie le groupe nominal dans chaque phrase.
-        </p>
+      <p>
+        Souligne mentalement le verbe dans chaque phrase.
+      </p>
 
-        <ol>
-            <li>Le petit garçon joue dans la cour.</li>
-            <li>Une grande maison se trouve près de l'école.</li>
-            <li>Les élèves attentifs écoutent le professeur.</li>
-        </ol>
+      <ol>
+        <li>Les enfants jouent dans la cour.</li>
+        <li>Mariam prépare le repas.</li>
+        <li>Nous regardons un film.</li>
+        <li>Le professeur explique la leçon.</li>
+      </ol>
 
-        <button onclick="toggleAnswer('answer1')">
-            Voir la correction
-        </button>
+      <button class="answer-button"
+              onclick="toggleAnswer('answer1')">
+        Voir la correction
+      </button>
 
-        <div class="answer" id="answer1">
-
-            <strong>Correction :</strong><br><br>
-
-            1. <strong>Le petit garçon</strong><br>
-            2. <strong>Une grande maison</strong><br>
-            3. <strong>Les élèves attentifs</strong>
-
-        </div>
+      <div class="answer" id="answer1">
+        <strong>Correction :</strong><br><br>
+        1. jouent<br>
+        2. prépare<br>
+        3. regardons<br>
+        4. explique
+      </div>
 
     </div>
+
 
     <div class="exercise">
 
-        <h3>Exercice 2 — Trouver le nom noyau</h3>
+      <h3>Exercice 2 — Trouve le COD</h3>
 
-        <p>
-            Identifie le nom noyau de chaque groupe nominal.
-        </p>
+      <ol>
+        <li>Awa mange une orange.</li>
+        <li>Le garçon lit un livre.</li>
+        <li>Maman prépare le dîner.</li>
+        <li>Les élèves écrivent une rédaction.</li>
+      </ol>
 
-        <ol>
-            <li>La jolie fleur</li>
-            <li>Un grand arbre</li>
-            <li>Les nouveaux élèves</li>
-            <li>Le livre de français</li>
-        </ol>
+      <button class="answer-button"
+              onclick="toggleAnswer('answer2')">
+        Voir la correction
+      </button>
 
-        <button onclick="toggleAnswer('answer2')">
-            Voir la correction
-        </button>
-
-        <div class="answer" id="answer2">
-
-            <strong>Correction :</strong><br><br>
-
-            1. fleur<br>
-            2. arbre<br>
-            3. élèves<br>
-            4. livre
-
-        </div>
+      <div class="answer" id="answer2">
+        <strong>Correction :</strong><br><br>
+        1. une orange<br>
+        2. un livre<br>
+        3. le dîner<br>
+        4. une rédaction
+      </div>
 
     </div>
+
 
     <div class="exercise">
 
-        <h3>Exercice 3 — Identifier les constituants</h3>
+      <h3>Exercice 3 — COD ou COI ?</h3>
 
-        <p>
-            Analyse le groupe nominal suivant :
-        </p>
+      <ol>
+        <li>Il regarde la télévision.</li>
+        <li>Elle parle à son frère.</li>
+        <li>Nous aidons notre professeur.</li>
+        <li>Il pense à ses vacances.</li>
+      </ol>
 
-        <div class="example">
-            <strong>Les jeunes élèves courageux</strong>
-        </div>
+      <button class="answer-button"
+              onclick="toggleAnswer('answer3')">
+        Voir la correction
+      </button>
 
-        <button onclick="toggleAnswer('answer3')">
-            Voir la correction
-        </button>
-
-        <div class="answer" id="answer3">
-
-            <strong>Correction :</strong><br><br>
-
-            <strong>Les</strong> → déterminant<br>
-
-            <strong>jeunes</strong> → adjectif qualificatif<br>
-
-            <strong>élèves</strong> → nom noyau<br>
-
-            <strong>courageux</strong> → adjectif qualificatif
-
-        </div>
+      <div class="answer" id="answer3">
+        <strong>Correction :</strong><br><br>
+        1. la télévision → COD<br>
+        2. à son frère → COI<br>
+        3. notre professeur → COD<br>
+        4. à ses vacances → COI
+      </div>
 
     </div>
+
 
     <div class="exercise">
 
-        <h3>Exercice 4 — Accorder les adjectifs</h3>
+      <h3>Exercice 4 — Trouve les compléments circonstanciels</h3>
 
-        <p>
-            Mets l'adjectif entre parenthèses au bon genre et au bon nombre.
-        </p>
+      <ol>
+        <li>Nous partirons demain.</li>
+        <li>Les élèves travaillent dans la classe.</li>
+        <li>Il répond calmement.</li>
+        <li>Elle étudie pour réussir.</li>
+      </ol>
 
-        <ol>
-            <li>Une fille (courageux).</li>
-            <li>Des garçons (attentif).</li>
-            <li>Une maison (grand).</li>
-            <li>Des fleurs (magnifique).</li>
-        </ol>
+      <button class="answer-button"
+              onclick="toggleAnswer('answer4')">
+        Voir la correction
+      </button>
 
-        <button onclick="toggleAnswer('answer4')">
-            Voir la correction
-        </button>
-
-        <div class="answer" id="answer4">
-
-            <strong>Correction :</strong><br><br>
-
-            1. Une fille <strong>courageuse</strong>.<br>
-            2. Des garçons <strong>attentifs</strong>.<br>
-            3. Une maison <strong>grande</strong>.<br>
-            4. Des fleurs <strong>magnifiques</strong>.
-
-        </div>
+      <div class="answer" id="answer4">
+        <strong>Correction :</strong><br><br>
+        1. demain → CCT<br>
+        2. dans la classe → CCL<br>
+        3. calmement → CCM<br>
+        4. pour réussir → CCB
+      </div>
 
     </div>
 
-</section>
 
-<!-- QUIZ -->
+    <div class="exercise">
 
-<section class="card">
+      <h3>Exercice 5 — Analyse complète</h3>
 
-    <h2>🧠 9. Quiz</h2>
+      <p>
+        Le samedi matin, les élèves rangent soigneusement
+        leurs livres dans la bibliothèque.
+      </p>
+
+      <button class="answer-button"
+              onclick="toggleAnswer('answer5')">
+        Voir la correction
+      </button>
+
+      <div class="answer" id="answer5">
+        <strong>Correction :</strong><br><br>
+
+        Verbe → <strong>rangent</strong><br>
+        COD → <strong>leurs livres</strong><br>
+        CCT → <strong>Le samedi matin</strong><br>
+        CCM → <strong>soigneusement</strong><br>
+        CCL → <strong>dans la bibliothèque</strong>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- QUIZ -->
+
+  <section class="section">
+
+    <h2>🧠 10. Quiz</h2>
 
     <p>
-        Réponds aux cinq questions puis calcule ton score.
+      Réponds aux cinq questions puis clique sur
+      <strong>Voir mon score</strong>.
     </p>
 
-    <div class="progress">
-        <div class="progress-bar" id="progressBar"></div>
-    </div>
 
     <div class="quiz-question">
 
-        <strong>1. Quel est le noyau du groupe nominal
-        « le grand arbre » ?</strong>
+      <p>1. Quel est le COD dans : « Koffi mange une banane » ?</p>
 
-        <label>
-            <input type="radio" name="q1" value="0">
-            le
-        </label>
+      <label>
+        <input type="radio" name="q1" value="0">
+        Koffi
+      </label>
 
-        <label>
-            <input type="radio" name="q1" value="1">
-            arbre
-        </label>
+      <label>
+        <input type="radio" name="q1" value="1">
+        une banane
+      </label>
 
-        <label>
-            <input type="radio" name="q1" value="0">
-            grand
-        </label>
+      <label>
+        <input type="radio" name="q1" value="0">
+        mange
+      </label>
 
     </div>
+
 
     <div class="quiz-question">
 
-        <strong>2. Quel mot est un déterminant ?</strong>
+      <p>2. Quel est le COI dans : « Awa parle à sa mère » ?</p>
 
-        <label>
-            <input type="radio" name="q2" value="1">
-            cette
-        </label>
+      <label>
+        <input type="radio" name="q2" value="1">
+        à sa mère
+      </label>
 
-        <label>
-            <input type="radio" name="q2" value="0">
-            maison
-        </label>
+      <label>
+        <input type="radio" name="q2" value="0">
+        Awa
+      </label>
 
-        <label>
-            <input type="radio" name="q2" value="0">
-            grande
-        </label>
+      <label>
+        <input type="radio" name="q2" value="0">
+        parle
+      </label>
 
     </div>
+
 
     <div class="quiz-question">
 
-        <strong>3. Quel mot est un adjectif qualificatif ?</strong>
+      <p>3. Quel est le CCT dans : « Nous partirons demain » ?</p>
 
-        <label>
-            <input type="radio" name="q3" value="0">
-            les
-        </label>
+      <label>
+        <input type="radio" name="q3" value="1">
+        demain
+      </label>
 
-        <label>
-            <input type="radio" name="q3" value="1">
-            magnifique
-        </label>
+      <label>
+        <input type="radio" name="q3" value="0">
+        partirons
+      </label>
 
-        <label>
-            <input type="radio" name="q3" value="0">
-            fleurs
-        </label>
+      <label>
+        <input type="radio" name="q3" value="0">
+        nous
+      </label>
 
     </div>
+
 
     <div class="quiz-question">
 
-        <strong>4. Dans « le livre de français »,
-        quelle est l'expansion du nom ?</strong>
+      <p>4. Quel est le CCL dans : « Les enfants jouent dans la cour » ?</p>
 
-        <label>
-            <input type="radio" name="q4" value="0">
-            le
-        </label>
+      <label>
+        <input type="radio" name="q4" value="1">
+        dans la cour
+      </label>
 
-        <label>
-            <input type="radio" name="q4" value="0">
-            livre
-        </label>
+      <label>
+        <input type="radio" name="q4" value="0">
+        les enfants
+      </label>
 
-        <label>
-            <input type="radio" name="q4" value="1">
-            de français
-        </label>
+      <label>
+        <input type="radio" name="q4" value="0">
+        jouent
+      </label>
 
     </div>
+
 
     <div class="quiz-question">
 
-        <strong>5. Dans « une grande maison »,
-        quel est le nom noyau ?</strong>
+      <p>5. Quel est le verbe dans : « Le maître explique la leçon » ?</p>
 
-        <label>
-            <input type="radio" name="q5" value="0">
-            une
-        </label>
+      <label>
+        <input type="radio" name="q5" value="1">
+        explique
+      </label>
 
-        <label>
-            <input type="radio" name="q5" value="0">
-            grande
-        </label>
+      <label>
+        <input type="radio" name="q5" value="0">
+        maître
+      </label>
 
-        <label>
-            <input type="radio" name="q5" value="1">
-            maison
-        </label>
+      <label>
+        <input type="radio" name="q5" value="0">
+        leçon
+      </label>
 
     </div>
 
-    <button onclick="calculateQuiz()">
-        Calculer mon score
+
+    <button class="quiz-button" onclick="calculateScore()">
+      Voir mon score
     </button>
 
-    <div class="result" id="quizResult"></div>
+    <div class="quiz-result" id="quizResult"></div>
 
-</section>
+  </section>
 
-<!-- ESSENTIEL -->
 
-<section class="card">
+  <!-- RECAP -->
 
-    <h2>⭐ 10. L'essentiel à retenir</h2>
+  <section class="section">
+
+    <h2>📚 11. L'essentiel à retenir</h2>
 
     <div class="recap">
 
-        <div>
-            <strong>GN</strong>
-            Groupe de mots organisé autour d'un nom.
-        </div>
+      <ul>
+        <li>
+          Le <strong>groupe verbal</strong> est organisé autour d'un verbe.
+        </li>
 
-        <div>
-            <strong>Nom</strong>
-            Il constitue généralement le noyau du GN.
-        </div>
+        <li>
+          Le <strong>COD</strong> complète directement le verbe.
+        </li>
 
-        <div>
-            <strong>Déterminant</strong>
-            Il accompagne le nom.
-        </div>
+        <li>
+          Le <strong>COI</strong> complète indirectement le verbe.
+        </li>
 
-        <div>
-            <strong>Adjectif</strong>
-            Il précise ou décrit le nom.
-        </div>
+        <li>
+          Le <strong>COS</strong> est un deuxième complément d'objet
+          dans une phrase qui possède déjà un autre complément d'objet.
+        </li>
 
-        <div>
-            <strong>Expansion</strong>
-            Elle apporte une précision supplémentaire au nom.
-        </div>
+        <li>
+          Le <strong>CCT</strong> indique le temps.
+        </li>
+
+        <li>
+          Le <strong>CCL</strong> indique le lieu.
+        </li>
+
+        <li>
+          Le <strong>CCM</strong> indique la manière.
+        </li>
+
+        <li>
+          Les compléments circonstanciels apportent des informations
+          sur les circonstances de l'action.
+        </li>
+
+        <li>
+          Pour analyser une phrase, il faut d'abord trouver
+          le verbe puis identifier les différents compléments.
+        </li>
+      </ul>
 
     </div>
 
-</section>
+  </section>
+
+
+  <!-- NAVIGATION -->
+
+  <div class="navigation">
+
+    <a href="cm2-francais-cours.html">
+      ← Retour aux cours
+    </a>
+
+    <a href="cm2-francais-pronoms.html">
+      Chapitre suivant →
+    </a>
+
+  </div>
+
 
 </main>
 
+
 <footer>
 
-    <strong>Z.Éducation</strong>
+  <p><strong>Z.Éducation</strong></p>
 
-    <p>Apprendre • Comprendre • Réussir</p>
+  <p>Apprendre • Comprendre • Réussir</p>
 
-    <p>
-        © 2026 Z.Éducation — Tous droits réservés.
-    </p>
+  <p>Français CM2</p>
 
 </footer>
 
+
 <script>
 
-function toggleAnswer(id) {
+  function toggleAnswer(id) {
 
     const answer = document.getElementById(id);
 
     if (answer.style.display === "block") {
-        answer.style.display = "none";
+      answer.style.display = "none";
     } else {
-        answer.style.display = "block";
+      answer.style.display = "block";
     }
 
-}
+  }
 
-function calculateQuiz() {
+
+  function calculateScore() {
 
     let score = 0;
-    let answered = 0;
 
-    for (let i = 1; i <= 5; i++) {
+    const questions = ["q1", "q2", "q3", "q4", "q5"];
 
-        const selected = document.querySelector(
-            'input[name="q' + i + '"]:checked'
-        );
+    questions.forEach(function(question) {
 
-        if (selected) {
+      const selected = document.querySelector(
+        'input[name="' + question + '"]:checked'
+      );
 
-            answered++;
-            score += Number(selected.value);
+      if (selected) {
+        score += Number(selected.value);
+      }
 
-        }
+    });
 
-    }
 
     const result = document.getElementById("quizResult");
-    const progress = document.getElementById("progressBar");
-
-    const percentage = Math.round((score / 5) * 100);
-
-    progress.style.width = percentage + "%";
 
     result.style.display = "block";
 
-    if (answered < 5) {
-
-        result.innerHTML =
-            "⚠️ Tu as répondu à " + answered +
-            " question(s) sur 5. Réponds à toutes les questions.";
-
-        return;
-
-    }
-
     if (score === 5) {
 
-        result.innerHTML =
-            "🏆 Excellent ! Score : 5/5 — Tu maîtrises très bien le groupe nominal.";
-
-    } else if (score >= 4) {
-
-        result.innerHTML =
-            "👏 Très bien ! Score : " + score +
-            "/5 — Continue tes efforts.";
+      result.innerHTML =
+        "🎉 Excellent ! Tu as obtenu " +
+        score +
+        "/5. Bravo !";
 
     } else if (score >= 3) {
 
-        result.innerHTML =
-            "👍 Bien ! Score : " + score +
-            "/5 — Relis les règles et entraîne-toi encore.";
+      result.innerHTML =
+        "👏 Bien joué ! Tu as obtenu " +
+        score +
+        "/5. Continue tes efforts !";
 
     } else {
 
-        result.innerHTML =
-            "📖 Score : " + score +
-            "/5 — Relis le cours puis recommence le quiz.";
+      result.innerHTML =
+        "💪 Tu as obtenu " +
+        score +
+        "/5. Relis le cours et recommence le quiz !";
 
     }
 
-}
+  }
 
 </script>
 
