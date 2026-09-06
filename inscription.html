@@ -462,6 +462,90 @@
         SUPABASE_URL,
         SUPABASE_PUBLISHABLE_KEY
     );
+<!-- SUPABASE -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+    const SUPABASE_URL = "https://qeiggkbirzrxpikhdzgn.supabase.co";
+
+    const SUPABASE_PUBLISHABLE_KEY = "TA_CLÉ_PUBLISHABLE";
+
+    const supabaseClient = window.supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_PUBLISHABLE_KEY
+    );
+</script>
+
+<script>
+document.getElementById("inscription-form").addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    const nom = document.getElementById("nom").value.trim();
+    const prenom = document.getElementById("prenom").value.trim();
+    const pays = document.getElementById("pays").value.trim();
+    const ville = document.getElementById("ville").value.trim();
+    const telephone = document.getElementById("telephone").value.trim();
+    const profil = document.getElementById("profil").value;
+    const niveau = document.getElementById("niveau").value;
+    const ecole = document.getElementById("ecole").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value;
+    const confirmPassword = document.getElementById("confirm-password").value;
+    const notifications = document.getElementById("notifications").checked;
+
+    if (password !== confirmPassword) {
+        alert("❌ Les deux mots de passe ne correspondent pas.");
+        return;
+    }
+
+    const button = document.querySelector(".register-btn");
+    button.disabled = true;
+    button.textContent = "Création du compte...";
+
+    try {
+        const { data, error } = await supabaseClient.auth.signUp({
+            email: email,
+            password: password,
+            options: {
+                data: {
+                    nom: nom,
+                    prenom: prenom,
+                    pays: pays,
+                    ville: ville,
+                    telephone: telephone,
+                    profil: profil,
+                    niveau: niveau,
+                    ecole: ecole,
+                    notifications: notifications
+                }
+            }
+        });
+
+        if (error) {
+            throw error;
+        }
+
+        alert(
+            "✅ Votre compte a été créé avec succès !\n\n" +
+            "Un e-mail de confirmation vient d'être envoyé à :\n" +
+            email +
+            "\n\nVeuillez confirmer votre adresse e-mail avant de vous connecter."
+        );
+
+        window.location.href = "connexion.html";
+
+    } catch (error) {
+        console.error(error);
+
+        alert(
+            "❌ Impossible de créer le compte :\n\n" +
+            error.message
+        );
+
+        button.disabled = false;
+        button.textContent = "Créer mon compte";
+    }
+});
 </script>
 
 </body>
