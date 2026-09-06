@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Chapitre 14 — Orthographe | Z.Éducation</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fb;
+      color: #1f2937;
+      line-height: 1.7;
+    }
+
+    header {
+      background: linear-gradient(135deg, #111827, #2563eb);
+      color: white;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .logo span {
+      color: #facc15;
+    }
+
+    .back {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .hero {
+      background: white;
+      padding: 55px 7%;
+      text-align: center;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #dbeafe;
+      color: #1d4ed8;
+      padding: 7px 15px;
+      border-radius: 20px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      color: #111827;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      max-width: 800px;
+      margin: auto;
+      color: #6b7280;
+      font-size: 1.1rem;
+    }
+
+    main {
+      width: 86%;
+      max-width: 1100px;
+      margin: 35px auto;
+    }
+
+    .section {
+      background: white;
+      padding: 30px;
+      border-radius: 18px;
+      margin-bottom: 25px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+    }
+
+    .section h2 {
+      color: #1d4ed8;
+      margin-bottom: 18px;
+      font-size: 1.6rem;
+    }
+
+    .section h3 {
+      color: #111827;
+      margin: 22px 0 10px;
+    }
+
+    .definition {
+      background: #eff6ff;
+      border-left: 5px solid #2563eb;
+      padding: 18px;
+      border-radius: 10px;
+      margin: 15px 0;
+    }
+
+    .example {
+      background: #f9fafb;
+      border-left: 5px solid #10b981;
+      padding: 16px;
+      margin: 15px 0;
+      border-radius: 8px;
+    }
+
+    .warning {
+      background: #fff7ed;
+      border-left: 5px solid #f97316;
+      padding: 16px;
+      margin: 15px 0;
+      border-radius: 8px;
+    }
+
+    .rule-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 18px 0;
+    }
+
+    .rule-table th,
+    .rule-table td {
+      border: 1px solid #d1d5db;
+      padding: 12px;
+      text-align: left;
+    }
+
+    .rule-table th {
+      background: #2563eb;
+      color: white;
+    }
+
+    .rule-table tr:nth-child(even) {
+      background: #f9fafb;
+    }
+
+    .exercise {
+      background: #f8fafc;
+      padding: 20px;
+      border-radius: 12px;
+      margin: 18px 0;
+      border: 1px solid #e5e7eb;
+    }
+
+    .exercise h3 {
+      margin-top: 0;
+      color: #2563eb;
+    }
+
+    button {
+      border: none;
+      background: #2563eb;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background: #1d4ed8;
+    }
+
+    .correction {
+      display: none;
+      margin-top: 15px;
+      padding: 15px;
+      background: #ecfdf5;
+      border-left: 4px solid #10b981;
+      border-radius: 8px;
+    }
+
+    .quiz-question {
+      margin: 22px 0;
+      padding: 18px;
+      background: #f9fafb;
+      border-radius: 10px;
+    }
+
+    .quiz-question label {
+      display: block;
+      margin: 8px 0;
+      cursor: pointer;
+    }
+
+    #resultat {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      padding: 15px;
+      border-radius: 10px;
+      background: #eff6ff;
+    }
+
+    .recap {
+      background: linear-gradient(135deg, #eff6ff, #f0fdf4);
+    }
+
+    .navigation {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      margin: 30px 0;
+    }
+
+    .navigation a {
+      text-decoration: none;
+      background: #111827;
+      color: white;
+      padding: 13px 20px;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+
+    .navigation a:hover {
+      background: #2563eb;
+    }
+
+    footer {
+      background: #111827;
+      color: white;
+      text-align: center;
+      padding: 25px;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 700px) {
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      main {
+        width: 92%;
+      }
+
+      .section {
+        padding: 20px;
+      }
+
+      .rule-table {
+        font-size: 0.9rem;
+      }
+
+      .navigation {
+        flex-direction: column;
+      }
+
+      .navigation a {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+
+  <div class="logo">
+    Z.<span>Éducation</span>
+  </div>
+
+  <a href="cm2-francais-cours.html" class="back">
+    ← Retour aux cours
+  </a>
+
+</header>
+
+
+<section class="hero">
+
+  <div class="badge">
+    Français CM2 • Chapitre 14
+  </div>
+
+  <h1>Orthographe</h1>
+
+  <p>
+    Apprends à éviter les principales erreurs d'orthographe,
+    à maîtriser les homophones et à accorder correctement les mots.
+  </p>
+
+</section>
+
+
+<main>
+
+
+  <!-- 1 -->
+
+  <section class="section">
+
+    <h2>📘 1. Pourquoi apprendre l'orthographe ?</h2>
+
+    <div class="definition">
+
+      <strong>Définition :</strong>
+
+      L'orthographe est l'ensemble des règles qui permettent
+      d'écrire correctement les mots et les phrases d'une langue.
+
+    </div>
+
+    <p>
+      Une bonne orthographe permet de communiquer clairement
+      et de mieux comprendre les textes.
+    </p>
+
+    <div class="example">
+
+      <strong>Exemple :</strong>
+
+      <br><br>
+
+      ❌ Les enfant joue dans la cour.
+
+      <br>
+
+      ✅ Les <strong>enfants jouent</strong> dans la cour.
+
+    </div>
+
+  </section>
+
+
+  <!-- 2 -->
+
+  <section class="section">
+
+    <h2>🔤 2. Les homophones grammaticaux</h2>
+
+    <p>
+      Les homophones sont des mots qui se prononcent de la même manière
+      mais qui n'ont pas le même sens ni nécessairement la même orthographe.
+    </p>
+
+    <h3>A / À</h3>
+
+    <div class="example">
+
+      <strong>a</strong> = verbe avoir.
+
+      <br>
+      Il <strong>a</strong> un livre.
+
+      <br><br>
+
+      <strong>à</strong> = préposition.
+
+      <br>
+      Il va <strong>à</strong> l'école.
+
+    </div>
+
+    <p>
+      <strong>Astuce :</strong> si on peut remplacer « a » par « avait »,
+      on écrit <strong>a</strong>.
+    </p>
+
+
+    <h3>CE / SE</h3>
+
+    <div class="example">
+
+      <strong>ce</strong> accompagne généralement un nom.
+
+      <br>
+      <strong>Ce</strong> garçon travaille.
+
+      <br><br>
+
+      <strong>se</strong> accompagne un verbe pronominal.
+
+      <br>
+      Il <strong>se</strong> lave.
+
+    </div>
+
+
+    <h3>MAIS / MES / MAI / METS / MET</h3>
+
+    <div class="example">
+
+      <strong>mais</strong> → opposition.
+
+      <br>
+      Je veux venir, <strong>mais</strong> je suis malade.
+
+      <br><br>
+
+      <strong>mes</strong> → déterminant possessif.
+
+      <br>
+      <strong>Mes</strong> livres sont sur la table.
+
+      <br><br>
+
+      <strong>mai</strong> → mois de l'année.
+
+      <br>
+      Nous sommes au mois de <strong>mai</strong>.
+
+      <br><br>
+
+      <strong>mets</strong> / <strong>met</strong> → verbe mettre.
+
+    </div>
+
+
+    <h3>QUAND / QUANT / QU'EN</h3>
+
+    <div class="example">
+
+      <strong>quand</strong> → indique généralement le temps.
+
+      <br>
+      <strong>Quand</strong> viendras-tu ?
+
+      <br><br>
+
+      <strong>quant</strong> → généralement dans « quant à ».
+
+      <br>
+      <strong>Quant à</strong> moi, je reste ici.
+
+      <br><br>
+
+      <strong>qu'en</strong> → que + en.
+
+      <br>
+      Je ne sais <strong>qu'en</strong> penser.
+
+    </div>
+
+  </section>
+
+
+  <!-- 3 -->
+
+  <section class="section">
+
+    <h2>👥 3. L'accord sujet-verbe</h2>
+
+    <div class="definition">
+
+      Le verbe s'accorde avec son sujet en
+      <strong>personne</strong> et en <strong>nombre</strong>.
+
+    </div>
+
+    <div class="example">
+
+      <strong>Le garçon joue.</strong>
+
+      <br>
+
+      Sujet singulier → verbe singulier.
+
+      <br><br>
+
+      <strong>Les garçons jouent.</strong>
+
+      <br>
+
+      Sujet pluriel → verbe pluriel.
+
+    </div>
+
+    <h3>Attention au sujet éloigné</h3>
+
+    <div class="example">
+
+      « Les enfants de la classe <strong>travaillent</strong>. »
+
+      <br><br>
+
+      Le sujet est « Les enfants », même si « de la classe »
+      se trouve entre le sujet et le verbe.
+
+    </div>
+
+    <div class="warning">
+
+      <strong>Astuce :</strong>
+
+      Pour trouver le sujet, pose la question :
+
+      <br><br>
+
+      <strong>Qui est-ce qui + verbe ?</strong>
+
+    </div>
+
+  </section>
+
+
+  <!-- 4 -->
+
+  <section class="section">
+
+    <h2>📝 4. L'accord du participe passé</h2>
+
+    <h3>Avec l'auxiliaire être</h3>
+
+    <div class="example">
+
+      Le participe passé s'accorde avec le sujet.
+
+      <br><br>
+
+      Elle est <strong>partie</strong>.<br>
+      Ils sont <strong>partis</strong>.<br>
+      Elles sont <strong>parties</strong>.
+
+    </div>
+
+
+    <h3>Avec l'auxiliaire avoir</h3>
+
+    <p>
+      Avec l'auxiliaire <strong>avoir</strong>, le participe passé
+      ne s'accorde généralement pas avec le sujet.
+    </p>
+
+    <div class="example">
+
+      Elle a <strong>mangé</strong> une pomme.
+
+      <br><br>
+
+      Ils ont <strong>terminé</strong> leur travail.
+
+    </div>
+
+    <div class="warning">
+
+      <strong>À retenir pour le CM2 :</strong>
+
+      L'accord du participe passé avec avoir devient plus complexe
+      lorsque le COD est placé avant le verbe.
+
+      <br><br>
+
+      Exemple :
+
+      <br>
+
+      « Les pommes qu'elle a <strong>mangées</strong>. »
+
+    </div>
+
+  </section>
+
+
+  <!-- 5 -->
+
+  <section class="section">
+
+    <h2>👑 5. LEUR / LEURS</h2>
+
+    <div class="example">
+
+      <strong>leur</strong> est singulier lorsqu'il accompagne
+      un nom singulier.
+
+      <br>
+
+      Ils ont pris <strong>leur</strong> voiture.
+
+      <br><br>
+
+      <strong>leurs</strong> accompagne un nom pluriel.
+
+      <br>
+
+      Ils ont pris <strong>leurs</strong> voitures.
+
+    </div>
+
+    <div class="definition">
+
+      <strong>Astuce :</strong>
+
+      Regarde le nom qui suit.
+
+      <br><br>
+
+      voiture → leur voiture<br>
+      voitures → leurs voitures
+
+    </div>
+
+  </section>
+
+
+  <!-- 6 -->
+
+  <section class="section">
+
+    <h2>🚫 6. NI / N'Y</h2>
+
+    <div class="example">
+
+      <strong>ni</strong> sert notamment à exprimer une négation.
+
+      <br>
+
+      Je ne veux <strong>ni</strong> pain <strong>ni</strong> riz.
+
+      <br><br>
+
+      <strong>n'y</strong> = ne + y.
+
+      <br>
+
+      Il <strong>n'y</strong> va jamais.
+
+    </div>
+
+  </section>
+
+
+  <!-- 7 -->
+
+  <section class="section">
+
+    <h2>🔄 7. SI / S'Y</h2>
+
+    <div class="example">
+
+      <strong>si</strong> peut exprimer une condition.
+
+      <br>
+
+      <strong>Si</strong> tu travailles, tu réussiras.
+
+      <br><br>
+
+      <strong>s'y</strong> = se + y.
+
+      <br>
+
+      Il <strong>s'y</strong> rend chaque matin.
+
+    </div>
+
+  </section>
+
+
+  <!-- 8 -->
+
+  <section class="section">
+
+    <h2>🎨 8. L'accord des couleurs</h2>
+
+    <p>
+      Les adjectifs de couleur s'accordent généralement avec
+      le nom qu'ils qualifient.
+    </p>
+
+    <div class="example">
+
+      une robe <strong>rouge</strong><br>
+      des robes <strong>rouges</strong><br>
+      un pantalon <strong>vert</strong><br>
+      des pantalons <strong>verts</strong>
+
+    </div>
+
+    <p>
+      Certains noms employés comme couleurs sont généralement
+      invariables.
+    </p>
+
+    <div class="example">
+
+      des robes <strong>orange</strong><br>
+      des chaussures <strong>marron</strong>
+
+    </div>
+
+  </section>
+
+
+  <!-- 9 -->
+
+  <section class="section">
+
+    <h2>🔤 9. Le pluriel des noms</h2>
+
+    <table class="rule-table">
+
+      <tr>
+        <th>Terminaison</th>
+        <th>Règle</th>
+        <th>Exemple</th>
+      </tr>
+
+      <tr>
+        <td>-eau</td>
+        <td>Souvent + x</td>
+        <td>un bateau → des bateaux</td>
+      </tr>
+
+      <tr>
+        <td>-au</td>
+        <td>Souvent + x</td>
+        <td>un tuyau → des tuyaux</td>
+      </tr>
+
+      <tr>
+        <td>-eu</td>
+        <td>Souvent + x</td>
+        <td>un jeu → des jeux</td>
+      </tr>
+
+      <tr>
+        <td>-al</td>
+        <td>Souvent → -aux</td>
+        <td>un animal → des animaux</td>
+      </tr>
+
+      <tr>
+        <td>-ail</td>
+        <td>Souvent + s</td>
+        <td>un détail → des détails</td>
+      </tr>
+
+      <tr>
+        <td>-ou</td>
+        <td>Généralement + s</td>
+        <td>un trou → des trous</td>
+      </tr>
+
+    </table>
+
+    <div class="warning">
+
+      Certaines exceptions doivent être apprises.
+
+      <br><br>
+
+      Exemple :
+
+      <strong>un bijou → des bijoux</strong>.
+
+    </div>
+
+  </section>
+
+
+  <!-- 10 -->
+
+  <section class="section">
+
+    <h2>🧩 10. Les noms composés</h2>
+
+    <p>
+      Un nom composé est formé de plusieurs mots.
+    </p>
+
+    <div class="example">
+
+      un arc-en-ciel → des arcs-en-ciel<br>
+      un porte-monnaie → des porte-monnaie<br>
+      un chou-fleur → des choux-fleurs
+
+    </div>
+
+    <p>
+      Le pluriel des noms composés dépend de leur composition.
+      Il faut donc connaître les règles et les cas particuliers.
+    </p>
+
+  </section>
+
+
+  <!-- 11 -->
+
+  <section class="section">
+
+    <h2>⚖️ 11. Tout devant un adjectif</h2>
+
+    <p>
+      Le mot <strong>tout</strong> peut être déterminant, pronom
+      ou adverbe.
+    </p>
+
+    <div class="example">
+
+      <strong>Tout</strong> le monde est là.
+
+      <br><br>
+
+      Elles sont <strong>toutes</strong> petites.
+
+    </div>
+
+    <p>
+      Lorsqu'il est adverbe devant un adjectif féminin commençant
+      par une consonne ou un « h » aspiré, « tout » peut s'accorder.
+    </p>
+
+    <div class="example">
+
+      Elle est <strong>toute</strong> petite.
+
+      <br>
+
+      Elles sont <strong>toutes</strong> petites.
+
+    </div>
+
+  </section>
+
+
+  <!-- 12 -->
+
+  <section class="section">
+
+    <h2>🧠 12. Participe présent et adjectif verbal</h2>
+
+    <div class="definition">
+
+      Le participe présent est généralement invariable,
+      tandis que l'adjectif verbal peut s'accorder.
+
+    </div>
+
+    <div class="example">
+
+      Les enfants <strong>fatiguant</strong> leurs parents
+      sont partis.
+
+      <br><br>
+
+      Une histoire <strong>fatigante</strong>.
+
+    </div>
+
+    <p>
+      Il faut observer le rôle du mot dans la phrase.
+    </p>
+
+  </section>
+
+
+  <!-- 13 -->
+
+  <section class="section">
+
+    <h2>✏️ 13. Exercices</h2>
+
+
+    <div class="exercise">
+
+      <h3>Exercice 1 — A ou À ?</h3>
+
+      <p>
+        Complète avec <strong>a</strong> ou <strong>à</strong>.
+      </p>
+
+      <p>
+        1. Paul ___ un livre.<br>
+        2. Il va ___ l'école.<br>
+        3. Marie ___ une nouvelle robe.<br>
+        4. Nous allons ___ Abidjan.
+      </p>
+
+      <button onclick="toggleCorrection('corr1')">
+        Voir la correction
+      </button>
+
+      <div id="corr1" class="correction">
+
+        1. Paul <strong>a</strong> un livre.<br>
+        2. Il va <strong>à</strong> l'école.<br>
+        3. Marie <strong>a</strong> une nouvelle robe.<br>
+        4. Nous allons <strong>à</strong> Abidjan.
+
+      </div>
+
+    </div>
+
+
+    <div class="exercise">
+
+      <h3>Exercice 2 — Ce ou Se ?</h3>
+
+      <p>
+        1. ___ garçon travaille.<br>
+        2. Il ___ lave.<br>
+        3. ___ livre est intéressant.<br>
+        4. Elle ___ prépare.
+      </p>
+
+      <button onclick="toggleCorrection('corr2')">
+        Voir la correction
+      </button>
+
+      <div id="corr2" class="correction">
+
+        1. <strong>Ce</strong> garçon travaille.<br>
+        2. Il <strong>se</strong> lave.<br>
+        3. <strong>Ce</strong> livre est intéressant.<br>
+        4. Elle <strong>se</strong> prépare.
+
+      </div>
+
+    </div>
+
+
+    <div class="exercise">
+
+      <h3>Exercice 3 — Leur ou leurs ?</h3>
+
+      <p>
+        1. Ils prennent ___ voiture.<br>
+        2. Ils rangent ___ livres.<br>
+        3. Les élèves ouvrent ___ cahier.<br>
+        4. Les enfants prennent ___ sacs.
+      </p>
+
+      <button onclick="toggleCorrection('corr3')">
+        Voir la correction
+      </button>
+
+      <div id="corr3" class="correction">
+
+        1. <strong>leur</strong> voiture.<br>
+        2. <strong>leurs</strong> livres.<br>
+        3. <strong>leur</strong> cahier.<br>
+        4. <strong>leurs</strong> sacs.
+
+      </div>
+
+    </div>
+
+
+    <div class="exercise">
+
+      <h3>Exercice 4 — Accord sujet-verbe</h3>
+
+      <p>
+        Choisis la bonne forme.
+      </p>
+
+      <p>
+        1. Les enfants (joue / jouent).<br>
+        2. Le maître (explique / expliquent).<br>
+        3. Les filles (chante / chantent).<br>
+        4. Mon frère et ma sœur (vient / viennent).
+      </p>
+
+      <button onclick="toggleCorrection('corr4')">
+        Voir la correction
+      </button>
+
+      <div id="corr4" class="correction">
+
+        1. Les enfants <strong>jouent</strong>.<br>
+        2. Le maître <strong>explique</strong>.<br>
+        3. Les filles <strong>chantent</strong>.<br>
+        4. Mon frère et ma sœur <strong>viennent</strong>.
+
+      </div>
+
+    </div>
+
+
+    <div class="exercise">
+
+      <h3>Exercice 5 — Participe passé</h3>
+
+      <p>
+        Complète correctement.
+      </p>
+
+      <p>
+        1. Elles sont (parti) __________.<br>
+        2. Il est (arrivé) __________.<br>
+        3. Nous avons (mangé) __________.<br>
+        4. Les filles sont (venu) __________.
+      </p>
+
+      <button onclick="toggleCorrection('corr5')">
+        Voir la correction
+      </button>
+
+      <div id="corr5" class="correction">
+
+        1. Elles sont <strong>parties</strong>.<br>
+        2. Il est <strong>arrivé</strong>.<br>
+        3. Nous avons <strong>mangé</strong>.<br>
+        4. Les filles sont <strong>venues</strong>.
+
+      </div>
+
+    </div>
+
+
+    <div class="exercise">
+
+      <h3>Exercice 6 — Correction de phrase</h3>
+
+      <p>
+        Corrige cette phrase :
+      </p>
+
+      <div class="example">
+
+        « Les enfant mange des pomme rouge. »
+
+      </div>
+
+      <button onclick="toggleCorrection('corr6')">
+        Voir la correction
+      </button>
+
+      <div id="corr6" class="correction">
+
+        « Les <strong>enfants mangent des pommes rouges</strong>. »
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- QUIZ -->
+
+  <section class="section">
+
+    <h2>🎯 14. Quiz — Teste tes connaissances</h2>
+
+    <form id="quiz">
+
+
+      <div class="quiz-question">
+
+        <p>
+          <strong>1. Quelle phrase est correcte ?</strong>
+        </p>
+
+        <label>
+          <input type="radio" name="q1" value="a">
+          Il a l'école.
+        </label>
+
+        <label>
+          <input type="radio" name="q1" value="b">
+          Il va à l'école.
+        </label>
+
+        <label>
+          <input type="radio" name="q1" value="c">
+          Il vas à l'école.
+        </label>
+
+      </div>
+
+
+      <div class="quiz-question">
+
+        <p>
+          <strong>2. Quelle phrase est correcte ?</strong>
+        </p>
+
+        <label>
+          <input type="radio" name="q2" value="a">
+          Les enfants joue.
+        </label>
+
+        <label>
+          <input type="radio" name="q2" value="b">
+          Les enfants jouent.
+        </label>
+
+        <label>
+          <input type="radio" name="q2" value="c">
+          Les enfants joues.
+        </label>
+
+      </div>
+
+
+      <div class="quiz-question">
+
+        <p>
+          <strong>3. Quelle phrase est correcte ?</strong>
+        </p>
+
+        <label>
+          <input type="radio" name="q3" value="a">
+          Elles sont parti.
+        </label>
+
+        <label>
+          <input type="radio" name="q3" value="b">
+          Elles sont parties.
+        </label>
+
+        <label>
+          <input type="radio" name="q3" value="c">
+          Elles sont partis.
+        </label>
+
+      </div>
+
+
+      <div class="quiz-question">
+
+        <p>
+          <strong>4. Quelle forme convient ? « Ils prennent ___ livres. »</strong>
+        </p>
+
+        <label>
+          <input type="radio" name="q4" value="a">
+          leur
+        </label>
+
+        <label>
+          <input type="radio" name="q4" value="b">
+          leurs
+        </label>
+
+        <label>
+          <input type="radio" name="q4" value="c">
+          leur's
+        </label>
+
+      </div>
+
+
+      <div class="quiz-question">
+
+        <p>
+          <strong>5. Quel est le pluriel correct de « animal » ?</strong>
+        </p>
+
+        <label>
+          <input type="radio" name="q5" value="a">
+          animals
+        </label>
+
+        <label>
+          <input type="radio" name="q5" value="b">
+          animails
+        </label>
+
+        <label>
+          <input type="radio" name="q5" value="c">
+          animaux
+        </label>
+
+      </div>
+
+
+      <button type="button" onclick="corrigerQuiz()">
+        Valider le quiz
+      </button>
+
+      <div id="resultat"></div>
+
+    </form>
+
+  </section>
+
+
+  <!-- RECAP -->
+
+  <section class="section recap">
+
+    <h2>📚 15. À retenir</h2>
+
+    <ul>
+
+      <li>
+        « a » est le verbe avoir ; « à » est une préposition.
+      </li>
+
+      <li>
+        « ce » accompagne généralement un nom ; « se » accompagne
+        un verbe pronominal.
+      </li>
+
+      <li>
+        « leur » et « leurs » s'accordent avec le nom qui suit.
+      </li>
+
+      <li>
+        Le sujet commande l'accord du verbe.
+      </li>
+
+      <li>
+        Avec être, le participe passé s'accorde avec le sujet.
+      </li>
+
+      <li>
+        Il faut connaître les principales règles du pluriel.
+      </li>
+
+      <li>
+        Les adjectifs qualificatifs s'accordent généralement
+        avec le nom qu'ils qualifient.
+      </li>
+
+      <li>
+        Une bonne orthographe rend le texte plus clair et plus précis.
+      </li>
+
+    </ul>
+
+  </section>
+
+
+  <!-- NAVIGATION -->
+
+  <div class="navigation">
+
+    <a href="cm2-francais-conjugaison.html">
+      ← Chapitre 13 : Conjugaison
+    </a>
+
+    <a href="cm2-francais-vocabulaire.html">
+      Chapitre 15 : Vocabulaire →
+    </a>
+
+  </div>
+
+
+</main>
+
+
+<footer>
+
+  <p><strong>Z.Éducation</strong></p>
+
+  <p>
+    Apprendre • Comprendre • Réussir
+  </p>
+
+  <p>
+    Français CM2
+  </p>
+
+</footer>
+
+
+<script>
+
+  function toggleCorrection(id) {
+
+    const element = document.getElementById(id);
+
+    if (element.style.display === "block") {
+
+      element.style.display = "none";
+
+    } else {
+
+      element.style.display = "block";
+
+    }
+
+  }
+
+
+  function corrigerQuiz() {
+
+    const bonnesReponses = {
+
+      q1: "b",
+      q2: "b",
+      q3: "b",
+      q4: "b",
+      q5: "c"
+
+    };
+
+    let score = 0;
+
+    for (let question in bonnesReponses) {
+
+      const reponse = document.querySelector(
+        'input[name="' + question + '"]:checked'
+      );
+
+      if (
+        reponse &&
+        reponse.value === bonnesReponses[question]
+      ) {
+
+        score++;
+
+      }
+
+    }
+
+    const resultat = document.getElementById("resultat");
+
+    if (score === 5) {
+
+      resultat.innerHTML =
+        "🎉 Excellent ! 5/5. Tu maîtrises très bien l'orthographe !";
+
+    } else if (score >= 3) {
+
+      resultat.innerHTML =
+        "👏 Bien joué ! Tu as obtenu " +
+        score +
+        "/5. Continue tes révisions.";
+
+    } else {
+
+      resultat.innerHTML =
+        "📚 Tu as obtenu " +
+        score +
+        "/5. Relis le cours et recommence le quiz.";
+
+    }
+
+  }
+
+</script>
+
+</body>
+</html>
