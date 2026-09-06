@@ -1365,5 +1365,23 @@
 
   </script>
 
-</body>
+<script>
+async function chargerVisiteurs() {
+    try {
+        const response = await fetch(
+            "https://api.counterapi.dev/v1/z-education/visites/up"
+        );
+
+        const data = await response.json();
+
+        document.getElementById("visitor-count").textContent =
+            data.count.toLocaleString("fr-FR");
+
+    } catch (error) {
+        document.getElementById("visitor-count").textContent = "—";
+    }
+}
+
+chargerVisiteurs();
+</script></body>
 </html>
