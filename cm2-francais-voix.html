@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>La voix active et la voix passive - Français CM2 | Z.Éducation</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f7fb;
+      color: #172033;
+      line-height: 1.7;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0f3d75, #1769aa);
+      color: white;
+      padding: 18px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .logo span {
+      color: #ffd54a;
+    }
+
+    .back-btn {
+      color: white;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.5);
+      padding: 8px 15px;
+      border-radius: 20px;
+      transition: 0.3s;
+    }
+
+    .back-btn:hover {
+      background: white;
+      color: #0f3d75;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #e8f2ff, #ffffff);
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .chapter-number {
+      display: inline-block;
+      background: #1769aa;
+      color: white;
+      padding: 7px 16px;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      color: #0f3d75;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      max-width: 750px;
+      margin: auto;
+      font-size: 1.1rem;
+      color: #536174;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    section {
+      background: white;
+      padding: 30px;
+      margin-bottom: 25px;
+      border-radius: 16px;
+      box-shadow: 0 5px 18px rgba(20, 50, 90, 0.08);
+    }
+
+    h2 {
+      color: #0f3d75;
+      margin-bottom: 18px;
+      font-size: 1.7rem;
+    }
+
+    h3 {
+      color: #1769aa;
+      margin: 22px 0 10px;
+    }
+
+    p {
+      margin-bottom: 12px;
+    }
+
+    ul, ol {
+      margin: 12px 0 12px 25px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .definition {
+      background: #edf6ff;
+      border-left: 5px solid #1769aa;
+      padding: 18px;
+      border-radius: 8px;
+      margin: 15px 0;
+    }
+
+    .important {
+      background: #fff7dc;
+      border-left: 5px solid #e4ad00;
+      padding: 18px;
+      border-radius: 8px;
+      margin: 15px 0;
+    }
+
+    .danger {
+      background: #fff0f0;
+      border-left: 5px solid #d64545;
+      padding: 18px;
+      border-radius: 8px;
+      margin: 15px 0;
+    }
+
+    .example {
+      background: #f5f7fa;
+      padding: 16px;
+      border-radius: 10px;
+      margin: 12px 0;
+      border: 1px solid #e1e7ef;
+    }
+
+    .active {
+      color: #1769aa;
+      font-weight: bold;
+    }
+
+    .passive {
+      color: #b24b00;
+      font-weight: bold;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+
+    th, td {
+      border: 1px solid #dce3eb;
+      padding: 12px;
+      text-align: left;
+    }
+
+    th {
+      background: #1769aa;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background: #f7f9fc;
+    }
+
+    .step {
+      background: #f7f9fc;
+      border-left: 4px solid #1769aa;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 8px;
+    }
+
+    .exercise {
+      background: #fafcff;
+      border: 1px solid #dfe7f1;
+      padding: 20px;
+      border-radius: 12px;
+      margin: 15px 0;
+    }
+
+    .exercise strong {
+      color: #0f3d75;
+    }
+
+    button {
+      border: none;
+      background: #1769aa;
+      color: white;
+      padding: 10px 17px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background: #0f3d75;
+    }
+
+    .correction {
+      display: none;
+      margin-top: 15px;
+      padding: 15px;
+      background: #eaf8ee;
+      border-left: 4px solid #2e8b57;
+      border-radius: 8px;
+    }
+
+    .quiz-question {
+      background: #f7f9fc;
+      padding: 18px;
+      margin: 15px 0;
+      border-radius: 10px;
+    }
+
+    .quiz-question label {
+      display: block;
+      margin: 8px 0;
+      cursor: pointer;
+    }
+
+    .result {
+      margin-top: 20px;
+      padding: 18px;
+      border-radius: 10px;
+      background: #edf6ff;
+      font-weight: bold;
+      display: none;
+    }
+
+    .recap {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .recap-card {
+      padding: 18px;
+      border-radius: 12px;
+      background: #f4f8fd;
+      border: 1px solid #dce6f2;
+    }
+
+    .recap-card h3 {
+      margin-top: 0;
+    }
+
+    .navigation {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      margin: 30px 0;
+    }
+
+    .navigation a {
+      flex: 1;
+      text-align: center;
+      padding: 14px;
+      background: #1769aa;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+
+    .navigation a:hover {
+      background: #0f3d75;
+    }
+
+    footer {
+      text-align: center;
+      background: #0f3d75;
+      color: white;
+      padding: 25px;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 700px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      section {
+        padding: 22px;
+      }
+
+      .recap {
+        grid-template-columns: 1fr;
+      }
+
+      .navigation {
+        flex-direction: column;
+      }
+
+      table {
+        font-size: 0.9rem;
+      }
+
+      header {
+        padding: 15px 4%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">Z.<span>Éducation</span></div>
+  <a href="cm2-francais-discours.html" class="back-btn">
+    ← Retour au chapitre 9
+  </a>
+</header>
+
+<div class="hero">
+  <div class="chapter-number">CHAPITRE 10 • FRANÇAIS CM2</div>
+
+  <h1>La voix active et la voix passive</h1>
+
+  <p>
+    Apprends à reconnaître la voix active et la voix passive,
+    à transformer une phrase active en phrase passive et inversement.
+  </p>
+</div>
+
+<main>
+
+  <!-- OBJECTIF -->
+  <section>
+    <h2>🎯 Objectifs du chapitre</h2>
+
+    <p>À la fin de cette leçon, tu dois être capable de :</p>
+
+    <ul>
+      <li>reconnaître une phrase à la voix active ;</li>
+      <li>reconnaître une phrase à la voix passive ;</li>
+      <li>identifier le sujet, le verbe et le complément d’agent ;</li>
+      <li>transformer une phrase active en phrase passive ;</li>
+      <li>transformer une phrase passive en phrase active ;</li>
+      <li>accorder correctement le participe passé à la voix passive.</li>
+    </ul>
+  </section>
+
+
+  <!-- DEFINITION -->
+  <section>
+    <h2>📘 1. Qu'est-ce que la voix ?</h2>
+
+    <div class="definition">
+      <strong>La voix du verbe</strong> indique la relation entre le sujet
+      et l'action exprimée par le verbe.
+    </div>
+
+    <p>
+      Il existe principalement deux voix à connaître :
+    </p>
+
+    <ul>
+      <li><strong>la voix active</strong> ;</li>
+      <li><strong>la voix passive</strong>.</li>
+    </ul>
+  </section>
+
+
+  <!-- VOIX ACTIVE -->
+  <section>
+    <h2>🔵 2. La voix active</h2>
+
+    <div class="definition">
+      À la <strong>voix active</strong>, le sujet fait ou réalise l'action
+      exprimée par le verbe.
+    </div>
+
+    <div class="example">
+      <p>
+        <span class="active">Le chat</span> mange la souris.
+      </p>
+
+      <p>
+        Le sujet <strong>« Le chat »</strong> réalise l'action de manger.
+      </p>
+    </div>
+
+    <p>Dans cette phrase :</p>
+
+    <ul>
+      <li><strong>Sujet :</strong> le chat</li>
+      <li><strong>Verbe :</strong> mange</li>
+      <li><strong>COD :</strong> la souris</li>
+    </ul>
+
+    <div class="important">
+      <strong>À retenir :</strong>
+      à la voix active, le sujet est celui qui accomplit l'action.
+    </div>
+  </section>
+
+
+  <!-- VOIX PASSIVE -->
+  <section>
+    <h2>🟠 3. La voix passive</h2>
+
+    <div class="definition">
+      À la <strong>voix passive</strong>, le sujet ne réalise pas l'action.
+      Il la subit.
+    </div>
+
+    <div class="example">
+      <p>
+        <span class="passive">La souris</span> est mangée par le chat.
+      </p>
+    </div>
+
+    <p>
+      Ici, la souris ne mange pas. Elle <strong>subit</strong> l'action
+      de manger.
+    </p>
+
+    <p>
+      <strong>« par le chat »</strong> indique celui qui réalise l'action.
+      On appelle ce groupe le <strong>complément d'agent</strong>.
+    </p>
+  </section>
+
+
+  <!-- COMPARAISON -->
+  <section>
+    <h2>⚖️ 4. Active ou passive ?</h2>
+
+    <table>
+      <tr>
+        <th>Voix active</th>
+        <th>Voix passive</th>
+      </tr>
+
+      <tr>
+        <td>Le professeur corrige les copies.</td>
+        <td>Les copies sont corrigées par le professeur.</td>
+      </tr>
+
+      <tr>
+        <td>Paul ouvre la porte.</td>
+        <td>La porte est ouverte par Paul.</td>
+      </tr>
+
+      <tr>
+        <td>Les enfants nettoient la classe.</td>
+        <td>La classe est nettoyée par les enfants.</td>
+      </tr>
+    </table>
+
+    <div class="important">
+      Dans la transformation, le <strong>COD de la phrase active</strong>
+      devient généralement le <strong>sujet de la phrase passive</strong>.
+    </div>
+  </section>
+
+
+  <!-- TRANSFORMATION -->
+  <section>
+    <h2>🔄 5. Transformer une phrase active en phrase passive</h2>
+
+    <p>
+      Pour transformer une phrase active en phrase passive, suis ces étapes :
+    </p>
+
+    <div class="step">
+      <strong>Étape 1 :</strong>
+      trouve le COD de la phrase active.
+    </div>
+
+    <div class="step">
+      <strong>Étape 2 :</strong>
+      le COD devient le sujet de la phrase passive.
+    </div>
+
+    <div class="step">
+      <strong>Étape 3 :</strong>
+      le sujet de la phrase active devient le complément d'agent.
+    </div>
+
+    <div class="step">
+      <strong>Étape 4 :</strong>
+      utilise l'auxiliaire <strong>être</strong> suivi du participe passé.
+    </div>
+
+    <div class="step">
+      <strong>Étape 5 :</strong>
+      conserve le temps du verbe.
+    </div>
+
+    <h3>Exemple</h3>
+
+    <div class="example">
+      <p>
+        Active :
+        <strong>Le jardinier arrose les fleurs.</strong>
+      </p>
+
+      <p>
+        COD : <strong>les fleurs</strong>
+      </p>
+
+      <p>
+        Passive :
+        <strong>Les fleurs sont arrosées par le jardinier.</strong>
+      </p>
+    </div>
+  </section>
+
+
+  <!-- TEMPS -->
+  <section>
+    <h2>⏱️ 6. La voix passive à différents temps</h2>
+
+    <p>
+      Le temps utilisé dans la phrase active doit être conservé dans
+      la phrase passive.
+    </p>
+
+    <table>
+      <tr>
+        <th>Temps</th>
+        <th>Voix active</th>
+        <th>Voix passive</th>
+      </tr>
+
+      <tr>
+        <td>Présent</td>
+        <td>Le professeur corrige les copies.</td>
+        <td>Les copies sont corrigées par le professeur.</td>
+      </tr>
+
+      <tr>
+        <td>Imparfait</td>
+        <td>Le professeur corrigeait les copies.</td>
+        <td>Les copies étaient corrigées par le professeur.</td>
+      </tr>
+
+      <tr>
+        <td>Futur</td>
+        <td>Le professeur corrigera les copies.</td>
+        <td>Les copies seront corrigées par le professeur.</td>
+      </tr>
+
+      <tr>
+        <td>Passé composé</td>
+        <td>Le professeur a corrigé les copies.</td>
+        <td>Les copies ont été corrigées par le professeur.</td>
+      </tr>
+    </table>
+  </section>
+
+
+  <!-- ACCORD -->
+  <section>
+    <h2>✏️ 7. L'accord du participe passé</h2>
+
+    <div class="definition">
+      À la voix passive, le participe passé s'accorde avec le
+      <strong>sujet</strong>.
+    </div>
+
+    <div class="example">
+      <p>
+        Le garçon est <strong>félicité</strong>.
+      </p>
+
+      <p>
+        La fille est <strong>félicitée</strong>.
+      </p>
+
+      <p>
+        Les garçons sont <strong>félicités</strong>.
+      </p>
+
+      <p>
+        Les filles sont <strong>félicitées</strong>.
+      </p>
+    </div>
+
+    <div class="important">
+      <strong>Astuce :</strong>
+      regarde toujours le sujet pour savoir comment accorder
+      le participe passé.
+    </div>
+  </section>
+
+
+  <!-- COMPLEMENT AGENT -->
+  <section>
+    <h2>👤 8. Le complément d'agent</h2>
+
+    <p>
+      Le <strong>complément d'agent</strong> indique généralement
+      qui réalise l'action dans une phrase passive.
+    </p>
+
+    <div class="example">
+      <p>
+        La lettre est écrite <strong>par Amina</strong>.
+      </p>
+
+      <p>
+        « par Amina » est le complément d'agent.
+      </p>
+    </div>
+
+    <p>
+      Il est souvent introduit par la préposition <strong>par</strong>.
+      Dans certains cas, on peut rencontrer <strong>de</strong>.
+    </p>
+
+    <div class="example">
+      <p>
+        Cette maison est entourée <strong>de grands arbres</strong>.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- PASSIVE VERS ACTIVE -->
+  <section>
+    <h2>🔁 9. Transformer la voix passive en voix active</h2>
+
+    <p>Pour revenir à la voix active :</p>
+
+    <div class="step">
+      Le sujet de la phrase passive devient le COD.
+    </div>
+
+    <div class="step">
+      Le complément d'agent devient le sujet.
+    </div>
+
+    <div class="step">
+      On conjugue le verbe à la voix active au même temps.
+    </div>
+
+    <h3>Exemple</h3>
+
+    <div class="example">
+      <p>
+        Passive :
+        <strong>La lettre est écrite par Marie.</strong>
+      </p>
+
+      <p>
+        Active :
+        <strong>Marie écrit la lettre.</strong>
+      </p>
+    </div>
+
+    <h3>Autre exemple</h3>
+
+    <div class="example">
+      <p>
+        Passive :
+        <strong>Les enfants sont félicités par le directeur.</strong>
+      </p>
+
+      <p>
+        Active :
+        <strong>Le directeur félicite les enfants.</strong>
+      </p>
+    </div>
+  </section>
+
+
+  <!-- LIMITES -->
+  <section>
+    <h2>⚠️ 10. Peut-on mettre toutes les phrases au passif ?</h2>
+
+    <p>
+      Non.
+    </p>
+
+    <p>
+      Pour transformer généralement une phrase active en phrase passive,
+      il faut que le verbe possède un <strong>COD</strong>.
+    </p>
+
+    <div class="example">
+      <p>
+        <strong>Paul mange une pomme.</strong>
+      </p>
+
+      <p>
+        COD : <strong>une pomme</strong>
+      </p>
+
+      <p>
+        Passive :
+        <strong>Une pomme est mangée par Paul.</strong>
+      </p>
+    </div>
+
+    <div class="danger">
+      <strong>Attention :</strong>
+      certains verbes n'ont pas de COD et ne peuvent donc pas être
+      transformés normalement à la voix passive.
+    </div>
+
+    <div class="example">
+      <p>
+        Paul dort.
+      </p>
+
+      <p>
+        Il n'y a pas de COD.
+      </p>
+
+      <p>
+        On ne peut donc pas construire une phrase passive normale
+        à partir de cette phrase.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- METHODE -->
+  <section>
+    <h2>🧠 11. Méthode pour reconnaître la voix passive</h2>
+
+    <p>Pose-toi les questions suivantes :</p>
+
+    <ol>
+      <li>Le sujet réalise-t-il l'action ?</li>
+      <li>Ou bien subit-il l'action ?</li>
+      <li>Le verbe est-il construit avec <strong>être + participe passé</strong> ?</li>
+      <li>Y a-t-il éventuellement un complément d'agent introduit par « par » ?</li>
+    </ol>
+
+    <div class="important">
+      <strong>Exemple :</strong>
+      « Le ballon est lancé par Paul. »
+      <br><br>
+      Le ballon ne lance pas. Il subit l'action.
+      La phrase est donc à la <strong>voix passive</strong>.
+    </div>
+  </section>
+
+
+  <!-- EXERCICES -->
+  <section>
+    <h2>📝 12. Exercices</h2>
+
+    <div class="exercise">
+      <strong>Exercice 1 — Reconnaître la voix</strong>
+
+      <p>Indique si chaque phrase est à la voix active ou passive.</p>
+
+      <ol>
+        <li>Le chat poursuit la souris.</li>
+        <li>La souris est poursuivie par le chat.</li>
+        <li>Les élèves nettoient la classe.</li>
+        <li>La classe est nettoyée par les élèves.</li>
+        <li>Le médecin soigne le malade.</li>
+      </ol>
+
+      <button onclick="toggleCorrection('corr1')">
+        Voir la correction
+      </button>
+
+      <div id="corr1" class="correction">
+        <strong>Correction :</strong>
+
+        <ol>
+          <li>Voix active.</li>
+          <li>Voix passive.</li>
+          <li>Voix active.</li>
+          <li>Voix passive.</li>
+          <li>Voix active.</li>
+        </ol>
+      </div>
+    </div>
+
+
+    <div class="exercise">
+      <strong>Exercice 2 — Active → Passive</strong>
+
+      <p>Transforme les phrases suivantes à la voix passive.</p>
+
+      <ol>
+        <li>Le professeur explique la leçon.</li>
+        <li>Les enfants plantent les arbres.</li>
+        <li>La maman prépare le repas.</li>
+        <li>Le directeur félicite les élèves.</li>
+        <li>Le jardinier arrose les fleurs.</li>
+      </ol>
+
+      <button onclick="toggleCorrection('corr2')">
+        Voir la correction
+      </button>
+
+      <div id="corr2" class="correction">
+        <strong>Correction :</strong>
+
+        <ol>
+          <li>La leçon est expliquée par le professeur.</li>
+          <li>Les arbres sont plantés par les enfants.</li>
+          <li>Le repas est préparé par la maman.</li>
+          <li>Les élèves sont félicités par le directeur.</li>
+          <li>Les fleurs sont arrosées par le jardinier.</li>
+        </ol>
+      </div>
+    </div>
+
+
+    <div class="exercise">
+      <strong>Exercice 3 — Passive → Active</strong>
+
+      <p>Transforme les phrases suivantes à la voix active.</p>
+
+      <ol>
+        <li>Le livre est lu par Awa.</li>
+        <li>La porte est ouverte par le gardien.</li>
+        <li>Les devoirs sont corrigés par le professeur.</li>
+        <li>La maison est construite par les ouvriers.</li>
+        <li>Les enfants sont accompagnés par leurs parents.</li>
+      </ol>
+
+      <button onclick="toggleCorrection('corr3')">
+        Voir la correction
+      </button>
+
+      <div id="corr3" class="correction">
+        <strong>Correction :</strong>
+
+        <ol>
+          <li>Awa lit le livre.</li>
+          <li>Le gardien ouvre la porte.</li>
+          <li>Le professeur corrige les devoirs.</li>
+          <li>Les ouvriers construisent la maison.</li>
+          <li>Leurs parents accompagnent les enfants.</li>
+        </ol>
+      </div>
+    </div>
+
+
+    <div class="exercise">
+      <strong>Exercice 4 — Identifier les éléments</strong>
+
+      <p>
+        Dans la phrase :
+        <strong>« Les fleurs sont arrosées par le jardinier. »</strong>
+      </p>
+
+      <p>Identifie :</p>
+
+      <ul>
+        <li>le sujet ;</li>
+        <li>le verbe ;</li>
+        <li>le complément d'agent.</li>
+      </ul>
+
+      <button onclick="toggleCorrection('corr4')">
+        Voir la correction
+      </button>
+
+      <div id="corr4" class="correction">
+        <strong>Correction :</strong>
+
+        <ul>
+          <li><strong>Sujet :</strong> les fleurs</li>
+          <li><strong>Verbe :</strong> sont arrosées</li>
+          <li><strong>Complément d'agent :</strong> par le jardinier</li>
+        </ul>
+      </div>
+    </div>
+
+
+    <div class="exercise">
+      <strong>Exercice 5 — Transformations</strong>
+
+      <p>
+        Transforme à la voix passive :
+      </p>
+
+      <p>
+        <strong>« Les élèves ont terminé les exercices. »</strong>
+      </p>
+
+      <button onclick="toggleCorrection('corr5')">
+        Voir la correction
+      </button>
+
+      <div id="corr5" class="correction">
+        <strong>Correction :</strong>
+
+        <p>
+          Les exercices <strong>ont été terminés par les élèves.</strong>
+        </p>
+
+        <p>
+          Le participe passé « terminés » s'accorde avec
+          « les exercices », masculin pluriel.
+        </p>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- QUIZ -->
+  <section>
+    <h2>🎯 13. Quiz interactif</h2>
+
+    <p>
+      Choisis la bonne réponse pour chaque question.
+    </p>
+
+    <div class="quiz-question">
+      <strong>1. Dans la phrase « Paul mange une pomme », quelle est la voix ?</strong>
+
+      <label>
+        <input type="radio" name="q1" value="1">
+        Voix active
+      </label>
+
+      <label>
+        <input type="radio" name="q1" value="0">
+        Voix passive
+      </label>
+    </div>
+
+
+    <div class="quiz-question">
+      <strong>2. Dans « La porte est ouverte par Marie », quel est le sujet ?</strong>
+
+      <label>
+        <input type="radio" name="q2" value="0">
+        Marie
+      </label>
+
+      <label>
+        <input type="radio" name="q2" value="1">
+        La porte
+      </label>
+
+      <label>
+        <input type="radio" name="q2" value="0">
+        Ouverte
+      </label>
+    </div>
+
+
+    <div class="quiz-question">
+      <strong>3. Comment transforme-t-on généralement le COD actif ?</strong>
+
+      <label>
+        <input type="radio" name="q3" value="1">
+        Il devient sujet à la voix passive.
+      </label>
+
+      <label>
+        <input type="radio" name="q3" value="0">
+        Il disparaît toujours.
+      </label>
+
+      <label>
+        <input type="radio" name="q3" value="0">
+        Il devient toujours un adverbe.
+      </label>
+    </div>
+
+
+    <div class="quiz-question">
+      <strong>4. Quelle phrase est à la voix passive ?</strong>
+
+      <label>
+        <input type="radio" name="q4" value="0">
+        Le garçon ouvre la fenêtre.
+      </label>
+
+      <label>
+        <input type="radio" name="q4" value="1">
+        La fenêtre est ouverte par le garçon.
+      </label>
+
+      <label>
+        <input type="radio" name="q4" value="0">
+        Le garçon regarde la fenêtre.
+      </label>
+    </div>
+
+
+    <div class="quiz-question">
+      <strong>5. Dans « Les filles sont félicitées par le professeur », pourquoi écrit-on « félicitées » ?</strong>
+
+      <label>
+        <input type="radio" name="q5" value="1">
+        Parce que le sujet « les filles » est féminin pluriel.
+      </label>
+
+      <label>
+        <input type="radio" name="q5" value="0">
+        Parce que « professeur » est masculin.
+      </label>
+
+      <label>
+        <input type="radio" name="q5" value="0">
+        Parce que tous les participes passés finissent par -ées.
+      </label>
+    </div>
+
+    <button onclick="calculateQuiz()">
+      Vérifier mon score
+    </button>
+
+    <div id="quizResult" class="result"></div>
+  </section>
+
+
+  <!-- RECAP -->
+  <section>
+    <h2>📌 14. À retenir</h2>
+
+    <div class="recap">
+
+      <div class="recap-card">
+        <h3>Voix active</h3>
+        <p>
+          Le sujet réalise l'action.
+        </p>
+
+        <p>
+          Exemple :
+          <strong>Paul ouvre la porte.</strong>
+        </p>
+      </div>
+
+      <div class="recap-card">
+        <h3>Voix passive</h3>
+        <p>
+          Le sujet subit l'action.
+        </p>
+
+        <p>
+          Exemple :
+          <strong>La porte est ouverte par Paul.</strong>
+        </p>
+      </div>
+
+      <div class="recap-card">
+        <h3>Complément d'agent</h3>
+        <p>
+          Il indique généralement celui qui réalise l'action.
+        </p>
+
+        <p>
+          Exemple :
+          <strong>par Paul</strong>
+        </p>
+      </div>
+
+      <div class="recap-card">
+        <h3>Accord</h3>
+        <p>
+          À la voix passive, le participe passé s'accorde avec le sujet.
+        </p>
+
+        <p>
+          Exemple :
+          <strong>Les fleurs sont arrosées.</strong>
+        </p>
+      </div>
+
+    </div>
+
+    <div class="important">
+      <strong>Formule essentielle :</strong>
+      <br><br>
+      Voix passive =
+      <strong>être conjugué + participe passé + complément d'agent</strong>
+    </div>
+  </section>
+
+
+  <!-- NAVIGATION -->
+  <div class="navigation">
+    <a href="cm2-francais-discours.html">
+      ← Chapitre 9 : Discours direct et indirect
+    </a>
+
+    <a href="cm2-francais-analyse-grammaticale.html">
+      Chapitre 11 : Analyse grammaticale →
+    </a>
+  </div>
+
+</main>
+
+
+<footer>
+  <p>
+    <strong>Z.Éducation</strong> — Apprendre • Comprendre • Réussir
+  </p>
+
+  <p>
+    Français CM2 • Chapitre 10
+  </p>
+</footer>
+
+
+<script>
+
+  function toggleCorrection(id) {
+    const element = document.getElementById(id);
+
+    if (element.style.display === "block") {
+      element.style.display = "none";
+    } else {
+      element.style.display = "block";
+    }
+  }
+
+
+  function calculateQuiz() {
+
+    let score = 0;
+
+    const questions = ["q1", "q2", "q3", "q4", "q5"];
+
+    questions.forEach(function(question) {
+
+      const answer = document.querySelector(
+        'input[name="' + question + '"]:checked'
+      );
+
+      if (answer && answer.value === "1") {
+        score++;
+      }
+
+    });
+
+    const result = document.getElementById("quizResult");
+
+    result.style.display = "block";
+
+    if (score === 5) {
+
+      result.innerHTML =
+        "🎉 Excellent ! Tu as obtenu 5/5. Tu maîtrises parfaitement la voix active et la voix passive.";
+
+    } else if (score >= 3) {
+
+      result.innerHTML =
+        "👏 Très bien ! Tu as obtenu " + score + "/5. Relis les points où tu hésites encore.";
+
+    } else {
+
+      result.innerHTML =
+        "📚 Tu as obtenu " + score + "/5. Relis la leçon puis recommence le quiz.";
+
+    }
+
+  }
+
+</script>
+
+</body>
+</html>
