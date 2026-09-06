@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vocabulaire CM2 - Z.Éducation</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fb;
+    color: #1f2937;
+    line-height: 1.7;
+}
+
+header {
+    background: #0f172a;
+    color: white;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #38bdf8;
+}
+
+.back-btn {
+    color: white;
+    text-decoration: none;
+    background: #1e293b;
+    padding: 10px 18px;
+    border-radius: 8px;
+}
+
+.back-btn:hover {
+    background: #334155;
+}
+
+.hero {
+    background: linear-gradient(135deg, #0f172a, #0369a1);
+    color: white;
+    text-align: center;
+    padding: 65px 20px;
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 12px;
+}
+
+.hero p {
+    font-size: 18px;
+    opacity: .95;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+}
+
+.section {
+    background: white;
+    margin-bottom: 25px;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(0,0,0,.06);
+}
+
+.section h2 {
+    color: #0369a1;
+    margin-bottom: 18px;
+    font-size: 27px;
+}
+
+.section h3 {
+    color: #0f172a;
+    margin: 20px 0 10px;
+}
+
+.example {
+    background: #eff6ff;
+    border-left: 5px solid #0284c7;
+    padding: 15px 18px;
+    margin: 15px 0;
+    border-radius: 8px;
+}
+
+.definition {
+    background: #f0fdf4;
+    border-left: 5px solid #16a34a;
+    padding: 18px;
+    margin: 15px 0;
+    border-radius: 8px;
+}
+
+.warning {
+    background: #fff7ed;
+    border-left: 5px solid #f97316;
+    padding: 18px;
+    margin: 15px 0;
+    border-radius: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    border: 1px solid #dbe3ec;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background: #e0f2fe;
+    color: #0f172a;
+}
+
+.exercise {
+    background: #f8fafc;
+    padding: 20px;
+    border-radius: 12px;
+    margin: 15px 0;
+    border: 1px solid #e2e8f0;
+}
+
+.exercise strong {
+    color: #0369a1;
+}
+
+button {
+    background: #0369a1;
+    color: white;
+    border: none;
+    padding: 10px 17px;
+    border-radius: 7px;
+    cursor: pointer;
+    margin-top: 12px;
+}
+
+button:hover {
+    background: #075985;
+}
+
+.correction {
+    display: none;
+    margin-top: 15px;
+    background: #ecfdf5;
+    border-left: 4px solid #16a34a;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.quiz-question {
+    margin: 22px 0;
+    padding: 18px;
+    background: #f8fafc;
+    border-radius: 10px;
+}
+
+.quiz-question label {
+    display: block;
+    margin: 8px 0;
+    cursor: pointer;
+}
+
+#resultat {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #0369a1;
+}
+
+.recap {
+    background: #0f172a;
+    color: white;
+}
+
+.recap h2 {
+    color: #38bdf8;
+}
+
+.recap li {
+    margin: 8px 0;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin: 35px 0;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: white;
+    background: #0369a1;
+    padding: 13px 20px;
+    border-radius: 9px;
+}
+
+.navigation a:hover {
+    background: #075985;
+}
+
+footer {
+    text-align: center;
+    background: #0f172a;
+    color: white;
+    padding: 25px;
+    margin-top: 50px;
+}
+
+@media (max-width: 700px) {
+    .hero h1 {
+        font-size: 31px;
+    }
+
+    .section {
+        padding: 20px;
+    }
+
+    .navigation {
+        flex-direction: column;
+    }
+
+    table {
+        font-size: 14px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Z.<span>Éducation</span></div>
+    <a href="cm2-francais-cours.html" class="back-btn">← Cours de Français</a>
+</header>
+
+<section class="hero">
+    <h1>Vocabulaire CM2</h1>
+    <p>Enrichir son vocabulaire • Comprendre les mots • Bien les utiliser</p>
+</section>
+
+<main class="container">
+
+<!-- INTRODUCTION -->
+<section class="section">
+    <h2>📚 Introduction</h2>
+
+    <p>
+        Le vocabulaire est l'ensemble des mots que nous utilisons pour
+        parler, lire, écrire et comprendre un texte.
+    </p>
+
+    <div class="definition">
+        <strong>À retenir :</strong>
+        Plus on connaît de mots, plus on peut comprendre facilement
+        ce que l'on lit et exprimer précisément ses idées.
+    </div>
+
+    <p>
+        En CM2, nous allons apprendre à reconnaître les relations entre
+        les mots et à comprendre leurs différents sens.
+    </p>
+</section>
+
+
+<!-- 1 SYNONYMES -->
+<section class="section">
+    <h2>1️⃣ Les synonymes</h2>
+
+    <div class="definition">
+        <strong>Définition :</strong>
+        Deux mots sont synonymes lorsqu'ils ont un sens identique
+        ou très proche.
+    </div>
+
+    <p>Exemples :</p>
+
+    <table>
+        <tr>
+            <th>Mot</th>
+            <th>Synonyme</th>
+        </tr>
+        <tr>
+            <td>content</td>
+            <td>heureux</td>
+        </tr>
+        <tr>
+            <td>maison</td>
+            <td>habitation</td>
+        </tr>
+        <tr>
+            <td>commencer</td>
+            <td>débuter</td>
+        </tr>
+        <tr>
+            <td>rapide</td>
+            <td>vite</td>
+        </tr>
+        <tr>
+            <td>terminer</td>
+            <td>achever</td>
+        </tr>
+    </table>
+
+    <div class="warning">
+        <strong>Attention :</strong>
+        Les synonymes ne sont pas toujours interchangeables dans toutes
+        les phrases. Il faut tenir compte du contexte.
+    </div>
+
+    <div class="example">
+        <strong>Exemple :</strong><br>
+        « Cette voiture est rapide. »<br>
+        On peut dire : « Cette voiture est <strong>vive</strong>. »
+    </div>
+</section>
+
+
+<!-- 2 HOMONYMES -->
+<section class="section">
+    <h2>2️⃣ Les homonymes et homophones</h2>
+
+    <div class="definition">
+        <strong>Définition :</strong>
+        Les homonymes sont des mots qui se ressemblent par leur
+        prononciation ou leur forme mais qui n'ont pas le même sens.
+    </div>
+
+    <h3>Les homophones</h3>
+
+    <p>
+        Les homophones se prononcent de la même manière mais
+        s'écrivent souvent différemment.
+    </p>
+
+    <table>
+        <tr>
+            <th>Mot</th>
+            <th>Signification</th>
+            <th>Exemple</th>
+        </tr>
+        <tr>
+            <td>mer</td>
+            <td>étendue d'eau salée</td>
+            <td>La mer est calme.</td>
+        </tr>
+        <tr>
+            <td>mère</td>
+            <td>parent</td>
+            <td>Ma mère cuisine.</td>
+        </tr>
+        <tr>
+            <td>maire</td>
+            <td>responsable d'une commune</td>
+            <td>Le maire parle aux habitants.</td>
+        </tr>
+    </table>
+
+    <h3>Autres exemples</h3>
+
+    <p>
+        verre / vert / vers / ver<br>
+        pain / pin<br>
+        sans / sang / cent / s'en<br>
+        cour / cours / court
+    </p>
+
+    <div class="example">
+        <strong>Astuce :</strong>
+        Pour choisir le bon homophone, il faut comprendre le sens
+        de la phrase.
+    </div>
+</section>
+
+
+<!-- 3 ANTONYMES -->
+<section class="section">
+    <h2>3️⃣ Les contraires ou antonymes</h2>
+
+    <div class="definition">
+        <strong>Définition :</strong>
+        Deux mots sont antonymes lorsqu'ils ont des sens opposés.
+    </div>
+
+    <table>
+        <tr>
+            <th>Mot</th>
+            <th>Contraire</th>
+        </tr>
+        <tr>
+            <td>grand</td>
+            <td>petit</td>
+        </tr>
+        <tr>
+            <td>chaud</td>
+            <td>froid</td>
+        </tr>
+        <tr>
+            <td>entrer</td>
+            <td>sortir</td>
+        </tr>
+        <tr>
+            <td>monter</td>
+            <td>descendre</td>
+        </tr>
+        <tr>
+            <td>heureux</td>
+            <td>malheureux</td>
+        </tr>
+        <tr>
+            <td>possible</td>
+            <td>impossible</td>
+        </tr>
+    </table>
+
+    <h3>Les préfixes pour former des contraires</h3>
+
+    <p>
+        Certains contraires sont formés grâce à un préfixe.
+    </p>
+
+    <div class="example">
+        possible → <strong>im</strong>possible<br>
+        régulier → <strong>ir</strong>régulier<br>
+        heureux → <strong>mal</strong>heureux<br>
+        honnête → <strong>mal</strong>honnête
+    </div>
+</section>
+
+
+<!-- 4 SENS PROPRE FIGURE -->
+<section class="section">
+    <h2>4️⃣ Le sens propre et le sens figuré</h2>
+
+    <div class="definition">
+        <strong>Sens propre :</strong>
+        c'est le sens réel et habituel d'un mot.
+    </div>
+
+    <div class="definition">
+        <strong>Sens figuré :</strong>
+        c'est un sens imagé qui permet de créer une comparaison
+        ou une image.
+    </div>
+
+    <table>
+        <tr>
+            <th>Expression</th>
+            <th>Sens propre</th>
+            <th>Sens figuré</th>
+        </tr>
+        <tr>
+            <td>avoir la tête dans les nuages</td>
+            <td>avoir la tête près des nuages</td>
+            <td>être rêveur</td>
+        </tr>
+        <tr>
+            <td>avoir un cœur de pierre</td>
+            <td>avoir un cœur fait de pierre</td>
+            <td>être insensible</td>
+        </tr>
+        <tr>
+            <td>donner sa langue au chat</td>
+            <td>donner réellement sa langue</td>
+            <td>abandonner une recherche ou une devinette</td>
+        </tr>
+    </table>
+
+    <div class="example">
+        <strong>Exemple :</strong><br>
+        « Le lion marche dans la savane. » → sens propre.<br>
+        « Cet homme est un lion. » → sens figuré : il est courageux.
+    </div>
+</section>
+
+
+<!-- 5 NOMS COMPOSES -->
+<section class="section">
+    <h2>5️⃣ Les noms composés</h2>
+
+    <div class="definition">
+        <strong>Définition :</strong>
+        Un nom composé est formé de plusieurs mots qui fonctionnent
+        ensemble pour désigner une seule réalité.
+    </div>
+
+    <h3>Exemples</h3>
+
+    <table>
+        <tr>
+            <th>Nom composé</th>
+            <th>Éléments</th>
+        </tr>
+        <tr>
+            <td>porte-monnaie</td>
+            <td>porte + monnaie</td>
+        </tr>
+        <tr>
+            <td>arc-en-ciel</td>
+            <td>arc + en + ciel</td>
+        </tr>
+        <tr>
+            <td>chef-d'œuvre</td>
+            <td>chef + d' + œuvre</td>
+        </tr>
+        <tr>
+            <td>gratte-ciel</td>
+            <td>gratte + ciel</td>
+        </tr>
+        <tr>
+            <td>pomme de terre</td>
+            <td>pomme + de + terre</td>
+        </tr>
+    </table>
+
+    <div class="warning">
+        <strong>Attention :</strong>
+        Le pluriel des noms composés dépend de la nature des mots
+        qui les composent. Il faut donc apprendre les règles et
+        vérifier dans un dictionnaire en cas de doute.
+    </div>
+</section>
+
+
+<!-- 6 FAMILLES DE MOTS -->
+<section class="section">
+    <h2>6️⃣ Les familles de mots</h2>
+
+    <div class="definition">
+        <strong>Définition :</strong>
+        Une famille de mots regroupe des mots construits à partir
+        d'un même radical et qui ont un lien de sens.
+    </div>
+
+    <div class="example">
+        <strong>Exemple : famille de « terre »</strong><br><br>
+        terre → terrestre → terrain → atterrir → déterrer
+    </div>
+
+    <h3>Le radical</h3>
+
+    <p>
+        Le radical est la partie commune que l'on retrouve
+        généralement dans les mots d'une même famille.
+    </p>
+
+    <div class="example">
+        chant → chanter → chanteur → chanson → chantonner
+    </div>
+</section>
+
+
+<!-- 7 PREFIXES SUFFIXES -->
+<section class="section">
+    <h2>7️⃣ Préfixes et suffixes</h2>
+
+    <h3>Le préfixe</h3>
+
+    <p>
+        Le préfixe se place avant le radical et permet de former
+        un nouveau mot.
+    </p>
+
+    <div class="example">
+        faire → <strong>re</strong>faire<br>
+        possible → <strong>im</strong>possible<br>
+        charger → <strong>dé</strong>charger
+    </div>
+
+    <h3>Le suffixe</h3>
+
+    <p>
+        Le suffixe se place après le radical.
+    </p>
+
+    <div class="example">
+        jardin → jardin<strong>ier</strong><br>
+        rapide → rapid<strong>ement</strong><br>
+        heureux → heure<strong>té</strong>
+    </div>
+</section>
+
+
+<!-- 8 CHAMP LEXICAL -->
+<section class="section">
+    <h2>8️⃣ Le champ lexical</h2>
+
+    <div class="definition">
+        <strong>Définition :</strong>
+        Un champ lexical est l'ensemble des mots qui se rapportent
+        à un même thème.
+    </div>
+
+    <div class="example">
+        <strong>Champ lexical de l'école :</strong><br>
+        élève, professeur, classe, cahier, tableau, leçon,
+        exercice, école, récréation, cartable.
+    </div>
+
+    <div class="example">
+        <strong>Champ lexical de la mer :</strong><br>
+        bateau, plage, vague, poisson, sable, océan, pêcheur,
+        coquillage.
+    </div>
+</section>
+
+
+<!-- 9 DICTIONNAIRE -->
+<section class="section">
+    <h2>9️⃣ Utiliser le dictionnaire</h2>
+
+    <p>
+        Le dictionnaire permet de connaître l'orthographe, la nature,
+        le sens et parfois l'origine d'un mot.
+    </p>
+
+    <h3>Pour chercher un mot</h3>
+
+    <ol>
+        <li>Regarder la première lettre.</li>
+        <li>Comparer la deuxième lettre.</li>
+        <li>Continuer jusqu'à trouver l'ordre alphabétique exact.</li>
+        <li>Lire les différentes définitions.</li>
+        <li>Choisir le sens correspondant à la phrase.</li>
+    </ol>
+
+    <div class="example">
+        <strong>Exemple :</strong><br>
+        Le mot « feuille » peut désigner une partie d'une plante
+        ou une feuille de papier. Le contexte permet de choisir
+        le bon sens.
+    </div>
+</section>
+
+
+<!-- EXERCICES -->
+<section class="section">
+    <h2>✏️ Exercices</h2>
+
+    <div class="exercise">
+        <strong>Exercice 1 — Synonymes</strong>
+        <p>Trouve un synonyme pour chaque mot :</p>
+        <p>
+            a) joli → ________<br>
+            b) commencer → ________<br>
+            c) terminer → ________<br>
+            d) courageux → ________
+        </p>
+
+        <button onclick="toggle('corr1')">Voir la correction</button>
+
+        <div id="corr1" class="correction">
+            a) beau<br>
+            b) débuter<br>
+            c) achever<br>
+            d) brave
+        </div>
+    </div>
+
+
+    <div class="exercise">
+        <strong>Exercice 2 — Contraires</strong>
+        <p>Donne le contraire de :</p>
+        <p>
+            a) grand → ________<br>
+            b) ouvrir → ________<br>
+            c) monter → ________<br>
+            d) heureux → ________
+        </p>
+
+        <button onclick="toggle('corr2')">Voir la correction</button>
+
+        <div id="corr2" class="correction">
+            a) petit<br>
+            b) fermer<br>
+            c) descendre<br>
+            d) malheureux
+        </div>
+    </div>
+
+
+    <div class="exercise">
+        <strong>Exercice 3 — Sens propre ou figuré ?</strong>
+        <p>
+            Indique si l'expression est employée au sens propre
+            ou au sens figuré.
+        </p>
+
+        <p>
+            a) Il a cassé le verre.<br>
+            b) Il a le cœur de pierre.<br>
+            c) Le chat dort sur le canapé.<br>
+            d) Cette nouvelle lui a brisé le cœur.
+        </p>
+
+        <button onclick="toggle('corr3')">Voir la correction</button>
+
+        <div id="corr3" class="correction">
+            a) Sens propre<br>
+            b) Sens figuré<br>
+            c) Sens propre<br>
+            d) Sens figuré
+        </div>
+    </div>
+
+
+    <div class="exercise">
+        <strong>Exercice 4 — Familles de mots</strong>
+        <p>
+            Trouve deux mots de la même famille que :
+        </p>
+
+        <p>
+            a) terre → ________ / ________<br>
+            b) chant → ________ / ________<br>
+            c) fleur → ________ / ________
+        </p>
+
+        <button onclick="toggle('corr4')">Voir la correction</button>
+
+        <div id="corr4" class="correction">
+            Exemples :<br>
+            a) terrestre / terrain<br>
+            b) chanter / chanteur<br>
+            c) fleuriste / fleurir
+        </div>
+    </div>
+
+
+    <div class="exercise">
+        <strong>Exercice 5 — Homophones</strong>
+        <p>
+            Complète avec le bon mot :
+        </p>
+
+        <p>
+            a) La ________ de mon village est très belle. (maire / mère)<br>
+            b) Ma ________ prépare le repas. (maire / mère)<br>
+            c) Le bateau est sur la ________. (mer / mère)<br>
+            d) J'ai bu dans un ________. (verre / vert)
+        </p>
+
+        <button onclick="toggle('corr5')">Voir la correction</button>
+
+        <div id="corr5" class="correction">
+            a) maire<br>
+            b) mère<br>
+            c) mer<br>
+            d) verre
+        </div>
+    </div>
+
+
+    <div class="exercise">
+        <strong>Exercice 6 — Champ lexical</strong>
+        <p>
+            Relève quatre mots appartenant au champ lexical
+            de l'école :
+        </p>
+
+        <p>
+            rivière — cahier — tableau — forêt —
+            professeur — élève — montagne
+        </p>
+
+        <button onclick="toggle('corr6')">Voir la correction</button>
+
+        <div id="corr6" class="correction">
+            cahier — tableau — professeur — élève
+        </div>
+    </div>
+</section>
+
+
+<!-- QUIZ -->
+<section class="section">
+    <h2>🎯 Quiz Vocabulaire CM2</h2>
+
+    <form id="quiz">
+
+        <div class="quiz-question">
+            <p><strong>1. Quel est le synonyme de « heureux » ?</strong></p>
+
+            <label>
+                <input type="radio" name="q1" value="0">
+                triste
+            </label>
+
+            <label>
+                <input type="radio" name="q1" value="1">
+                content
+            </label>
+
+            <label>
+                <input type="radio" name="q1" value="0">
+                fatigué
+            </label>
+        </div>
+
+
+        <div class="quiz-question">
+            <p><strong>2. Quel est le contraire de « monter » ?</strong></p>
+
+            <label>
+                <input type="radio" name="q2" value="0">
+                avancer
+            </label>
+
+            <label>
+                <input type="radio" name="q2" value="1">
+                descendre
+            </label>
+
+            <label>
+                <input type="radio" name="q2" value="0">
+                courir
+            </label>
+        </div>
+
+
+        <div class="quiz-question">
+            <p><strong>3. Dans « avoir un cœur de pierre », le sens est :</strong></p>
+
+            <label>
+                <input type="radio" name="q3" value="0">
+                propre
+            </label>
+
+            <label>
+                <input type="radio" name="q3" value="1">
+                figuré
+            </label>
+
+            <label>
+                <input type="radio" name="q3" value="0">
+                scientifique
+            </label>
+        </div>
+
+
+        <div class="quiz-question">
+            <p><strong>4. Quel mot appartient à la famille de « terre » ?</strong></p>
+
+            <label>
+                <input type="radio" name="q4" value="1">
+                terrestre
+            </label>
+
+            <label>
+                <input type="radio" name="q4" value="0">
+                terrible
+            </label>
+
+            <label>
+                <input type="radio" name="q4" value="0">
+                terminer
+            </label>
+        </div>
+
+
+        <div class="quiz-question">
+            <p><strong>5. Quel mot appartient au champ lexical de l'école ?</strong></p>
+
+            <label>
+                <input type="radio" name="q5" value="0">
+                bateau
+            </label>
+
+            <label>
+                <input type="radio" name="q5" value="1">
+                cahier
+            </label>
+
+            <label>
+                <input type="radio" name="q5" value="0">
+                forêt
+            </label>
+        </div>
+
+        <button type="button" onclick="calculerScore()">
+            Voir mon score
+        </button>
+
+        <div id="resultat"></div>
+
+    </form>
+</section>
+
+
+<!-- RECAP -->
+<section class="section recap">
+    <h2>📌 À retenir</h2>
+
+    <ul>
+        <li><strong>Synonymes :</strong> mots de sens identique ou proche.</li>
+        <li><strong>Antonymes :</strong> mots de sens contraire.</li>
+        <li><strong>Homophones :</strong> mots qui se prononcent de la même façon mais peuvent avoir une écriture et un sens différents.</li>
+        <li><strong>Sens propre :</strong> sens réel du mot.</li>
+        <li><strong>Sens figuré :</strong> sens imagé.</li>
+        <li><strong>Nom composé :</strong> nom formé de plusieurs mots.</li>
+        <li><strong>Famille de mots :</strong> mots construits autour d'un même radical.</li>
+        <li><strong>Préfixe :</strong> élément placé avant le radical.</li>
+        <li><strong>Suffixe :</strong> élément placé après le radical.</li>
+        <li><strong>Champ lexical :</strong> mots associés à un même thème.</li>
+        <li><strong>Dictionnaire :</strong> outil permettant de rechercher les informations sur un mot.</li>
+    </ul>
+</section>
+
+
+<!-- NAVIGATION -->
+<div class="navigation">
+    <a href="cm2-francais-orthographe.html">
+        ← Chapitre 14 : Orthographe
+    </a>
+
+    <a href="cm2-francais-production-ecrite.html">
+        Chapitre 16 : Production écrite →
+    </a>
+</div>
+
+</main>
+
+<footer>
+    <p><strong>Z.Éducation</strong></p>
+    <p>Apprendre • Comprendre • Réussir</p>
+    <p>Français CM2</p>
+</footer>
+
+
+<script>
+
+function toggle(id) {
+    const element = document.getElementById(id);
+
+    if (element.style.display === "block") {
+        element.style.display = "none";
+    } else {
+        element.style.display = "block";
+    }
+}
+
+function calculerScore() {
+
+    let score = 0;
+
+    const questions = ["q1", "q2", "q3", "q4", "q5"];
+
+    questions.forEach(function(question) {
+
+        const reponse = document.querySelector(
+            'input[name="' + question + '"]:checked'
+        );
+
+        if (reponse && reponse.value === "1") {
+            score++;
+        }
+
+    });
+
+    const resultat = document.getElementById("resultat");
+
+    if (score === 5) {
+        resultat.innerHTML =
+            "🏆 Excellent ! 5/5 — Tu maîtrises très bien le vocabulaire.";
+    }
+    else if (score >= 4) {
+        resultat.innerHTML =
+            "👏 Très bien ! " + score + "/5 — Encore un petit effort.";
+    }
+    else if (score >= 3) {
+        resultat.innerHTML =
+            "👍 Bien ! " + score + "/5 — Continue à réviser.";
+    }
+    else {
+        resultat.innerHTML =
+            "📚 " + score + "/5 — Relis le cours et recommence le quiz.";
+    }
+}
+
+</script>
+
+</body>
+</html>
