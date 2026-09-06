@@ -52,21 +52,24 @@
         }
 
         .welcome {
-            background: white;
-            padding: 35px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            margin-bottom: 30px;
-        }
+    background: linear-gradient(135deg, #0369a1, #0284c7);
+    color: white;
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(3, 105, 161, 0.25);
+    margin-bottom: 30px;
+}
 
-        .welcome h1 {
-            color: #0369a1;
-            margin-bottom: 10px;
-        }
+       .welcome h1 {
+    color: white;
+    margin-bottom: 15px;
+    font-size: 30px;
+}
 
-        .welcome p {
-            color: #64748b;
-        }
+.welcome p {
+    color: #e0f2fe;
+    line-height: 1.8;
+}
 
         .levels {
             display: grid;
@@ -75,19 +78,21 @@
         }
 
         .level-card {
-            background: white;
-            padding: 28px;
-            border-radius: 16px;
-            text-decoration: none;
-            color: #0f172a;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.07);
-            transition: 0.2s;
-        }
+    background: white;
+    padding: 28px;
+    border-radius: 18px;
+    text-decoration: none;
+    color: #0f172a;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+    transition: all 0.25s ease;
+    border: 1px solid #e2e8f0;
+}
 
-        .level-card:hover {
-            transform: translateY(-4px);
-        }
-
+.level-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 30px rgba(3,105,161,0.15);
+    border-color: #7dd3fc;
+}
         .level-card h3 {
             color: #0369a1;
             margin-bottom: 8px;
@@ -137,32 +142,32 @@
     <div class="levels">
 
         <a href="cm2.html" class="level-card">
-            <h3>CM2</h3>
+          <h3>📚 CM2</h3>
             <p>Français, Mathématiques, Sciences, Anglais et plus.</p>
         </a>
 
         <div class="level-card">
-            <h3>CM1</h3>
+            <h3>📘 CM1</h3>
             <p>Contenus pédagogiques bientôt disponibles.</p>
         </div>
 
         <div class="level-card">
-            <h3>CE2</h3>
+          <h3>📖 CE2</h3>
             <p>Contenus pédagogiques bientôt disponibles.</p>
         </div>
 
         <div class="level-card">
-            <h3>CE1</h3>
+         <h3>✏️ CE1</h3>
             <p>Contenus pédagogiques bientôt disponibles.</p>
         </div>
 
         <div class="level-card">
-            <h3>CP2</h3>
+          <h3>📝 CP2</h3>
             <p>Contenus pédagogiques bientôt disponibles.</p>
         </div>
 
         <div class="level-card">
-            <h3>CP1</h3>
+          <h3>🔤 CP1</h3>
             <p>Contenus pédagogiques bientôt disponibles.</p>
         </div>
 
@@ -189,17 +194,32 @@ async function verifierConnexion() {
         return;
     }
 
-    const prenom = data.user.user_metadata?.prenom || "élève";
+    const user = data.user;
+    const metadata = user.user_metadata || {};
+
+    const prenom = metadata.prenom || "élève";
+    const profil = metadata.profil || "Non renseigné";
+    const niveau = metadata.niveau || "Non renseigné";
+    const ecole = metadata.ecole || "Non renseigné";
+    const ville = metadata.ville || "Non renseignée";
 
     document.getElementById("welcome-message").textContent =
         `Bienvenue ${prenom} 👋`;
+
+    document.getElementById("profile-info").innerHTML =
+        `👤 Profil : <strong>${profil}</strong><br>
+        🎓 Niveau : <strong>${niveau}</strong><br>
+        🏫 Établissement : <strong>${ecole}</strong><br>
+        📍 Ville : <strong>${ville}</strong>`;
 }
 verifierConnexion();
 
-document.getElementById("logout-btn").addEventListener("click", async function() {
+
+    document.getElementById("logout-btn").addEventListener("click", async function() {
     await supabaseClient.auth.signOut();
     window.location.href = "connexion.html";
 });
 </script>
+    
 </body>
 </html>
