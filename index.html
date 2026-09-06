@@ -1,162 +1,1324 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Z.Éducation — Apprendre • Comprendre • Réussir</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+  <title>Z.Éducation | Apprendre • Comprendre • Réussir</title>
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #f5f7fb;
-            color: #1f2937;
-        }
+  <meta name="description" content="Z.Éducation, plateforme éducative pour apprendre, comprendre et réussir du CP1 au CM2. Cours, exercices, quiz et évaluations.">
 
-        header {
-            background: #ffffff;
-            padding: 20px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-        }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        .logo {
-            font-size: 28px;
-            font-weight: bold;
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
-        nav a {
-            margin-left: 20px;
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
-        }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f7f9fc;
+      color: #172033;
+      line-height: 1.6;
+    }
 
-        .hero {
-            padding: 90px 8%;
-            text-align: center;
-            background: linear-gradient(135deg, #e8f0ff, #ffffff);
-        }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-        .hero h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
+    button {
+      font-family: inherit;
+    }
 
-        .hero p {
-            font-size: 22px;
-            margin-bottom: 30px;
-        }
+    /* =========================
+       NAVIGATION
+    ========================== */
 
-        .button {
-            display: inline-block;
-            padding: 14px 28px;
-            background: #2563eb;
-            color: white;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-        }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid #e8ecf3;
+      backdrop-filter: blur(10px);
+    }
 
-        .section {
-            padding: 60px 8%;
-            text-align: center;
-        }
+    .navbar {
+      max-width: 1200px;
+      margin: auto;
+      height: 76px;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-        .section h2 {
-            font-size: 32px;
-            margin-bottom: 35px;
-        }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 24px;
+      color: #123b70;
+    }
 
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 20px;
-        }
+    .logo-symbol {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #0b63ce, #17a673);
+      color: white;
+      font-size: 22px;
+      font-weight: 900;
+      box-shadow: 0 8px 20px rgba(11, 99, 206, 0.22);
+    }
 
-        .card {
-            background: white;
-            padding: 30px 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-        }
+    .logo span {
+      color: #0b63ce;
+    }
 
-        .card h3 {
-            margin-bottom: 10px;
-        }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      font-size: 15px;
+      font-weight: 600;
+    }
 
-        footer {
-            background: #111827;
-            color: white;
-            text-align: center;
-            padding: 30px;
-            margin-top: 30px;
-        }
-    </style>
+    .nav-links a {
+      color: #475569;
+      transition: 0.25s;
+    }
+
+    .nav-links a:hover {
+      color: #0b63ce;
+    }
+
+    .nav-button {
+      padding: 11px 19px;
+      border-radius: 10px;
+      background: #0b63ce;
+      color: white !important;
+    }
+
+    .nav-button:hover {
+      background: #084f9f;
+    }
+
+    .menu-button {
+      display: none;
+      border: none;
+      background: transparent;
+      font-size: 28px;
+      cursor: pointer;
+      color: #123b70;
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 85% 20%, rgba(23, 166, 115, 0.15), transparent 30%),
+        radial-gradient(circle at 10% 80%, rgba(11, 99, 206, 0.14), transparent 32%),
+        linear-gradient(135deg, #eef6ff, #f5fbf8);
+      padding: 95px 24px 90px;
+    }
+
+    .hero-container {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: white;
+      color: #0b63ce;
+      padding: 8px 14px;
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 6vw, 70px);
+      line-height: 1.05;
+      color: #102a43;
+      margin-bottom: 22px;
+      letter-spacing: -2px;
+    }
+
+    .hero h1 span {
+      color: #0b63ce;
+    }
+
+    .hero h2 {
+      font-size: 24px;
+      color: #17a673;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      max-width: 650px;
+      font-size: 18px;
+      color: #526174;
+      margin-bottom: 32px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 23px;
+      border-radius: 11px;
+      font-weight: 700;
+      transition: 0.25s;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: #0b63ce;
+      color: white;
+      box-shadow: 0 10px 25px rgba(11, 99, 206, 0.24);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      background: #084f9f;
+    }
+
+    .btn-secondary {
+      background: white;
+      color: #123b70;
+      border: 1px solid #dce4ef;
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      border-color: #0b63ce;
+    }
+
+    .hero-card {
+      background: white;
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: 0 25px 60px rgba(35, 67, 100, 0.12);
+      border: 1px solid #e7edf5;
+    }
+
+    .hero-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+
+    .hero-card-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: #102a43;
+    }
+
+    .online {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: #17a673;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .online-dot {
+      width: 9px;
+      height: 9px;
+      background: #17a673;
+      border-radius: 50%;
+    }
+
+    .dashboard-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 15px;
+      margin-bottom: 12px;
+      border-radius: 14px;
+      background: #f7f9fc;
+    }
+
+    .dashboard-icon {
+      width: 45px;
+      height: 45px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #eaf3ff;
+      font-size: 21px;
+    }
+
+    .dashboard-item strong {
+      display: block;
+      font-size: 15px;
+      color: #172033;
+    }
+
+    .dashboard-item small {
+      color: #718096;
+    }
+
+    /* =========================
+       SECTIONS
+    ========================== */
+
+    .section {
+      padding: 85px 24px;
+    }
+
+    .section-container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 48px;
+    }
+
+    .section-heading .label {
+      color: #0b63ce;
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+
+    .section-heading h2 {
+      font-size: 38px;
+      line-height: 1.15;
+      color: #102a43;
+      margin-bottom: 15px;
+    }
+
+    .section-heading p {
+      color: #64748b;
+      font-size: 16px;
+    }
+
+    /* =========================
+       NIVEAUX
+    ========================== */
+
+    .levels {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 15px;
+    }
+
+    .level-card {
+      background: white;
+      border: 1px solid #e4eaf2;
+      border-radius: 18px;
+      padding: 25px 12px;
+      text-align: center;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .level-card:hover {
+      transform: translateY(-6px);
+      border-color: #0b63ce;
+      box-shadow: 0 15px 35px rgba(20, 60, 100, 0.10);
+    }
+
+    .level-number {
+      width: 54px;
+      height: 54px;
+      margin: 0 auto 14px;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #eaf3ff;
+      color: #0b63ce;
+      font-weight: 900;
+      font-size: 17px;
+    }
+
+    .level-card h3 {
+      font-size: 17px;
+      color: #102a43;
+    }
+
+    .level-card p {
+      font-size: 12px;
+      color: #718096;
+    }
+
+    /* =========================
+       MATIERES
+    ========================== */
+
+    .subjects {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .subject-card {
+      background: white;
+      padding: 28px;
+      border-radius: 20px;
+      border: 1px solid #e5eaf1;
+      transition: 0.3s;
+    }
+
+    .subject-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 35px rgba(20, 60, 100, 0.10);
+    }
+
+    .subject-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 15px;
+      background: #eef5ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 25px;
+      margin-bottom: 18px;
+    }
+
+    .subject-card h3 {
+      color: #102a43;
+      margin-bottom: 8px;
+      font-size: 18px;
+    }
+
+    .subject-card p {
+      color: #718096;
+      font-size: 14px;
+    }
+
+    /* =========================
+       ACTIVITES
+    ========================== */
+
+    .activities {
+      background: #102a43;
+      color: white;
+    }
+
+    .activities .section-heading h2,
+    .activities .section-heading p {
+      color: white;
+    }
+
+    .activities .section-heading .label {
+      color: #64d8ad;
+    }
+
+    .activity-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .activity-card {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 22px;
+      padding: 32px;
+      transition: 0.3s;
+    }
+
+    .activity-card:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .activity-icon {
+      font-size: 38px;
+      margin-bottom: 18px;
+    }
+
+    .activity-card h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .activity-card p {
+      color: #cbd5e1;
+      font-size: 14px;
+    }
+
+    /* =========================
+       POURQUOI
+    ========================== */
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .why-card {
+      background: white;
+      border-radius: 20px;
+      padding: 30px;
+      border: 1px solid #e5eaf1;
+    }
+
+    .why-card .check {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: #e8f8f1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #17a673;
+      font-size: 22px;
+      margin-bottom: 18px;
+    }
+
+    .why-card h3 {
+      color: #102a43;
+      margin-bottom: 8px;
+    }
+
+    .why-card p {
+      color: #718096;
+      font-size: 14px;
+    }
+
+    /* =========================
+       CTA
+    ========================== */
+
+    .cta {
+      padding: 75px 24px;
+    }
+
+    .cta-box {
+      max-width: 1200px;
+      margin: auto;
+      border-radius: 28px;
+      padding: 60px 35px;
+      text-align: center;
+      background: linear-gradient(135deg, #0b63ce, #17a673);
+      color: white;
+      box-shadow: 0 25px 50px rgba(11, 99, 206, 0.20);
+    }
+
+    .cta-box h2 {
+      font-size: 38px;
+      margin-bottom: 14px;
+    }
+
+    .cta-box p {
+      max-width: 650px;
+      margin: 0 auto 28px;
+      color: #e9f5ff;
+    }
+
+    .cta-box .btn {
+      background: white;
+      color: #0b63ce;
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      background: #091b2d;
+      color: #cbd5e1;
+      padding: 55px 24px 25px;
+    }
+
+    .footer-grid {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 40px;
+    }
+
+    .footer-brand {
+      max-width: 330px;
+    }
+
+    .footer-brand .logo {
+      color: white;
+      margin-bottom: 15px;
+    }
+
+    .footer-brand p {
+      color: #94a3b8;
+      font-size: 14px;
+    }
+
+    footer h3 {
+      color: white;
+      margin-bottom: 15px;
+      font-size: 15px;
+    }
+
+    footer ul {
+      list-style: none;
+    }
+
+    footer li {
+      margin-bottom: 9px;
+      font-size: 14px;
+      color: #94a3b8;
+    }
+
+    footer a:hover {
+      color: white;
+    }
+
+    .copyright {
+      max-width: 1200px;
+      margin: auto;
+      padding-top: 22px;
+      border-top: 1px solid rgba(255, 255, 255, 0.10);
+      text-align: center;
+      color: #718096;
+      font-size: 13px;
+    }
+
+    /* =========================
+       ANIMATION
+    ========================== */
+
+    .fade-in {
+      animation: fadeIn 0.8s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================== */
+
+    @media (max-width: 950px) {
+
+      .hero-container {
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
+
+      .levels {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .subjects {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .activity-grid,
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 700px) {
+
+      .navbar {
+        height: 68px;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 22px 24px;
+        border-bottom: 1px solid #e8ecf3;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-button {
+        display: block;
+      }
+
+      .hero {
+        padding: 65px 20px;
+      }
+
+      .hero h1 {
+        font-size: 45px;
+      }
+
+      .hero h2 {
+        font-size: 20px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .section {
+        padding: 65px 20px;
+      }
+
+      .section-heading h2 {
+        font-size: 30px;
+      }
+
+      .levels {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .subjects {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-box {
+        padding: 45px 22px;
+      }
+
+      .cta-box h2 {
+        font-size: 30px;
+      }
+    }
+  </style>
+
 </head>
 
 <body>
 
-<header>
-    <div class="logo">Z.Éducation</div>
+  <!-- =========================
+       NAVIGATION
+  ========================== -->
 
-    <nav>
-        <a href="#">Accueil</a>
-        <a href="#niveaux">Niveaux</a>
-        <a href="#matieres">Matières</a>
-        <a href="#contact">Contact</a>
-    </nav>
-</header>
+  <header>
+    <nav class="navbar">
 
-<section class="hero">
-    <h1>Z.Éducation</h1>
-    <p>Apprendre • Comprendre • Réussir</p>
-    <a href="#niveaux" class="button">Commencer à apprendre</a>
+```
+  <a href="#accueil" class="logo">
+    <div class="logo-symbol">Z</div>
+    Z.<span>Éducation</span>
+  </a>
+
+  <button class="menu-button" onclick="toggleMenu()" aria-label="Ouvrir le menu">
+    ☰
+  </button>
+
+  <div class="nav-links" id="navLinks">
+    <a href="#accueil">Accueil</a>
+    <a href="#niveaux">Niveaux</a>
+    <a href="#matieres">Matières</a>
+    <a href="#activites">Apprendre</a>
+    <a href="#apropos">À propos</a>
+    <a href="#contact" class="nav-button">Commencer</a>
+  </div>
+
+</nav>
+```
+
+  </header>
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <main>
+
+```
+<section class="hero" id="accueil">
+
+  <div class="hero-container">
+
+    <div class="hero-text fade-in">
+
+      <div class="hero-badge">
+        🎓 PLATEFORME ÉDUCATIVE
+      </div>
+
+      <h1>
+        Bienvenue sur<br>
+        <span>Z.Éducation</span>
+      </h1>
+
+      <h2>
+        Apprendre • Comprendre • Réussir
+      </h2>
+
+      <p>
+        Une plateforme éducative pensée pour accompagner chaque élève
+        du CP1 au CM2 grâce à des cours, des exercices, des quiz et
+        des évaluations adaptés à son niveau.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#niveaux" class="btn btn-primary">
+          🚀 Commencer à apprendre
+        </a>
+
+        <a href="#matieres" class="btn btn-secondary">
+          📚 Découvrir les matières
+        </a>
+      </div>
+
+    </div>
+
+
+    <div class="hero-card fade-in">
+
+      <div class="hero-card-top">
+
+        <div class="hero-card-title">
+          Tableau d'apprentissage
+        </div>
+
+        <div class="online">
+          <span class="online-dot"></span>
+          En ligne
+        </div>
+
+      </div>
+
+      <div class="dashboard-item">
+        <div class="dashboard-icon">📖</div>
+        <div>
+          <strong>Cours</strong>
+          <small>Apprends les notions essentielles</small>
+        </div>
+      </div>
+
+      <div class="dashboard-item">
+        <div class="dashboard-icon">✏️</div>
+        <div>
+          <strong>Exercices</strong>
+          <small>Entraîne-toi progressivement</small>
+        </div>
+      </div>
+
+      <div class="dashboard-item">
+        <div class="dashboard-icon">🧠</div>
+        <div>
+          <strong>Quiz</strong>
+          <small>Teste tes connaissances</small>
+        </div>
+      </div>
+
+      <div class="dashboard-item">
+        <div class="dashboard-icon">🏆</div>
+        <div>
+          <strong>Progression</strong>
+          <small>Mesure tes progrès</small>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
 </section>
+
+
+<!-- =========================
+     NIVEAUX
+========================== -->
 
 <section class="section" id="niveaux">
-    <h2>Nos niveaux</h2>
 
-    <div class="cards">
-        <div class="card"><h3>CP1</h3><p>Apprendre les bases</p></div>
-        <div class="card"><h3>CP2</h3><p>Renforcer ses acquis</p></div>
-        <div class="card"><h3>CE1</h3><p>Progresser chaque jour</p></div>
-        <div class="card"><h3>CE2</h3><p>Comprendre et pratiquer</p></div>
-        <div class="card"><h3>CM1</h3><p>Développer ses compétences</p></div>
-        <div class="card"><h3>CM2</h3><p>Se préparer à la 6e</p></div>
+  <div class="section-container">
+
+    <div class="section-heading">
+
+      <div class="label">Nos niveaux</div>
+
+      <h2>
+        De la première année du primaire au CM2
+      </h2>
+
+      <p>
+        Choisis ton niveau scolaire et accède progressivement
+        aux contenus adaptés à ton apprentissage.
+      </p>
+
     </div>
+
+
+    <div class="levels">
+
+      <a href="#" class="level-card">
+        <div class="level-number">CP1</div>
+        <h3>CP1</h3>
+        <p>Début du primaire</p>
+      </a>
+
+      <a href="#" class="level-card">
+        <div class="level-number">CP2</div>
+        <h3>CP2</h3>
+        <p>Consolidation</p>
+      </a>
+
+      <a href="#" class="level-card">
+        <div class="level-number">CE1</div>
+        <h3>CE1</h3>
+        <p>Approfondissement</p>
+      </a>
+
+      <a href="#" class="level-card">
+        <div class="level-number">CE2</div>
+        <h3>CE2</h3>
+        <p>Progression</p>
+      </a>
+
+      <a href="#" class="level-card">
+        <div class="level-number">CM1</div>
+        <h3>CM1</h3>
+        <p>Perfectionnement</p>
+      </a>
+
+      <a href="#" class="level-card">
+        <div class="level-number">CM2</div>
+        <h3>CM2</h3>
+        <p>Préparation 6e</p>
+      </a>
+
+    </div>
+
+  </div>
+
 </section>
+
+
+<!-- =========================
+     MATIERES
+========================== -->
 
 <section class="section" id="matieres">
-    <h2>Nos matières</h2>
 
-    <div class="cards">
-        <div class="card"><h3>📖 Français</h3><p>Cours, exercices et quiz</p></div>
-        <div class="card"><h3>🔢 Mathématiques</h3><p>Cours, exercices et quiz</p></div>
-        <div class="card"><h3>🌍 Histoire-Géographie</h3><p>Découvrir et comprendre</p></div>
-        <div class="card"><h3>🔬 Sciences</h3><p>Observer et expérimenter</p></div>
-        <div class="card"><h3>🇬🇧 Anglais</h3><p>Apprendre progressivement</p></div>
+  <div class="section-container">
+
+    <div class="section-heading">
+
+      <div class="label">Les matières</div>
+
+      <h2>
+        Tout pour apprendre efficacement
+      </h2>
+
+      <p>
+        Des contenus organisés par matière et adaptés au niveau
+        de chaque élève.
+      </p>
+
     </div>
+
+
+    <div class="subjects">
+
+      <a href="#" class="subject-card">
+        <div class="subject-icon">📘</div>
+        <h3>Français</h3>
+        <p>
+          Grammaire, conjugaison, orthographe,
+          vocabulaire, lecture et expression écrite.
+        </p>
+      </a>
+
+      <a href="#" class="subject-card">
+        <div class="subject-icon">🔢</div>
+        <h3>Mathématiques</h3>
+        <p>
+          Nombres, calcul, géométrie, mesures,
+          problèmes et raisonnement.
+        </p>
+      </a>
+
+      <a href="#" class="subject-card">
+        <div class="subject-icon">🔬</div>
+        <h3>Sciences</h3>
+        <p>
+          Corps humain, environnement, matière,
+          santé et découvertes scientifiques.
+        </p>
+      </a>
+
+      <a href="#" class="subject-card">
+        <div class="subject-icon">🌍</div>
+        <h3>Histoire-Géographie</h3>
+        <p>
+          Histoire, géographie, Côte d'Ivoire,
+          Afrique et monde.
+        </p>
+      </a>
+
+      <a href="#" class="subject-card">
+        <div class="subject-icon">🇬🇧</div>
+        <h3>Anglais</h3>
+        <p>
+          Vocabulaire, expressions, compréhension
+          et communication en anglais.
+        </p>
+      </a>
+
+      <a href="#" class="subject-card">
+        <div class="subject-icon">✍️</div>
+        <h3>Dictée</h3>
+        <p>
+          Entraînement à l'orthographe et
+          amélioration de l'écriture.
+        </p>
+      </a>
+
+      <a href="#" class="subject-card">
+        <div class="subject-icon">📚</div>
+        <h3>Lecture</h3>
+        <p>
+          Compréhension, vocabulaire, textes
+          et développement de la lecture.
+        </p>
+      </a>
+
+      <a href="#" class="subject-card">
+        <div class="subject-icon">🎤</div>
+        <h3>Expression orale</h3>
+        <p>
+          S'exprimer clairement, communiquer
+          et développer sa confiance.
+        </p>
+      </a>
+
+    </div>
+
+  </div>
+
 </section>
 
-<section class="section">
-    <h2>Une nouvelle façon d'apprendre</h2>
+
+<!-- =========================
+     ACTIVITES
+========================== -->
+
+<section class="section activities" id="activites">
+
+  <div class="section-container">
+
+    <div class="section-heading">
+
+      <div class="label">Méthode Z.Éducation</div>
+
+      <h2>
+        Apprendre autrement
+      </h2>
+
+      <p>
+        Une progression simple : apprendre la leçon,
+        pratiquer, puis vérifier ses connaissances.
+      </p>
+
+    </div>
+
+
+    <div class="activity-grid">
+
+      <div class="activity-card">
+
+        <div class="activity-icon">📖</div>
+
+        <h3>COURS</h3>
+
+        <p>
+          Des leçons structurées avec des explications,
+          des exemples et les notions essentielles à retenir.
+        </p>
+
+      </div>
+
+
+      <div class="activity-card">
+
+        <div class="activity-icon">✏️</div>
+
+        <h3>EXERCICES</h3>
+
+        <p>
+          Des exercices progressifs pour mettre les connaissances
+          en pratique et développer les compétences.
+        </p>
+
+      </div>
+
+
+      <div class="activity-card">
+
+        <div class="activity-icon">🧠</div>
+
+        <h3>QUIZ</h3>
+
+        <p>
+          Des quiz interactifs pour vérifier rapidement
+          ce qui est compris et identifier les points à revoir.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     POURQUOI
+========================== -->
+
+<section class="section" id="apropos">
+
+  <div class="section-container">
+
+    <div class="section-heading">
+
+      <div class="label">Pourquoi Z.Éducation ?</div>
+
+      <h2>
+        Une éducation pensée pour la réussite
+      </h2>
+
+      <p>
+        Z.Éducation veut rendre l'apprentissage plus clair,
+        plus accessible et plus motivant.
+      </p>
+
+    </div>
+
+
+    <div class="why-grid">
+
+      <div class="why-card">
+
+        <div class="check">✓</div>
+
+        <h3>Progression par niveau</h3>
+
+        <p>
+          Chaque élève retrouve des contenus correspondant
+          à son niveau scolaire, du CP1 au CM2.
+        </p>
+
+      </div>
+
+
+      <div class="why-card">
+
+        <div class="check">✓</div>
+
+        <h3>Apprentissage progressif</h3>
+
+        <p>
+          Les notions sont présentées progressivement,
+          de la découverte à la maîtrise.
+        </p>
+
+      </div>
+
+
+      <div class="why-card">
+
+        <div class="check">✓</div>
+
+        <h3>Apprendre en pratiquant</h3>
+
+        <p>
+          Cours, exercices et quiz permettent de transformer
+          les connaissances en véritables compétences.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     CTA
+========================== -->
+
+<section class="cta" id="contact">
+
+  <div class="cta-box">
+
+    <h2>
+      Prêt à commencer ?
+    </h2>
+
     <p>
-        Z.Éducation accompagne les élèves avec des cours,
-        des exercices, des quiz et des évaluations adaptés à leur niveau.
+      Choisis ton niveau et commence ton parcours
+      d'apprentissage avec Z.Éducation.
     </p>
-</section>
 
-<footer id="contact">
-    <p>© 2026 Z.Éducation — Apprendre • Comprendre • Réussir</p>
-</footer>
+    <a href="#niveaux" class="btn">
+      🎓 Choisir mon niveau
+    </a>
+
+  </div>
+
+</section>
+```
+
+  </main>
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+```
+<div class="footer-grid">
+
+  <div class="footer-brand">
+
+    <a href="#accueil" class="logo">
+      <div class="logo-symbol">Z</div>
+      Z.Éducation
+    </a>
+
+    <p>
+      Une plateforme éducative pour apprendre,
+      comprendre et réussir.
+    </p>
+
+  </div>
+
+
+  <div>
+
+    <h3>Navigation</h3>
+
+    <ul>
+      <li><a href="#accueil">Accueil</a></li>
+      <li><a href="#niveaux">Niveaux</a></li>
+      <li><a href="#matieres">Matières</a></li>
+      <li><a href="#activites">Apprendre</a></li>
+    </ul>
+
+  </div>
+
+
+  <div>
+
+    <h3>Niveaux</h3>
+
+    <ul>
+      <li><a href="#niveaux">CP1</a></li>
+      <li><a href="#niveaux">CP2</a></li>
+      <li><a href="#niveaux">CE1</a></li>
+      <li><a href="#niveaux">CE2</a></li>
+      <li><a href="#niveaux">CM1</a></li>
+      <li><a href="#niveaux">CM2</a></li>
+    </ul>
+
+  </div>
+
+
+  <div>
+
+    <h3>À propos</h3>
+
+    <ul>
+      <li><a href="#apropos">Notre mission</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#">Application mobile</a></li>
+    </ul>
+
+  </div>
+
+</div>
+
+
+<div class="copyright">
+  © 2026 Z.Éducation — Apprendre • Comprendre • Réussir
+</div>
+```
+
+  </footer>
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+
+  <script>
+
+    function toggleMenu() {
+      const menu = document.getElementById("navLinks");
+      menu.classList.toggle("active");
+    }
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+
+      link.addEventListener("click", () => {
+
+        document.getElementById("navLinks").classList.remove("active");
+
+      });
+
+    });
+
+  </script>
 
 </body>
 </html>
