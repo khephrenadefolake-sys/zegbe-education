@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Le groupe nominal — Français CM2 | Z.Éducation</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fb;
+    color: #1f2937;
+    line-height: 1.7;
+}
+
+header {
+    background: white;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    color: #2563eb;
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.back {
+    color: #374151;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.hero {
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+    color: white;
+    text-align: center;
+    padding: 65px 20px;
+}
+
+.hero .icon {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    max-width: 800px;
+    margin: auto;
+    font-size: 18px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    margin-bottom: 25px;
+    border-radius: 18px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.07);
+}
+
+.card h2 {
+    color: #2563eb;
+    margin-bottom: 18px;
+    font-size: 27px;
+}
+
+.card h3 {
+    margin-top: 22px;
+    margin-bottom: 10px;
+    color: #374151;
+}
+
+.definition {
+    background: #eff6ff;
+    border-left: 5px solid #2563eb;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.example {
+    background: #f8fafc;
+    padding: 18px;
+    border-radius: 10px;
+    margin: 15px 0;
+}
+
+.example strong {
+    color: #7c3aed;
+}
+
+.rule {
+    background: #fef3c7;
+    border-left: 5px solid #f59e0b;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.highlight {
+    background: #ecfdf5;
+    border-left: 5px solid #10b981;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+ul, ol {
+    padding-left: 25px;
+    margin: 12px 0;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+.table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 650px;
+}
+
+th, td {
+    border: 1px solid #d1d5db;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background: #eef2ff;
+}
+
+.exercise {
+    background: #f8fafc;
+    padding: 22px;
+    margin: 20px 0;
+    border-radius: 12px;
+}
+
+.exercise h3 {
+    margin-top: 0;
+    color: #111827;
+}
+
+button {
+    border: none;
+    background: #2563eb;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
+
+.answer {
+    display: none;
+    margin-top: 15px;
+    padding: 15px;
+    background: #ecfdf5;
+    border-left: 5px solid #10b981;
+    border-radius: 8px;
+}
+
+.quiz-question {
+    padding: 20px;
+    background: #f8fafc;
+    border-radius: 12px;
+    margin: 18px 0;
+}
+
+.quiz-question label {
+    display: block;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.result {
+    margin-top: 20px;
+    padding: 18px;
+    background: #eef2ff;
+    border-radius: 10px;
+    font-weight: bold;
+    display: none;
+}
+
+.progress {
+    background: #e5e7eb;
+    height: 12px;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+.progress-bar {
+    width: 0%;
+    height: 100%;
+    background: #2563eb;
+    transition: width 0.4s;
+}
+
+.recap {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.recap div {
+    background: #f8fafc;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.recap strong {
+    display: block;
+    color: #2563eb;
+    margin-bottom: 8px;
+}
+
+footer {
+    background: #111827;
+    color: #d1d5db;
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 60px;
+}
+
+footer strong {
+    color: white;
+}
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 15px 5%;
+    }
+
+    .logo {
+        font-size: 21px;
+    }
+
+    .back {
+        font-size: 14px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .card {
+        padding: 22px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <a href="index.html" class="logo">Z.Éducation</a>
+
+    <a href="cm2-francais-cours.html" class="back">
+        ← Retour aux cours
+    </a>
+</header>
+
+<section class="hero">
+
+    <div class="icon">🧩</div>
+
+    <h1>Chapitre 2 : Le groupe nominal</h1>
+
+    <p>
+        Français CM2 — Déterminant, nom, adjectif qualificatif
+        et expansions du nom.
+    </p>
+
+</section>
+
+<main class="container">
+
+<!-- DEFINITION -->
+
+<section class="card">
+
+    <h2>📖 1. Qu'est-ce qu'un groupe nominal ?</h2>
+
+    <div class="definition">
+
+        <strong>Définition :</strong>
+
+        Un groupe nominal, appelé aussi <strong>GN</strong>,
+        est un groupe de mots organisé autour d'un
+        <strong>nom</strong>.
+
+    </div>
+
+    <div class="example">
+
+        <strong>Exemple :</strong><br><br>
+
+        <strong>Le petit garçon</strong> joue dans la cour.
+
+    </div>
+
+    <p>
+        Dans le groupe nominal
+        <strong>« le petit garçon »</strong>,
+        le mot principal est <strong>garçon</strong>.
+    </p>
+
+    <div class="rule">
+
+        <strong>À retenir :</strong>
+
+        Le nom est généralement le
+        <strong>noyau du groupe nominal</strong>.
+
+    </div>
+
+</section>
+
+<!-- CONSTITUANTS -->
+
+<section class="card">
+
+    <h2>🔎 2. Les éléments du groupe nominal</h2>
+
+    <p>
+        Un groupe nominal peut être composé de plusieurs éléments.
+    </p>
+
+    <div class="table-container">
+
+        <table>
+
+            <tr>
+                <th>Élément</th>
+                <th>Rôle</th>
+                <th>Exemple</th>
+            </tr>
+
+            <tr>
+                <td>Déterminant</td>
+                <td>Il accompagne et précise le nom.</td>
+                <td><strong>Le</strong> garçon</td>
+            </tr>
+
+            <tr>
+                <td>Nom</td>
+                <td>Il constitue le noyau du GN.</td>
+                <td>Le <strong>garçon</strong></td>
+            </tr>
+
+            <tr>
+                <td>Adjectif qualificatif</td>
+                <td>Il donne une précision sur le nom.</td>
+                <td>Le garçon <strong>gentil</strong></td>
+            </tr>
+
+            <tr>
+                <td>Complément du nom</td>
+                <td>Il apporte une précision sur le nom.</td>
+                <td>Le livre <strong>de français</strong></td>
+            </tr>
+
+        </table>
+
+    </div>
+
+</section>
+
+<!-- DETERMINANTS -->
+
+<section class="card">
+
+    <h2>📝 3. Les déterminants</h2>
+
+    <p>
+        Le déterminant accompagne généralement le nom.
+        Il permet notamment de connaître son genre et son nombre.
+    </p>
+
+    <h3>Les articles définis</h3>
+
+    <div class="example">
+        <strong>le, la, l', les</strong>
+    </div>
+
+    <p>
+        Exemple : <strong>le</strong> garçon,
+        <strong>la</strong> fille,
+        <strong>les</strong> élèves.
+    </p>
+
+    <h3>Les articles indéfinis</h3>
+
+    <div class="example">
+        <strong>un, une, des</strong>
+    </div>
+
+    <p>
+        Exemple : <strong>un</strong> livre,
+        <strong>une</strong> maison,
+        <strong>des</strong> enfants.
+    </p>
+
+    <h3>Les déterminants possessifs</h3>
+
+    <div class="example">
+        <strong>mon, ton, son, ma, ta, sa, notre, votre, leur, leurs...</strong>
+    </div>
+
+    <p>
+        Exemple : <strong>mon</strong> cahier,
+        <strong>notre</strong> classe,
+        <strong>leurs</strong> livres.
+    </p>
+
+    <h3>Les déterminants démonstratifs</h3>
+
+    <div class="example">
+        <strong>ce, cet, cette, ces</strong>
+    </div>
+
+    <p>
+        Exemple : <strong>ce</strong> garçon,
+        <strong>cette</strong> fille,
+        <strong>ces</strong> élèves.
+    </p>
+
+    <h3>Les déterminants interrogatifs et exclamatifs</h3>
+
+    <div class="example">
+        <strong>quel, quelle, quels, quelles</strong>
+    </div>
+
+    <p>
+        Exemple : <strong>Quelle</strong> belle journée !
+    </p>
+
+    <div class="rule">
+
+        <strong>Attention :</strong>
+
+        Le déterminant s'accorde avec le nom
+        en genre et en nombre.
+
+    </div>
+
+</section>
+
+<!-- NOM -->
+
+<section class="card">
+
+    <h2>🔤 4. Le nom : le noyau du groupe nominal</h2>
+
+    <p>
+        Le nom désigne généralement une personne,
+        un animal, une chose, un lieu, une idée ou un sentiment.
+    </p>
+
+    <div class="example">
+
+        <strong>Exemples :</strong><br><br>
+
+        <strong>fille</strong> → personne<br>
+        <strong>chat</strong> → animal<br>
+        <strong>table</strong> → chose<br>
+        <strong>Abidjan</strong> → lieu<br>
+        <strong>courage</strong> → idée / qualité
+
+    </div>
+
+    <div class="highlight">
+
+        Pour trouver le noyau du groupe nominal,
+        demande-toi :
+
+        <br><br>
+
+        <strong>« De qui ou de quoi parle-t-on ? »</strong>
+
+    </div>
+
+</section>
+
+<!-- ADJECTIF -->
+
+<section class="card">
+
+    <h2>🎨 5. L'adjectif qualificatif</h2>
+
+    <div class="definition">
+
+        L'adjectif qualificatif donne une information
+        ou une précision sur un nom.
+
+    </div>
+
+    <div class="example">
+
+        <strong>Exemple :</strong><br><br>
+
+        Une <strong>grande</strong> maison.<br>
+        Un garçon <strong>courageux</strong>.<br>
+        Des fleurs <strong>magnifiques</strong>.
+
+    </div>
+
+    <h3>L'accord de l'adjectif</h3>
+
+    <p>
+        L'adjectif qualificatif s'accorde généralement
+        en genre et en nombre avec le nom qu'il qualifie.
+    </p>
+
+    <div class="example">
+
+        un garçon <strong>courageux</strong><br>
+        une fille <strong>courageuse</strong><br>
+        des garçons <strong>courageux</strong><br>
+        des filles <strong>courageuses</strong>
+
+    </div>
+
+    <div class="rule">
+
+        <strong>À retenir :</strong>
+
+        Pour accorder correctement un adjectif,
+        cherche le nom auquel il se rapporte.
+
+    </div>
+
+</section>
+
+<!-- EXPANSIONS -->
+
+<section class="card">
+
+    <h2>➕ 6. Les expansions du nom</h2>
+
+    <p>
+        Une expansion du nom est un élément qui apporte
+        des informations supplémentaires sur un nom.
+    </p>
+
+    <h3>L'adjectif qualificatif</h3>
+
+    <div class="example">
+        une <strong>belle</strong> maison
+    </div>
+
+    <h3>Le complément du nom</h3>
+
+    <div class="example">
+        le livre <strong>de français</strong>
+    </div>
+
+    <h3>La proposition subordonnée relative</h3>
+
+    <div class="example">
+        le garçon <strong>qui joue dans la cour</strong>
+    </div>
+
+    <div class="table-container">
+
+        <table>
+
+            <tr>
+                <th>Groupe nominal</th>
+                <th>Expansion</th>
+            </tr>
+
+            <tr>
+                <td>une voiture rouge</td>
+                <td>rouge → adjectif qualificatif</td>
+            </tr>
+
+            <tr>
+                <td>un sac de voyage</td>
+                <td>de voyage → complément du nom</td>
+            </tr>
+
+            <tr>
+                <td>l'élève qui travaille</td>
+                <td>qui travaille → proposition relative</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+</section>
+
+<!-- ANALYSE -->
+
+<section class="card">
+
+    <h2>🔬 7. Analyser un groupe nominal</h2>
+
+    <p>
+        Pour analyser un groupe nominal, on peut identifier
+        la nature de chacun de ses éléments.
+    </p>
+
+    <div class="example">
+
+        <strong>Exemple :</strong><br><br>
+
+        <strong>Le petit garçon courageux</strong>
+        aide son ami.
+
+        <br><br>
+
+        <strong>Le</strong> → déterminant<br>
+
+        <strong>petit</strong> → adjectif qualificatif<br>
+
+        <strong>garçon</strong> → nom commun, noyau du GN<br>
+
+        <strong>courageux</strong> → adjectif qualificatif
+
+    </div>
+
+    <div class="rule">
+
+        <strong>Méthode :</strong>
+
+        <ol>
+            <li>Repère le groupe nominal.</li>
+            <li>Cherche le nom noyau.</li>
+            <li>Identifie le déterminant.</li>
+            <li>Repère les adjectifs.</li>
+            <li>Repère les éventuels compléments du nom ou relatives.</li>
+        </ol>
+
+    </div>
+
+</section>
+
+<!-- EXERCICES -->
+
+<section class="card">
+
+    <h2>✏️ 8. Exercices</h2>
+
+    <div class="exercise">
+
+        <h3>Exercice 1 — Trouver le groupe nominal</h3>
+
+        <p>
+            Recopie le groupe nominal dans chaque phrase.
+        </p>
+
+        <ol>
+            <li>Le petit garçon joue dans la cour.</li>
+            <li>Une grande maison se trouve près de l'école.</li>
+            <li>Les élèves attentifs écoutent le professeur.</li>
+        </ol>
+
+        <button onclick="toggleAnswer('answer1')">
+            Voir la correction
+        </button>
+
+        <div class="answer" id="answer1">
+
+            <strong>Correction :</strong><br><br>
+
+            1. <strong>Le petit garçon</strong><br>
+            2. <strong>Une grande maison</strong><br>
+            3. <strong>Les élèves attentifs</strong>
+
+        </div>
+
+    </div>
+
+    <div class="exercise">
+
+        <h3>Exercice 2 — Trouver le nom noyau</h3>
+
+        <p>
+            Identifie le nom noyau de chaque groupe nominal.
+        </p>
+
+        <ol>
+            <li>La jolie fleur</li>
+            <li>Un grand arbre</li>
+            <li>Les nouveaux élèves</li>
+            <li>Le livre de français</li>
+        </ol>
+
+        <button onclick="toggleAnswer('answer2')">
+            Voir la correction
+        </button>
+
+        <div class="answer" id="answer2">
+
+            <strong>Correction :</strong><br><br>
+
+            1. fleur<br>
+            2. arbre<br>
+            3. élèves<br>
+            4. livre
+
+        </div>
+
+    </div>
+
+    <div class="exercise">
+
+        <h3>Exercice 3 — Identifier les constituants</h3>
+
+        <p>
+            Analyse le groupe nominal suivant :
+        </p>
+
+        <div class="example">
+            <strong>Les jeunes élèves courageux</strong>
+        </div>
+
+        <button onclick="toggleAnswer('answer3')">
+            Voir la correction
+        </button>
+
+        <div class="answer" id="answer3">
+
+            <strong>Correction :</strong><br><br>
+
+            <strong>Les</strong> → déterminant<br>
+
+            <strong>jeunes</strong> → adjectif qualificatif<br>
+
+            <strong>élèves</strong> → nom noyau<br>
+
+            <strong>courageux</strong> → adjectif qualificatif
+
+        </div>
+
+    </div>
+
+    <div class="exercise">
+
+        <h3>Exercice 4 — Accorder les adjectifs</h3>
+
+        <p>
+            Mets l'adjectif entre parenthèses au bon genre et au bon nombre.
+        </p>
+
+        <ol>
+            <li>Une fille (courageux).</li>
+            <li>Des garçons (attentif).</li>
+            <li>Une maison (grand).</li>
+            <li>Des fleurs (magnifique).</li>
+        </ol>
+
+        <button onclick="toggleAnswer('answer4')">
+            Voir la correction
+        </button>
+
+        <div class="answer" id="answer4">
+
+            <strong>Correction :</strong><br><br>
+
+            1. Une fille <strong>courageuse</strong>.<br>
+            2. Des garçons <strong>attentifs</strong>.<br>
+            3. Une maison <strong>grande</strong>.<br>
+            4. Des fleurs <strong>magnifiques</strong>.
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- QUIZ -->
+
+<section class="card">
+
+    <h2>🧠 9. Quiz</h2>
+
+    <p>
+        Réponds aux cinq questions puis calcule ton score.
+    </p>
+
+    <div class="progress">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <div class="quiz-question">
+
+        <strong>1. Quel est le noyau du groupe nominal
+        « le grand arbre » ?</strong>
+
+        <label>
+            <input type="radio" name="q1" value="0">
+            le
+        </label>
+
+        <label>
+            <input type="radio" name="q1" value="1">
+            arbre
+        </label>
+
+        <label>
+            <input type="radio" name="q1" value="0">
+            grand
+        </label>
+
+    </div>
+
+    <div class="quiz-question">
+
+        <strong>2. Quel mot est un déterminant ?</strong>
+
+        <label>
+            <input type="radio" name="q2" value="1">
+            cette
+        </label>
+
+        <label>
+            <input type="radio" name="q2" value="0">
+            maison
+        </label>
+
+        <label>
+            <input type="radio" name="q2" value="0">
+            grande
+        </label>
+
+    </div>
+
+    <div class="quiz-question">
+
+        <strong>3. Quel mot est un adjectif qualificatif ?</strong>
+
+        <label>
+            <input type="radio" name="q3" value="0">
+            les
+        </label>
+
+        <label>
+            <input type="radio" name="q3" value="1">
+            magnifique
+        </label>
+
+        <label>
+            <input type="radio" name="q3" value="0">
+            fleurs
+        </label>
+
+    </div>
+
+    <div class="quiz-question">
+
+        <strong>4. Dans « le livre de français »,
+        quelle est l'expansion du nom ?</strong>
+
+        <label>
+            <input type="radio" name="q4" value="0">
+            le
+        </label>
+
+        <label>
+            <input type="radio" name="q4" value="0">
+            livre
+        </label>
+
+        <label>
+            <input type="radio" name="q4" value="1">
+            de français
+        </label>
+
+    </div>
+
+    <div class="quiz-question">
+
+        <strong>5. Dans « une grande maison »,
+        quel est le nom noyau ?</strong>
+
+        <label>
+            <input type="radio" name="q5" value="0">
+            une
+        </label>
+
+        <label>
+            <input type="radio" name="q5" value="0">
+            grande
+        </label>
+
+        <label>
+            <input type="radio" name="q5" value="1">
+            maison
+        </label>
+
+    </div>
+
+    <button onclick="calculateQuiz()">
+        Calculer mon score
+    </button>
+
+    <div class="result" id="quizResult"></div>
+
+</section>
+
+<!-- ESSENTIEL -->
+
+<section class="card">
+
+    <h2>⭐ 10. L'essentiel à retenir</h2>
+
+    <div class="recap">
+
+        <div>
+            <strong>GN</strong>
+            Groupe de mots organisé autour d'un nom.
+        </div>
+
+        <div>
+            <strong>Nom</strong>
+            Il constitue généralement le noyau du GN.
+        </div>
+
+        <div>
+            <strong>Déterminant</strong>
+            Il accompagne le nom.
+        </div>
+
+        <div>
+            <strong>Adjectif</strong>
+            Il précise ou décrit le nom.
+        </div>
+
+        <div>
+            <strong>Expansion</strong>
+            Elle apporte une précision supplémentaire au nom.
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+<footer>
+
+    <strong>Z.Éducation</strong>
+
+    <p>Apprendre • Comprendre • Réussir</p>
+
+    <p>
+        © 2026 Z.Éducation — Tous droits réservés.
+    </p>
+
+</footer>
+
+<script>
+
+function toggleAnswer(id) {
+
+    const answer = document.getElementById(id);
+
+    if (answer.style.display === "block") {
+        answer.style.display = "none";
+    } else {
+        answer.style.display = "block";
+    }
+
+}
+
+function calculateQuiz() {
+
+    let score = 0;
+    let answered = 0;
+
+    for (let i = 1; i <= 5; i++) {
+
+        const selected = document.querySelector(
+            'input[name="q' + i + '"]:checked'
+        );
+
+        if (selected) {
+
+            answered++;
+            score += Number(selected.value);
+
+        }
+
+    }
+
+    const result = document.getElementById("quizResult");
+    const progress = document.getElementById("progressBar");
+
+    const percentage = Math.round((score / 5) * 100);
+
+    progress.style.width = percentage + "%";
+
+    result.style.display = "block";
+
+    if (answered < 5) {
+
+        result.innerHTML =
+            "⚠️ Tu as répondu à " + answered +
+            " question(s) sur 5. Réponds à toutes les questions.";
+
+        return;
+
+    }
+
+    if (score === 5) {
+
+        result.innerHTML =
+            "🏆 Excellent ! Score : 5/5 — Tu maîtrises très bien le groupe nominal.";
+
+    } else if (score >= 4) {
+
+        result.innerHTML =
+            "👏 Très bien ! Score : " + score +
+            "/5 — Continue tes efforts.";
+
+    } else if (score >= 3) {
+
+        result.innerHTML =
+            "👍 Bien ! Score : " + score +
+            "/5 — Relis les règles et entraîne-toi encore.";
+
+    } else {
+
+        result.innerHTML =
+            "📖 Score : " + score +
+            "/5 — Relis le cours puis recommence le quiz.";
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
