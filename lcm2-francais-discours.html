@@ -1,0 +1,1560 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Discours direct et indirect - Français CM2 | Z.Éducation</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f7fb;
+      color: #172033;
+      line-height: 1.7;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0f3d75, #1769aa);
+      color: white;
+      padding: 18px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .logo span {
+      color: #ffd54a;
+    }
+
+    .back-btn {
+      color: white;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.5);
+      padding: 8px 15px;
+      border-radius: 20px;
+      transition: 0.3s;
+    }
+
+    .back-btn:hover {
+      background: white;
+      color: #0f3d75;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #e8f2ff, #ffffff);
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .chapter-number {
+      display: inline-block;
+      background: #1769aa;
+      color: white;
+      padding: 7px 16px;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      color: #0f3d75;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: auto;
+      font-size: 1.1rem;
+      color: #536174;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    section {
+      background: white;
+      padding: 30px;
+      margin-bottom: 25px;
+      border-radius: 16px;
+      box-shadow: 0 5px 18px rgba(20, 50, 90, 0.08);
+    }
+
+    h2 {
+      color: #0f3d75;
+      margin-bottom: 18px;
+      font-size: 1.7rem;
+    }
+
+    h3 {
+      color: #1769aa;
+      margin: 22px 0 10px;
+    }
+
+    p {
+      margin-bottom: 12px;
+    }
+
+    ul, ol {
+      margin: 12px 0 12px 25px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .definition {
+      background: #edf6ff;
+      border-left: 5px solid #1769aa;
+      padding: 18px;
+      border-radius: 8px;
+      margin: 15px 0;
+    }
+
+    .important {
+      background: #fff7dc;
+      border-left: 5px solid #e4ad00;
+      padding: 18px;
+      border-radius: 8px;
+      margin: 15px 0;
+    }
+
+    .example {
+      background: #f5f7fa;
+      padding: 17px;
+      border-radius: 10px;
+      margin: 14px 0;
+      border: 1px solid #e1e7ef;
+    }
+
+    .direct {
+      color: #1769aa;
+      font-weight: bold;
+    }
+
+    .indirect {
+      color: #a34b00;
+      font-weight: bold;
+    }
+
+    .step {
+      background: #f7f9fc;
+      border-left: 4px solid #1769aa;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 8px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+
+    th, td {
+      border: 1px solid #dce3eb;
+      padding: 12px;
+      text-align: left;
+    }
+
+    th {
+      background: #1769aa;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background: #f7f9fc;
+    }
+
+    .exercise {
+      background: #fafcff;
+      border: 1px solid #dfe7f1;
+      padding: 20px;
+      border-radius: 12px;
+      margin: 15px 0;
+    }
+
+    .exercise strong {
+      color: #0f3d75;
+    }
+
+    button {
+      border: none;
+      background: #1769aa;
+      color: white;
+      padding: 10px 17px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background: #0f3d75;
+    }
+
+    .correction {
+      display: none;
+      margin-top: 15px;
+      padding: 15px;
+      background: #eaf8ee;
+      border-left: 4px solid #2e8b57;
+      border-radius: 8px;
+    }
+
+    .quiz-question {
+      background: #f7f9fc;
+      padding: 18px;
+      margin: 15px 0;
+      border-radius: 10px;
+    }
+
+    .quiz-question label {
+      display: block;
+      margin: 8px 0;
+      cursor: pointer;
+    }
+
+    .result {
+      margin-top: 20px;
+      padding: 18px;
+      border-radius: 10px;
+      background: #edf6ff;
+      font-weight: bold;
+      display: none;
+    }
+
+    .recap {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .recap-card {
+      padding: 18px;
+      border-radius: 12px;
+      background: #f4f8fd;
+      border: 1px solid #dce6f2;
+    }
+
+    .recap-card h3 {
+      margin-top: 0;
+    }
+
+    .navigation {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      margin: 30px 0;
+    }
+
+    .navigation a {
+      flex: 1;
+      text-align: center;
+      padding: 14px;
+      background: #1769aa;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+
+    .navigation a:hover {
+      background: #0f3d75;
+    }
+
+    footer {
+      text-align: center;
+      background: #0f3d75;
+      color: white;
+      padding: 25px;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 700px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      section {
+        padding: 22px;
+      }
+
+      .recap {
+        grid-template-columns: 1fr;
+      }
+
+      .navigation {
+        flex-direction: column;
+      }
+
+      table {
+        font-size: 0.9rem;
+      }
+
+      header {
+        padding: 15px 4%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">Z.<span>Éducation</span></div>
+
+  <a href="cm2-francais-circonstancielle.html" class="back-btn">
+    ← Retour au chapitre 8
+  </a>
+</header>
+
+
+<div class="hero">
+
+  <div class="chapter-number">
+    CHAPITRE 9 • FRANÇAIS CM2
+  </div>
+
+  <h1>Le discours direct et le discours indirect</h1>
+
+  <p>
+    Apprends à reconnaître, comprendre et transformer
+    le discours direct et le discours indirect.
+  </p>
+
+</div>
+
+
+<main>
+
+
+<!-- OBJECTIFS -->
+
+<section>
+
+  <h2>🎯 Objectifs du chapitre</h2>
+
+  <p>
+    À la fin de cette leçon, tu dois être capable de :
+  </p>
+
+  <ul>
+    <li>reconnaître un discours direct ;</li>
+    <li>reconnaître un discours indirect ;</li>
+    <li>identifier les paroles rapportées ;</li>
+    <li>utiliser correctement les guillemets et les deux-points ;</li>
+    <li>transformer un discours direct en discours indirect ;</li>
+    <li>transformer un discours indirect en discours direct ;</li>
+    <li>modifier correctement les pronoms et les indicateurs de temps et de lieu.</li>
+  </ul>
+
+</section>
+
+
+<!-- DEFINITION -->
+
+<section>
+
+  <h2>📘 1. Qu'est-ce que le discours rapporté ?</h2>
+
+  <div class="definition">
+
+    Le <strong>discours rapporté</strong> consiste à rapporter
+    les paroles ou les pensées d'une personne.
+
+  </div>
+
+  <p>
+    Il existe principalement deux manières de rapporter les paroles :
+  </p>
+
+  <ul>
+    <li><strong>le discours direct</strong> ;</li>
+    <li><strong>le discours indirect</strong>.</li>
+  </ul>
+
+</section>
+
+
+<!-- DIRECT -->
+
+<section>
+
+  <h2>🔵 2. Le discours direct</h2>
+
+  <div class="definition">
+
+    Au <strong>discours direct</strong>, on rapporte les paroles
+    exactement comme elles ont été prononcées.
+
+  </div>
+
+  <h3>Exemple</h3>
+
+  <div class="example">
+
+    <p class="direct">
+      Paul dit : « Je suis fatigué. »
+    </p>
+
+  </div>
+
+  <p>
+    Les paroles prononcées par Paul sont :
+    <strong>« Je suis fatigué. »</strong>
+  </p>
+
+  <h3>Les signes du discours direct</h3>
+
+  <ul>
+    <li>les deux-points <strong>:</strong> ;</li>
+    <li>les guillemets <strong>« »</strong> ;</li>
+    <li>parfois un tiret dans un dialogue ;</li>
+    <li>les paroles sont conservées telles qu'elles ont été prononcées.</li>
+  </ul>
+
+</section>
+
+
+<!-- INDIRECT -->
+
+<section>
+
+  <h2>🟠 3. Le discours indirect</h2>
+
+  <div class="definition">
+
+    Au <strong>discours indirect</strong>, les paroles sont intégrées
+    dans une autre phrase.
+
+  </div>
+
+  <h3>Exemple</h3>
+
+  <div class="example">
+
+    <p class="indirect">
+      Paul dit qu'il est fatigué.
+    </p>
+
+  </div>
+
+  <p>
+    Il n'y a plus de guillemets.
+    Les paroles sont introduites par un mot comme
+    <strong>que</strong>.
+  </p>
+
+</section>
+
+
+<!-- COMPARAISON -->
+
+<section>
+
+  <h2>⚖️ 4. Discours direct ou indirect ?</h2>
+
+  <table>
+
+    <tr>
+      <th>Discours direct</th>
+      <th>Discours indirect</th>
+    </tr>
+
+    <tr>
+      <td>Paul dit : « Je suis malade. »</td>
+      <td>Paul dit qu'il est malade.</td>
+    </tr>
+
+    <tr>
+      <td>Awa demande : « Où vas-tu ? »</td>
+      <td>Awa demande où je vais.</td>
+    </tr>
+
+    <tr>
+      <td>Le professeur dit : « Travaillez ! »</td>
+      <td>Le professeur dit de travailler.</td>
+    </tr>
+
+  </table>
+
+</section>
+
+
+<!-- TRANSFORMATION -->
+
+<section>
+
+  <h2>🔄 5. Transformer le discours direct en discours indirect</h2>
+
+  <p>
+    Pour transformer une phrase du discours direct au discours indirect,
+    plusieurs éléments peuvent changer.
+  </p>
+
+  <div class="step">
+
+    <strong>Étape 1 :</strong>
+    supprimer les guillemets.
+
+  </div>
+
+  <div class="step">
+
+    <strong>Étape 2 :</strong>
+    utiliser un mot introducteur adapté :
+    <strong>que, si, où, pourquoi, comment...</strong>
+
+  </div>
+
+  <div class="step">
+
+    <strong>Étape 3 :</strong>
+    modifier les pronoms si nécessaire.
+
+  </div>
+
+  <div class="step">
+
+    <strong>Étape 4 :</strong>
+    modifier les indicateurs de temps et de lieu si nécessaire.
+
+  </div>
+
+  <h3>Exemple simple</h3>
+
+  <div class="example">
+
+    <p>
+      Direct :
+      <strong>Marie dit : « Je travaille. »</strong>
+    </p>
+
+    <p>
+      Indirect :
+      <strong>Marie dit qu'elle travaille.</strong>
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- PRONOMS -->
+
+<section>
+
+  <h2>👤 6. Le changement des pronoms</h2>
+
+  <p>
+    Lorsqu'on passe du discours direct au discours indirect,
+    les pronoms peuvent changer.
+  </p>
+
+  <table>
+
+    <tr>
+      <th>Discours direct</th>
+      <th>Discours indirect</th>
+    </tr>
+
+    <tr>
+      <td>Je</td>
+      <td>il / elle</td>
+    </tr>
+
+    <tr>
+      <td>Tu</td>
+      <td>je / il / elle</td>
+    </tr>
+
+    <tr>
+      <td>Nous</td>
+      <td>ils / elles / nous</td>
+    </tr>
+
+    <tr>
+      <td>Mon</td>
+      <td>son</td>
+    </tr>
+
+    <tr>
+      <td>Ma</td>
+      <td>sa</td>
+    </tr>
+
+  </table>
+
+  <div class="example">
+
+    <p>
+      Direct :
+      <strong>Awa dit : « Je suis heureuse. »</strong>
+    </p>
+
+    <p>
+      Indirect :
+      <strong>Awa dit qu'elle est heureuse.</strong>
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- TEMPS -->
+
+<section>
+
+  <h2>⏰ 7. Les changements de temps</h2>
+
+  <p>
+    Lorsque le verbe introducteur est au passé,
+    certains temps peuvent changer.
+  </p>
+
+  <table>
+
+    <tr>
+      <th>Discours direct</th>
+      <th>Discours indirect</th>
+    </tr>
+
+    <tr>
+      <td>présent</td>
+      <td>imparfait</td>
+    </tr>
+
+    <tr>
+      <td>futur simple</td>
+      <td>conditionnel présent</td>
+    </tr>
+
+    <tr>
+      <td>passé composé</td>
+      <td>plus-que-parfait</td>
+    </tr>
+
+  </table>
+
+  <h3>Exemple</h3>
+
+  <div class="example">
+
+    <p>
+      Direct :
+      <strong>
+        Paul a dit : « Je suis malade. »
+      </strong>
+    </p>
+
+    <p>
+      Indirect :
+      <strong>
+        Paul a dit qu'il était malade.
+      </strong>
+    </p>
+
+  </div>
+
+  <div class="example">
+
+    <p>
+      Direct :
+      <strong>
+        Paul a dit : « Je viendrai demain. »
+      </strong>
+    </p>
+
+    <p>
+      Indirect :
+      <strong>
+        Paul a dit qu'il viendrait le lendemain.
+      </strong>
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- TEMPS ET LIEU -->
+
+<section>
+
+  <h2>📅 8. Les indicateurs de temps et de lieu</h2>
+
+  <p>
+    Certains mots doivent changer lorsqu'on transforme
+    le discours direct en discours indirect.
+  </p>
+
+  <table>
+
+    <tr>
+      <th>Direct</th>
+      <th>Indirect</th>
+    </tr>
+
+    <tr>
+      <td>aujourd'hui</td>
+      <td>ce jour-là</td>
+    </tr>
+
+    <tr>
+      <td>demain</td>
+      <td>le lendemain</td>
+    </tr>
+
+    <tr>
+      <td>hier</td>
+      <td>la veille</td>
+    </tr>
+
+    <tr>
+      <td>ici</td>
+      <td>là</td>
+    </tr>
+
+    <tr>
+      <td>maintenant</td>
+      <td>à ce moment-là</td>
+    </tr>
+
+  </table>
+
+  <div class="example">
+
+    <p>
+      Direct :
+      <strong>
+        Awa dit : « Je viendrai demain. »
+      </strong>
+    </p>
+
+    <p>
+      Indirect :
+      <strong>
+        Awa dit qu'elle viendra le lendemain.
+      </strong>
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- QUESTIONS -->
+
+<section>
+
+  <h2>❓ 9. Rapporter une question</h2>
+
+  <p>
+    Une question peut également être transformée
+    au discours indirect.
+  </p>
+
+  <h3>Question avec réponse oui/non</h3>
+
+  <div class="example">
+
+    <p>
+      Direct :
+      <strong>
+        Paul demande : « Viens-tu ? »
+      </strong>
+    </p>
+
+    <p>
+      Indirect :
+      <strong>
+        Paul demande si je viens.
+      </strong>
+    </p>
+
+  </div>
+
+  <h3>Question avec un mot interrogatif</h3>
+
+  <div class="example">
+
+    <p>
+      Direct :
+      <strong>
+        Awa demande : « Où habites-tu ? »
+      </strong>
+    </p>
+
+    <p>
+      Indirect :
+      <strong>
+        Awa demande où j'habite.
+      </strong>
+    </p>
+
+  </div>
+
+  <div class="important">
+
+    <strong>Attention :</strong>
+    dans une question indirecte, on ne conserve généralement
+    pas le point d'interrogation.
+
+  </div>
+
+</section>
+
+
+<!-- ORDRES -->
+
+<section>
+
+  <h2>📢 10. Rapporter un ordre ou un conseil</h2>
+
+  <p>
+    Un ordre ou un conseil peut être rapporté avec
+    <strong>de + infinitif</strong>.
+  </p>
+
+  <div class="example">
+
+    <p>
+      Direct :
+      <strong>
+        Le professeur dit : « Travaillez sérieusement. »
+      </strong>
+    </p>
+
+    <p>
+      Indirect :
+      <strong>
+        Le professeur dit de travailler sérieusement.
+      </strong>
+    </p>
+
+  </div>
+
+  <div class="example">
+
+    <p>
+      Direct :
+      <strong>
+        Maman dit : « Range ta chambre. »
+      </strong>
+    </p>
+
+    <p>
+      Indirect :
+      <strong>
+        Maman dit de ranger ma chambre.
+      </strong>
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- METHODE -->
+
+<section>
+
+  <h2>🧠 11. Méthode pour réussir la transformation</h2>
+
+  <p>
+    Pour transformer correctement une phrase,
+    procède dans cet ordre :
+  </p>
+
+  <ol>
+
+    <li>
+      repère les paroles rapportées ;
+    </li>
+
+    <li>
+      identifie le sujet qui parle ;
+    </li>
+
+    <li>
+      supprime les guillemets si tu passes au discours indirect ;
+    </li>
+
+    <li>
+      choisis le mot introducteur adapté ;
+    </li>
+
+    <li>
+      vérifie les pronoms ;
+    </li>
+
+    <li>
+      vérifie les temps des verbes ;
+    </li>
+
+    <li>
+      vérifie les indicateurs de temps et de lieu ;
+    </li>
+
+    <li>
+      vérifie la ponctuation.
+    </li>
+
+  </ol>
+
+  <div class="important">
+
+    <strong>Astuce :</strong>
+    ne transforme pas les mots au hasard.
+    Commence toujours par comprendre qui parle
+    et à qui les paroles sont destinées.
+
+  </div>
+
+</section>
+
+
+<!-- EXERCICES -->
+
+<section>
+
+  <h2>📝 12. Exercices</h2>
+
+
+  <div class="exercise">
+
+    <strong>Exercice 1 — Reconnaître le discours</strong>
+
+    <p>
+      Indique si chaque phrase est au discours direct
+      ou au discours indirect.
+    </p>
+
+    <ol>
+
+      <li>
+        Paul dit : « Je suis prêt. »
+      </li>
+
+      <li>
+        Awa affirme qu'elle viendra demain.
+      </li>
+
+      <li>
+        Le professeur demande : « Avez-vous terminé ? »
+      </li>
+
+      <li>
+        Maman dit que nous devons travailler.
+      </li>
+
+      <li>
+        Jean répond : « Je ne comprends pas. »
+      </li>
+
+    </ol>
+
+    <button onclick="toggleCorrection('corr1')">
+      Voir la correction
+    </button>
+
+    <div id="corr1" class="correction">
+
+      <strong>Correction :</strong>
+
+      <ol>
+
+        <li>Discours direct.</li>
+
+        <li>Discours indirect.</li>
+
+        <li>Discours direct.</li>
+
+        <li>Discours indirect.</li>
+
+        <li>Discours direct.</li>
+
+      </ol>
+
+    </div>
+
+  </div>
+
+
+  <div class="exercise">
+
+    <strong>Exercice 2 — Direct → Indirect</strong>
+
+    <p>
+      Transforme les phrases suivantes au discours indirect.
+    </p>
+
+    <ol>
+
+      <li>
+        Paul dit : « Je suis fatigué. »
+      </li>
+
+      <li>
+        Awa dit : « Je travaille beaucoup. »
+      </li>
+
+      <li>
+        Karim dit : « Je viendrai demain. »
+      </li>
+
+      <li>
+        Marie demande : « Où habites-tu ? »
+      </li>
+
+      <li>
+        Le professeur dit : « Travaillez sérieusement. »
+      </li>
+
+    </ol>
+
+    <button onclick="toggleCorrection('corr2')">
+      Voir la correction
+    </button>
+
+    <div id="corr2" class="correction">
+
+      <strong>Correction :</strong>
+
+      <ol>
+
+        <li>
+          Paul dit qu'il est fatigué.
+        </li>
+
+        <li>
+          Awa dit qu'elle travaille beaucoup.
+        </li>
+
+        <li>
+          Karim dit qu'il viendra le lendemain.
+        </li>
+
+        <li>
+          Marie demande où j'habite.
+        </li>
+
+        <li>
+          Le professeur dit de travailler sérieusement.
+        </li>
+
+      </ol>
+
+    </div>
+
+  </div>
+
+
+  <div class="exercise">
+
+    <strong>Exercice 3 — Indirect → Direct</strong>
+
+    <p>
+      Transforme les phrases suivantes au discours direct.
+    </p>
+
+    <ol>
+
+      <li>
+        Paul dit qu'il est heureux.
+      </li>
+
+      <li>
+        Awa dit qu'elle viendra demain.
+      </li>
+
+      <li>
+        Jean demande si je suis prêt.
+      </li>
+
+      <li>
+        Maman dit de ranger la chambre.
+      </li>
+
+      <li>
+        Le professeur demande où j'habite.
+      </li>
+
+    </ol>
+
+    <button onclick="toggleCorrection('corr3')">
+      Voir la correction
+    </button>
+
+    <div id="corr3" class="correction">
+
+      <strong>Correction possible :</strong>
+
+      <ol>
+
+        <li>
+          Paul dit : « Je suis heureux. »
+        </li>
+
+        <li>
+          Awa dit : « Je viendrai demain. »
+        </li>
+
+        <li>
+          Jean demande : « Es-tu prêt ? »
+        </li>
+
+        <li>
+          Maman dit : « Range ta chambre. »
+        </li>
+
+        <li>
+          Le professeur demande : « Où habites-tu ? »
+        </li>
+
+      </ol>
+
+    </div>
+
+  </div>
+
+
+  <div class="exercise">
+
+    <strong>Exercice 4 — Temps et indicateurs</strong>
+
+    <p>
+      Transforme :
+    </p>
+
+    <p>
+      <strong>
+        Paul a dit : « Je viendrai demain. »
+      </strong>
+    </p>
+
+    <button onclick="toggleCorrection('corr4')">
+      Voir la correction
+    </button>
+
+    <div id="corr4" class="correction">
+
+      <strong>Correction :</strong>
+
+      <p>
+        Paul a dit qu'il viendrait le lendemain.
+      </p>
+
+      <p>
+        <strong>viendrai</strong> devient
+        <strong>viendrait</strong>.
+      </p>
+
+      <p>
+        <strong>demain</strong> devient
+        <strong>le lendemain</strong>.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div class="exercise">
+
+    <strong>Exercice 5 — Production</strong>
+
+    <p>
+      Transforme au discours indirect :
+    </p>
+
+    <p>
+      <strong>
+        Le directeur annonce :
+        « Les élèves participeront au concours demain. »
+      </strong>
+    </p>
+
+    <button onclick="toggleCorrection('corr5')">
+      Voir la correction
+    </button>
+
+    <div id="corr5" class="correction">
+
+      <strong>Correction possible :</strong>
+
+      <p>
+        Le directeur annonce que les élèves participeront
+        au concours demain.
+      </p>
+
+      <p>
+        Si le verbe introducteur était au passé :
+      </p>
+
+      <p>
+        Le directeur a annoncé que les élèves participeraient
+        au concours le lendemain.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- QUIZ -->
+
+<section>
+
+  <h2>🎯 13. Quiz interactif</h2>
+
+  <p>
+    Choisis la bonne réponse.
+  </p>
+
+
+  <div class="quiz-question">
+
+    <strong>
+      1. Quelle phrase est au discours direct ?
+    </strong>
+
+    <label>
+      <input type="radio" name="q1" value="1">
+      Paul dit : « Je suis prêt. »
+    </label>
+
+    <label>
+      <input type="radio" name="q1" value="0">
+      Paul dit qu'il est prêt.
+    </label>
+
+  </div>
+
+
+  <div class="quiz-question">
+
+    <strong>
+      2. Quel mot introduit souvent une proposition au discours indirect ?
+    </strong>
+
+    <label>
+      <input type="radio" name="q2" value="1">
+      que
+    </label>
+
+    <label>
+      <input type="radio" name="q2" value="0">
+      mais
+    </label>
+
+    <label>
+      <input type="radio" name="q2" value="0">
+      donc
+    </label>
+
+  </div>
+
+
+  <div class="quiz-question">
+
+    <strong>
+      3. « demain » devient généralement quoi lorsque
+      le verbe introducteur est au passé ?
+    </strong>
+
+    <label>
+      <input type="radio" name="q3" value="0">
+      aujourd'hui
+    </label>
+
+    <label>
+      <input type="radio" name="q3" value="1">
+      le lendemain
+    </label>
+
+    <label>
+      <input type="radio" name="q3" value="0">
+      hier
+    </label>
+
+  </div>
+
+
+  <div class="quiz-question">
+
+    <strong>
+      4. Comment rapporte-t-on généralement une question
+      dont la réponse est oui ou non ?
+    </strong>
+
+    <label>
+      <input type="radio" name="q4" value="1">
+      Avec « si »
+    </label>
+
+    <label>
+      <input type="radio" name="q4" value="0">
+      Avec « donc »
+    </label>
+
+    <label>
+      <input type="radio" name="q4" value="0">
+      Avec « parce que »
+    </label>
+
+  </div>
+
+
+  <div class="quiz-question">
+
+    <strong>
+      5. Quelle phrase est correcte au discours indirect ?
+    </strong>
+
+    <label>
+      <input type="radio" name="q5" value="1">
+      Awa dit qu'elle travaille.
+    </label>
+
+    <label>
+      <input type="radio" name="q5" value="0">
+      Awa dit : qu'elle travaille.
+    </label>
+
+    <label>
+      <input type="radio" name="q5" value="0">
+      Awa dit « qu'elle travaille ».
+    </label>
+
+  </div>
+
+
+  <button onclick="calculateQuiz()">
+    Vérifier mon score
+  </button>
+
+  <div id="quizResult" class="result"></div>
+
+</section>
+
+
+<!-- RECAP -->
+
+<section>
+
+  <h2>📌 14. À retenir</h2>
+
+  <div class="recap">
+
+    <div class="recap-card">
+
+      <h3>🔵 Discours direct</h3>
+
+      <p>
+        Les paroles sont rapportées telles qu'elles ont été prononcées.
+      </p>
+
+      <p>
+        Exemple :
+        <strong>Paul dit : « Je suis heureux. »</strong>
+      </p>
+
+    </div>
+
+
+    <div class="recap-card">
+
+      <h3>🟠 Discours indirect</h3>
+
+      <p>
+        Les paroles sont intégrées dans une autre phrase.
+      </p>
+
+      <p>
+        Exemple :
+        <strong>Paul dit qu'il est heureux.</strong>
+      </p>
+
+    </div>
+
+
+    <div class="recap-card">
+
+      <h3>❓ Question</h3>
+
+      <p>
+        Une question oui/non peut être introduite par
+        <strong>si</strong>.
+      </p>
+
+    </div>
+
+
+    <div class="recap-card">
+
+      <h3>⏰ Temps</h3>
+
+      <p>
+        Certains temps et indicateurs de temps peuvent changer
+        lorsque le verbe introducteur est au passé.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div class="important">
+
+    <strong>Formule essentielle :</strong>
+
+    <br><br>
+
+    Discours direct :
+    <strong>verbe introducteur + : + « paroles »</strong>
+
+    <br><br>
+
+    Discours indirect :
+    <strong>verbe introducteur + que / si / mot interrogatif + proposition</strong>
+
+  </div>
+
+</section>
+
+
+<!-- NAVIGATION -->
+
+<div class="navigation">
+
+  <a href="cm2-francais-circonstancielle.html">
+    ← Chapitre 8 : Subordonnées circonstancielles
+  </a>
+
+  <a href="cm2-francais-voix.html">
+    Chapitre 10 : Voix active et passive →
+  </a>
+
+</div>
+
+
+</main>
+
+
+<footer>
+
+  <p>
+    <strong>Z.Éducation</strong> — Apprendre • Comprendre • Réussir
+  </p>
+
+  <p>
+    Français CM2 • Chapitre 9
+  </p>
+
+</footer>
+
+
+<script>
+
+function toggleCorrection(id) {
+
+  const element = document.getElementById(id);
+
+  if (element.style.display === "block") {
+
+    element.style.display = "none";
+
+  } else {
+
+    element.style.display = "block";
+
+  }
+
+}
+
+
+function calculateQuiz() {
+
+  let score = 0;
+
+  const questions = [
+    "q1",
+    "q2",
+    "q3",
+    "q4",
+    "q5"
+  ];
+
+  questions.forEach(function(question) {
+
+    const answer = document.querySelector(
+      'input[name="' + question + '"]:checked'
+    );
+
+    if (answer && answer.value === "1") {
+
+      score++;
+
+    }
+
+  });
+
+
+  const result = document.getElementById("quizResult");
+
+  result.style.display = "block";
+
+
+  if (score === 5) {
+
+    result.innerHTML =
+      "🎉 Excellent ! Tu as obtenu 5/5. Tu maîtrises parfaitement le discours direct et le discours indirect.";
+
+  }
+
+  else if (score >= 3) {
+
+    result.innerHTML =
+      "👏 Très bien ! Tu as obtenu " + score + "/5. Relis les points où tu hésites encore.";
+
+  }
+
+  else {
+
+    result.innerHTML =
+      "📚 Tu as obtenu " + score + "/5. Relis la leçon puis recommence le quiz.";
+
+  }
+
+}
+
+</script>
+
+</body>
+</html>
