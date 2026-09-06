@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cours de Français CM2 — Z.Éducation</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fb;
+    color: #1f2937;
+    line-height: 1.7;
+}
+
+header {
+    background: white;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #2563eb;
+    text-decoration: none;
+}
+
+.back {
+    text-decoration: none;
+    color: #374151;
+    font-weight: bold;
+}
+
+.hero {
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+    color: white;
+    text-align: center;
+    padding: 70px 20px;
+}
+
+.hero .icon {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 12px;
+}
+
+.hero p {
+    max-width: 750px;
+    margin: auto;
+    font-size: 18px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1050px;
+    margin: 45px auto;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.section-title h2 {
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.section-title p {
+    color: #6b7280;
+}
+
+.chapters {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.chapter {
+    background: white;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.07);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.chapter:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.10);
+}
+
+.chapter-number {
+    display: inline-block;
+    background: #e0e7ff;
+    color: #3730a3;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.chapter h3 {
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+.chapter p {
+    color: #6b7280;
+    margin-bottom: 18px;
+}
+
+.chapter a {
+    display: inline-block;
+    text-decoration: none;
+    background: #2563eb;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.method {
+    margin-top: 55px;
+    background: white;
+    border-radius: 18px;
+    padding: 35px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.07);
+}
+
+.method h2 {
+    margin-bottom: 20px;
+}
+
+.method-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.method-item {
+    padding: 20px;
+    background: #f8fafc;
+    border-radius: 12px;
+}
+
+.method-item strong {
+    display: block;
+    margin-bottom: 7px;
+}
+
+.cta {
+    margin-top: 50px;
+    background: #111827;
+    color: white;
+    padding: 40px;
+    border-radius: 18px;
+    text-align: center;
+}
+
+.cta h2 {
+    margin-bottom: 10px;
+}
+
+.cta p {
+    color: #d1d5db;
+    margin-bottom: 20px;
+}
+
+.cta a {
+    display: inline-block;
+    background: white;
+    color: #111827;
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+footer {
+    margin-top: 60px;
+    background: #111827;
+    color: #d1d5db;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+footer strong {
+    color: white;
+}
+
+@media (max-width: 600px) {
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    header {
+        padding: 15px 5%;
+    }
+
+    .logo {
+        font-size: 21px;
+    }
+
+    .back {
+        font-size: 14px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <a href="index.html" class="logo">Z.Éducation</a>
+    <a href="cm2-francais.html" class="back">← Retour Français CM2</a>
+</header>
+
+<section class="hero">
+    <div class="icon">📚</div>
+    <h1>Cours de Français CM2</h1>
+    <p>
+        Progresse chapitre après chapitre pour maîtriser la grammaire,
+        la conjugaison, l'orthographe, le vocabulaire et la production écrite.
+    </p>
+</section>
+
+<main class="container">
+
+    <section class="section-title">
+        <h2>Programme de Français CM2</h2>
+        <p>Choisis un chapitre pour commencer ton apprentissage.</p>
+    </section>
+
+    <section class="chapters">
+
+        <article class="chapter">
+            <span class="chapter-number">CHAPITRE 1</span>
+            <h3>La phrase</h3>
+            <p>Types et formes de phrases, phrase simple et phrase complexe.</p>
+            <a href="cm2-francais-phrase.html">Commencer →</a>
+        </article>
+
+        <article class="chapter">
+            <span class="chapter-number">CHAPITRE 2</span>
+            <h3>Le groupe nominal</h3>
+            <p>Déterminants, nom, adjectif qualificatif et expansions du nom.</p>
+            <a href="#">Commencer →</a>
+        </article>
+
+        <article class="chapter">
+            <span class="chapter-number">CHAPITRE 3</span>
+            <h3>Le groupe verbal</h3>
+            <p>Verbe, COD, COI, COS et compléments circonstanciels.</p>
+            <a href="#">Commencer →</a>
+        </article>
+
+        <article class="chapter">
+            <span class="chapter-number">CHAPITRE 4</span>
+            <h3>Les pronoms</h3>
+            <p>Pronoms personnels, relatifs et autres pronoms.</p>
+            <a href="#">Commencer →</a>
+        </article>
+
+        <article class="chapter">
+            <span class="chapter-number">CHAPITRE 5</span>
+            <h3>Les propositions</h3>
+            <p>Proposition indépendante, principale, subordonnée, coordination et juxtaposition.</p>
+            <a href="#">Commencer →</a>
+        </article>
+
+        <article class="chapter">
+            <span class="chapter-number">CHAPITRE 6</span>
+            <h3>La proposition subordonnée relative</h3>
+            <p>Pronoms relatifs, construction et analyse des propositions relatives.</p>
+            <a href="#">Commencer →</a>
+        </article>
+
+        <article class="chapter">
+            <span class="chapter-number">CHAPITRE 7</span>
+            <h3>La proposition subordonnée complétive</h3>
+            <p>Reconnaître, identifier et analyser les propositions complétives.</p>
+            <a href="#">Commencer →</a>
+        </article>
+
+        <article class="chapter">
+            <span class="chapter-number">CHAPITRE 8</span>
+            <h3>Les subordonnées circonstancielles</h3>
+            <p>Temps, cause, conséquence, but, condition et autres circonstances.</p>
+            <a href="#">Commencer →</a>
+        </article>
+
+        <article class="chapter">
+            <span class="chapter-number">CHAPITRE 9</span>
+            <h3>Discours direct et indirect</h3>
+            <p>Reconnaître et transformer les deux formes de discours.</p>
+            <a href="#">Commencer →</a>
+        </article>
+
+        <article class="chapter">
+            <span class="chapter-number">CHAPITRE 10</span>
+            <h3>Voix active et voix passive</h3>
+            <p>Identifier et transformer les phrases actives et passives.</p>
+            <a href="#">Commencer →</a>
+        </article>
+
+        <article class="chapter">
+            <span class="chapter-number">CHAPITRE 11</span>
+            <h3>Analyse grammaticale</h3>
+            <p>Identifier la nature et la fonction des mots et groupes de mots.</p>
+            <a href="#">Commencer →</a>
+        </article>
+
+        <article class="chapter">
+            <span class="chapter-number">CHAPITRE 12</span>
+            <h3>Analyse logique</h3>
+            <p>Identifier et analyser les différentes propositions d'une phrase.</p>
+            <a href="#">Commencer →</a>
+        </article>
+
+        <article class="chapter">
+            <span class="chapter-number">CHAPITRE 13</span>
+            <h3>Conjugaison</h3>
+            <p>Maîtriser les temps et les modes étudiés au CM2.</p>
+            <a href="#">Commencer →</a>
+        </article>
+
+        <article class="chapter">
+            <span class="chapter-number">CHAPITRE 14</span>
+            <h3>Orthographe</h3>
+            <p>Accords, homophones, participe passé et règles orthographiques.</p>
+            <a href="#">Commencer →</a>
+        </article>
+
+        <article class="chapter">
+            <span class="chapter-number">CHAPITRE 15</span>
+            <h3>Vocabulaire</h3>
+            <p>Synonymes, contraires, homonymes, sens propre et sens figuré.</p>
+            <a href="#">Commencer →</a>
+        </article>
+
+        <article class="chapter">
+            <span class="chapter-number">CHAPITRE 16</span>
+            <h3>Production écrite</h3>
+            <p>Décrire, raconter, dialoguer, écrire une lettre et organiser un texte.</p>
+            <a href="#">Commencer →</a>
+        </article>
+
+    </section>
+
+    <section class="method">
+        <h2>🎯 Comment apprendre sur Z.Éducation ?</h2>
+
+        <div class="method-grid">
+
+            <div class="method-item">
+                <strong>📖 1. Cours</strong>
+                Lis la leçon et comprends les règles avec des exemples.
+            </div>
+
+            <div class="method-item">
+                <strong>✏️ 2. Exercices</strong>
+                Entraîne-toi progressivement pour vérifier ta maîtrise.
+            </div>
+
+            <div class="method-item">
+                <strong>🧠 3. Quiz</strong>
+                Teste rapidement tes connaissances.
+            </div>
+
+            <div class="method-item">
+                <strong>✅ 4. Correction</strong>
+                Analyse tes erreurs et comprends comment progresser.
+            </div>
+
+        </div>
+    </section>
+
+    <section class="cta">
+        <h2>Prêt à commencer ?</h2>
+        <p>Commence par le premier chapitre : <strong>La phrase</strong>.</p>
+        <a href="cm2-francais-phrase.html">Commencer le chapitre 1 →</a>
+    </section>
+
+</main>
+
+<footer>
+    <strong>Z.Éducation</strong>
+    <p>Apprendre • Comprendre • Réussir</p>
+    <p>© 2026 Z.Éducation — Tous droits réservés.</p>
+</footer>
+
+</body>
+</html>
