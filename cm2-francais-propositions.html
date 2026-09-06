@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Les propositions - Français CM2 | Z.Éducation</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f7fb;
+      color: #1f2937;
+      line-height: 1.7;
+    }
+
+    header {
+      background: white;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 18px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      color: #2563eb;
+      text-decoration: none;
+      font-size: 24px;
+      font-weight: 800;
+    }
+
+    .back-link {
+      color: #374151;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .back-link:hover {
+      color: #2563eb;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #2563eb, #4f46e5);
+      color: white;
+      text-align: center;
+      padding: 70px 20px;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      max-width: 800px;
+      margin: auto;
+      font-size: 19px;
+    }
+
+    .container {
+      max-width: 1050px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .section {
+      background: white;
+      padding: 30px;
+      margin-bottom: 30px;
+      border-radius: 18px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+    }
+
+    .section h2 {
+      color: #1d4ed8;
+      font-size: 28px;
+      margin-bottom: 18px;
+    }
+
+    .section h3 {
+      margin: 25px 0 10px;
+      color: #374151;
+      font-size: 21px;
+    }
+
+    .definition {
+      background: #eff6ff;
+      border-left: 5px solid #2563eb;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+
+    .example {
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      padding: 18px;
+      border-radius: 12px;
+      margin: 15px 0;
+    }
+
+    .method {
+      background: #f0fdf4;
+      border-left: 5px solid #16a34a;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+
+    .warning {
+      background: #fff7ed;
+      border-left: 5px solid #f97316;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+
+    ul, ol {
+      margin: 12px 0 12px 25px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .exercise {
+      background: #f8fafc;
+      border: 1px solid #dbeafe;
+      padding: 22px;
+      border-radius: 14px;
+      margin: 18px 0;
+    }
+
+    .exercise h3 {
+      margin-top: 0;
+      color: #1d4ed8;
+    }
+
+    .answer-button {
+      margin-top: 12px;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 8px;
+      background: #2563eb;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .answer-button:hover {
+      background: #1d4ed8;
+    }
+
+    .answer {
+      display: none;
+      margin-top: 15px;
+      padding: 15px;
+      background: #ecfdf5;
+      border-left: 4px solid #16a34a;
+      border-radius: 8px;
+    }
+
+    .quiz-question {
+      margin: 22px 0;
+      padding: 20px;
+      background: #f8fafc;
+      border-radius: 12px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .quiz-question p {
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+
+    .quiz-question label {
+      display: block;
+      margin: 8px 0;
+      cursor: pointer;
+    }
+
+    .quiz-button {
+      display: block;
+      margin: 25px auto 0;
+      padding: 14px 28px;
+      border: none;
+      border-radius: 10px;
+      background: #16a34a;
+      color: white;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .quiz-button:hover {
+      background: #15803d;
+    }
+
+    .quiz-result {
+      display: none;
+      margin-top: 25px;
+      padding: 20px;
+      background: #eff6ff;
+      border-radius: 12px;
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .recap {
+      background: linear-gradient(135deg, #eff6ff, #eef2ff);
+      padding: 25px;
+      border-radius: 15px;
+    }
+
+    .navigation {
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .navigation a {
+      display: inline-block;
+      background: #2563eb;
+      color: white;
+      text-decoration: none;
+      padding: 13px 22px;
+      border-radius: 10px;
+      font-weight: bold;
+      margin: 5px;
+    }
+
+    .navigation a:hover {
+      background: #1d4ed8;
+    }
+
+    footer {
+      background: #111827;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 50px;
+    }
+
+    footer p {
+      margin: 5px;
+      opacity: 0.85;
+    }
+
+    @media (max-width: 700px) {
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      .section {
+        padding: 22px;
+      }
+
+      .header-container {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-container">
+
+    <a href="index.html" class="logo">
+      Z.Éducation
+    </a>
+
+    <a href="cm2-francais-cours.html" class="back-link">
+      ← Retour aux cours de Français CM2
+    </a>
+
+  </div>
+</header>
+
+
+<section class="hero">
+
+  <h1>Les propositions</h1>
+
+  <p>
+    Français CM2 — Comprendre la proposition indépendante,
+    la proposition principale, la subordonnée, la coordination
+    et la juxtaposition.
+  </p>
+
+</section>
+
+
+<main class="container">
+
+
+<!-- 1 -->
+
+<section class="section">
+
+  <h2>📘 1. Qu'est-ce qu'une proposition ?</h2>
+
+  <div class="definition">
+
+    <strong>Définition :</strong>
+    Une proposition est un groupe de mots organisé autour
+    d'un <strong>verbe conjugué</strong>.
+
+  </div>
+
+  <p>
+    Une phrase peut contenir une seule proposition ou plusieurs propositions.
+  </p>
+
+  <div class="example">
+
+    <strong>Exemple :</strong><br><br>
+
+    Awa travaille.
+
+    <br><br>
+
+    → Le verbe conjugué est « travaille ».
+    <br>
+    → Il y a donc <strong>une proposition</strong>.
+
+  </div>
+
+  <div class="example">
+
+    <strong>Exemple :</strong><br><br>
+
+    Awa travaille et son frère lit.
+
+    <br><br>
+
+    → « Awa travaille » = proposition 1<br>
+    → « son frère lit » = proposition 2
+
+    <br><br>
+
+    La phrase contient donc <strong>deux propositions</strong>.
+
+  </div>
+
+</section>
+
+
+<!-- 2 -->
+
+<section class="section">
+
+  <h2>🔎 2. Comment compter les propositions ?</h2>
+
+  <div class="method">
+
+    <strong>Règle :</strong><br><br>
+
+    Pour trouver le nombre de propositions,
+    cherche les <strong>verbes conjugués</strong>.
+
+    <br><br>
+
+    En général :
+
+    <br><br>
+
+    <strong>1 verbe conjugué = 1 proposition.</strong>
+
+  </div>
+
+  <div class="example">
+
+    <strong>Exemple :</strong><br><br>
+
+    Les enfants jouent dans la cour.
+
+    <br><br>
+
+    → « jouent » = 1 verbe conjugué<br>
+    → 1 proposition.
+
+  </div>
+
+  <div class="example">
+
+    <strong>Exemple :</strong><br><br>
+
+    Les enfants jouent et le maître surveille.
+
+    <br><br>
+
+    → « jouent » = proposition 1<br>
+    → « surveille » = proposition 2
+
+  </div>
+
+</section>
+
+
+<!-- 3 -->
+
+<section class="section">
+
+  <h2>🟢 3. La proposition indépendante</h2>
+
+  <div class="definition">
+
+    Une proposition indépendante ne dépend d'aucune autre proposition.
+    Elle peut généralement constituer une phrase à elle seule.
+
+  </div>
+
+  <div class="example">
+
+    <strong>Exemple :</strong><br><br>
+
+    Le soleil brille.
+
+    <br><br>
+
+    → Cette proposition ne dépend d'aucune autre.
+    <br>
+    → C'est une <strong>proposition indépendante</strong>.
+
+  </div>
+
+  <h3>Deux propositions indépendantes</h3>
+
+  <div class="example">
+
+    Paul travaille et Awa lit.
+
+    <br><br>
+
+    → « Paul travaille » = proposition indépendante<br>
+    → « Awa lit » = proposition indépendante
+
+  </div>
+
+</section>
+
+
+<!-- 4 -->
+
+<section class="section">
+
+  <h2>🔵 4. La coordination</h2>
+
+  <p>
+    Deux propositions peuvent être reliées par une
+    <strong>conjonction de coordination</strong>.
+  </p>
+
+  <div class="example">
+
+    <strong>Conjonctions de coordination :</strong>
+
+    <p>
+      <strong>mais — ou — et — donc — or — ni — car</strong>
+    </p>
+
+  </div>
+
+  <div class="example">
+
+    <strong>Exemple :</strong><br><br>
+
+    Awa travaille <strong>et</strong> son frère joue.
+
+    <br><br>
+
+    Proposition 1 → Awa travaille<br>
+    Proposition 2 → son frère joue<br>
+    Mot de liaison → <strong>et</strong>
+
+  </div>
+
+  <div class="example">
+
+    Il voulait sortir <strong>mais</strong> il pleuvait.
+
+    <br><br>
+
+    → Les deux propositions sont reliées par « mais ».
+
+  </div>
+
+</section>
+
+
+<!-- 5 -->
+
+<section class="section">
+
+  <h2>🟠 5. La juxtaposition</h2>
+
+  <div class="definition">
+
+    Deux propositions sont juxtaposées lorsqu'elles sont placées
+    l'une à côté de l'autre et séparées par un signe de ponctuation.
+
+  </div>
+
+  <p>
+    Elles peuvent être séparées par :
+  </p>
+
+  <ul>
+    <li>une virgule ;</li>
+    <li>un point-virgule ;</li>
+    <li>deux-points.</li>
+  </ul>
+
+  <div class="example">
+
+    <strong>Exemple :</strong><br><br>
+
+    Le soleil se couche, les oiseaux rentrent.
+
+    <br><br>
+
+    → Proposition 1 : Le soleil se couche.<br>
+    → Proposition 2 : les oiseaux rentrent.<br>
+    → Elles sont séparées par une virgule.
+
+  </div>
+
+</section>
+
+
+<!-- 6 -->
+
+<section class="section">
+
+  <h2>🔴 6. La subordination</h2>
+
+  <div class="definition">
+
+    Une proposition subordonnée dépend d'une autre proposition.
+    Elle ne fonctionne donc pas de la même manière qu'une proposition
+    indépendante.
+
+  </div>
+
+  <div class="example">
+
+    <strong>Exemple :</strong><br><br>
+
+    Je sais <strong>que tu travailles</strong>.
+
+    <br><br>
+
+    « Je sais » = proposition principale<br>
+    « que tu travailles » = proposition subordonnée
+
+  </div>
+
+  <div class="example">
+
+    Je vois l'élève <strong>qui travaille</strong>.
+
+    <br><br>
+
+    « Je vois l'élève » = proposition principale<br>
+    « qui travaille » = proposition subordonnée
+
+  </div>
+
+</section>
+
+
+<!-- 7 -->
+
+<section class="section">
+
+  <h2>🏛️ 7. Proposition principale et subordonnée</h2>
+
+  <p>
+    Lorsqu'une phrase contient une proposition subordonnée,
+    l'autre proposition est généralement appelée
+    <strong>proposition principale</strong>.
+  </p>
+
+  <div class="example">
+
+    <strong>Exemple :</strong><br><br>
+
+    Nous partirons <strong>quand le professeur arrivera</strong>.
+
+    <br><br>
+
+    Proposition principale :
+    <strong>Nous partirons</strong>
+
+    <br><br>
+
+    Proposition subordonnée :
+    <strong>quand le professeur arrivera</strong>
+
+  </div>
+
+</section>
+
+
+<!-- 8 -->
+
+<section class="section">
+
+  <h2>🔗 8. Les mots qui introduisent les subordonnées</h2>
+
+  <p>
+    Les propositions subordonnées peuvent être introduites
+    par différents mots.
+  </p>
+
+  <div class="example">
+
+    <strong>Exemples :</strong>
+
+    <ul>
+      <li>qui</li>
+      <li>que</li>
+      <li>dont</li>
+      <li>où</li>
+      <li>quand</li>
+      <li>lorsque</li>
+      <li>parce que</li>
+      <li>puisque</li>
+      <li>si</li>
+      <li>comme</li>
+    </ul>
+
+  </div>
+
+</section>
+
+
+<!-- 9 -->
+
+<section class="section">
+
+  <h2>🧠 9. Méthode d'analyse</h2>
+
+  <div class="method">
+
+    <strong>Étape 1 :</strong>
+    Cherche tous les verbes conjugués.
+
+    <br><br>
+
+    <strong>Étape 2 :</strong>
+    Délimite les propositions.
+
+    <br><br>
+
+    <strong>Étape 3 :</strong>
+    Observe le lien entre les propositions.
+
+    <br><br>
+
+    <strong>Étape 4 :</strong>
+    Détermine si elles sont indépendantes,
+    coordonnées, juxtaposées ou subordonnées.
+
+  </div>
+
+  <div class="example">
+
+    <strong>Exemple :</strong><br><br>
+
+    Quand il pleut, les enfants restent à la maison.
+
+    <br><br>
+
+    Verbes :
+    <strong>pleut</strong> et <strong>restent</strong>
+
+    <br><br>
+
+    Proposition subordonnée :
+    <strong>Quand il pleut</strong>
+
+    <br><br>
+
+    Proposition principale :
+    <strong>les enfants restent à la maison</strong>
+
+  </div>
+
+</section>
+
+
+<!-- EXERCICES -->
+
+<section class="section">
+
+  <h2>✏️ 10. Exercices</h2>
+
+
+  <div class="exercise">
+
+    <h3>Exercice 1 — Compte les propositions</h3>
+
+    <ol>
+      <li>Les enfants jouent.</li>
+      <li>Awa lit et Paul écrit.</li>
+      <li>Le soleil brille, les oiseaux chantent.</li>
+      <li>Je pense que tu as raison.</li>
+    </ol>
+
+    <button class="answer-button"
+      onclick="toggleAnswer('answer1')">
+      Voir la correction
+    </button>
+
+    <div class="answer" id="answer1">
+
+      <strong>Correction :</strong><br><br>
+
+      1. 1 proposition<br>
+      2. 2 propositions<br>
+      3. 2 propositions<br>
+      4. 2 propositions
+
+    </div>
+
+  </div>
+
+
+  <div class="exercise">
+
+    <h3>Exercice 2 — Coordination ou juxtaposition ?</h3>
+
+    <ol>
+      <li>Paul travaille et Awa étudie.</li>
+      <li>Le soleil se couche, les oiseaux rentrent.</li>
+      <li>Il pleut mais nous sortons.</li>
+    </ol>
+
+    <button class="answer-button"
+      onclick="toggleAnswer('answer2')">
+      Voir la correction
+    </button>
+
+    <div class="answer" id="answer2">
+
+      <strong>Correction :</strong><br><br>
+
+      1. Coordination → « et »<br>
+      2. Juxtaposition → virgule<br>
+      3. Coordination → « mais »
+
+    </div>
+
+  </div>
+
+
+  <div class="exercise">
+
+    <h3>Exercice 3 — Principale ou subordonnée ?</h3>
+
+    <p>
+      Je partirai <strong>quand tu arriveras</strong>.
+    </p>
+
+    <button class="answer-button"
+      onclick="toggleAnswer('answer3')">
+      Voir la correction
+    </button>
+
+    <div class="answer" id="answer3">
+
+      <strong>Correction :</strong><br><br>
+
+      Proposition principale :
+      <strong>Je partirai</strong>
+
+      <br><br>
+
+      Proposition subordonnée :
+      <strong>quand tu arriveras</strong>
+
+    </div>
+
+  </div>
+
+
+  <div class="exercise">
+
+    <h3>Exercice 4 — Analyse</h3>
+
+    <p>
+      Le garçon qui travaille réussira.
+    </p>
+
+    <button class="answer-button"
+      onclick="toggleAnswer('answer4')">
+      Voir la correction
+    </button>
+
+    <div class="answer" id="answer4">
+
+      <strong>Correction :</strong><br><br>
+
+      Proposition principale :
+      <strong>Le garçon réussira</strong>
+
+      <br><br>
+
+      Proposition subordonnée relative :
+      <strong>qui travaille</strong>
+
+    </div>
+
+  </div>
+
+
+  <div class="exercise">
+
+    <h3>Exercice 5 — Analyse complète</h3>
+
+    <p>
+      Lorsque la pluie tombe, les enfants restent à la maison
+      et leurs parents préparent le repas.
+    </p>
+
+    <button class="answer-button"
+      onclick="toggleAnswer('answer5')">
+      Voir la correction
+    </button>
+
+    <div class="answer" id="answer5">
+
+      <strong>Correction :</strong><br><br>
+
+      Proposition 1 :
+      <strong>Lorsque la pluie tombe</strong>
+      → proposition subordonnée circonstancielle.
+
+      <br><br>
+
+      Proposition 2 :
+      <strong>les enfants restent à la maison</strong>
+      → proposition principale.
+
+      <br><br>
+
+      Proposition 3 :
+      <strong>leurs parents préparent le repas</strong>
+      → proposition indépendante coordonnée à la précédente.
+
+      <br><br>
+
+      Mot de coordination :
+      <strong>et</strong>.
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- QUIZ -->
+
+<section class="section">
+
+  <h2>🧠 11. Quiz</h2>
+
+
+  <div class="quiz-question">
+
+    <p>
+      1. Qu'est-ce qui permet généralement de compter les propositions ?
+    </p>
+
+    <label>
+      <input type="radio" name="q1" value="1">
+      Les verbes conjugués
+    </label>
+
+    <label>
+      <input type="radio" name="q1" value="0">
+      Les noms
+    </label>
+
+    <label>
+      <input type="radio" name="q1" value="0">
+      Les adjectifs
+    </label>
+
+  </div>
+
+
+  <div class="quiz-question">
+
+    <p>
+      2. Dans « Paul travaille et Awa lit »,
+      quel mot relie les deux propositions ?
+    </p>
+
+    <label>
+      <input type="radio" name="q2" value="1">
+      et
+    </label>
+
+    <label>
+      <input type="radio" name="q2" value="0">
+      travaille
+    </label>
+
+    <label>
+      <input type="radio" name="q2" value="0">
+      lit
+    </label>
+
+  </div>
+
+
+  <div class="quiz-question">
+
+    <p>
+      3. Comment appelle-t-on deux propositions séparées par une virgule ?
+    </p>
+
+    <label>
+      <input type="radio" name="q3" value="1">
+      Des propositions juxtaposées
+    </label>
+
+    <label>
+      <input type="radio" name="q3" value="0">
+      Des propositions relatives
+    </label>
+
+    <label>
+      <input type="radio" name="q3" value="0">
+      Des propositions infinitives
+    </label>
+
+  </div>
+
+
+  <div class="quiz-question">
+
+    <p>
+      4. Dans « Je sais que tu travailles »,
+      « que tu travailles » est :
+    </p>
+
+    <label>
+      <input type="radio" name="q4" value="1">
+      Une proposition subordonnée
+    </label>
+
+    <label>
+      <input type="radio" name="q4" value="0">
+      Une proposition indépendante
+    </label>
+
+    <label>
+      <input type="radio" name="q4" value="0">
+      Une proposition coordonnée
+    </label>
+
+  </div>
+
+
+  <div class="quiz-question">
+
+    <p>
+      5. Quelle conjonction de coordination est correcte ?
+    </p>
+
+    <label>
+      <input type="radio" name="q5" value="1">
+      mais
+    </label>
+
+    <label>
+      <input type="radio" name="q5" value="0">
+      quand
+    </label>
+
+    <label>
+      <input type="radio" name="q5" value="0">
+      qui
+    </label>
+
+  </div>
+
+
+  <button class="quiz-button" onclick="calculateScore()">
+    Voir mon score
+  </button>
+
+  <div class="quiz-result" id="quizResult"></div>
+
+</section>
+
+
+<!-- RECAP -->
+
+<section class="section">
+
+  <h2>📚 12. L'essentiel à retenir</h2>
+
+  <div class="recap">
+
+    <ul>
+
+      <li>
+        Une <strong>proposition</strong> est organisée autour
+        d'un verbe conjugué.
+      </li>
+
+      <li>
+        Une proposition peut être <strong>indépendante</strong>.
+      </li>
+
+      <li>
+        Deux propositions peuvent être reliées par
+        <strong>coordination</strong>.
+      </li>
+
+      <li>
+        Deux propositions peuvent être reliées par
+        <strong>juxtaposition</strong>.
+      </li>
+
+      <li>
+        Une proposition peut dépendre d'une autre :
+        c'est une <strong>proposition subordonnée</strong>.
+      </li>
+
+      <li>
+        La proposition dont dépend la subordonnée est appelée
+        <strong>proposition principale</strong>.
+      </li>
+
+      <li>
+        Les conjonctions de coordination sont :
+        <strong>mais, ou, et, donc, or, ni, car</strong>.
+      </li>
+
+      <li>
+        Pour analyser une phrase complexe,
+        commence toujours par rechercher les verbes conjugués.
+      </li>
+
+    </ul>
+
+  </div>
+
+</section>
+
+
+<!-- NAVIGATION -->
+
+<div class="navigation">
+
+  <a href="cm2-francais-cours.html">
+    ← Retour aux cours
+  </a>
+
+  <a href="cm2-francais-relative.html">
+    Chapitre suivant →
+  </a>
+
+</div>
+
+
+</main>
+
+
+<footer>
+
+  <p><strong>Z.Éducation</strong></p>
+  <p>Apprendre • Comprendre • Réussir</p>
+  <p>Français CM2</p>
+
+</footer>
+
+
+<script>
+
+function toggleAnswer(id) {
+
+  const answer = document.getElementById(id);
+
+  if (answer.style.display === "block") {
+    answer.style.display = "none";
+  } else {
+    answer.style.display = "block";
+  }
+
+}
+
+
+function calculateScore() {
+
+  let score = 0;
+
+  const questions = ["q1", "q2", "q3", "q4", "q5"];
+
+  questions.forEach(function(question) {
+
+    const selected = document.querySelector(
+      'input[name="' + question + '"]:checked'
+    );
+
+    if (selected) {
+      score += Number(selected.value);
+    }
+
+  });
+
+  const result = document.getElementById("quizResult");
+
+  result.style.display = "block";
+
+  if (score === 5) {
+
+    result.innerHTML =
+      "🎉 Excellent ! Tu as obtenu " +
+      score +
+      "/5. Bravo !";
+
+  } else if (score >= 3) {
+
+    result.innerHTML =
+      "👏 Bien joué ! Tu as obtenu " +
+      score +
+      "/5. Continue tes efforts !";
+
+  } else {
+
+    result.innerHTML =
+      "💪 Tu as obtenu " +
+      score +
+      "/5. Relis le cours et recommence !";
+
+  }
+
+}
+
+</script>
+
+</body>
+</html>
